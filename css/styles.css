@@ -316,10 +316,8 @@ blockquote { margin: 0; }
 .reason__num {
   font-family: var(--font-display);
   font-size: clamp(40px, 4.5vw, 68px); font-weight: 700; line-height: 0.8; letter-spacing: -0.03em;
-  color: transparent; -webkit-text-stroke: 1.5px var(--text-faint);
-  transition: -webkit-text-stroke-color var(--t-mid) var(--ease-in);
+  color: var(--yellow);
 }
-.reason:hover .reason__num { -webkit-text-stroke-color: var(--yellow); }
 .reason__title { font-size: clamp(18px, 2.1vw, 25px); text-transform: uppercase; margin-bottom: 9px; letter-spacing: -0.01em; }
 .reason__body p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0; }
 
@@ -502,7 +500,7 @@ blockquote { margin: 0; }
 .quote {
   flex: 0 0 100%; min-width: 0;
   background: var(--dark-2); border-radius: 16px; padding: clamp(28px, 4vw, 44px);
-  border-top: 2px solid var(--yellow);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
 .quote__text { font-size: clamp(18px, 2.2vw, 26px); font-weight: 400; line-height: 1.4; margin: 0 0 20px; }
 .quote__author { font-size: 13px; font-weight: 500; color: var(--text-dim); letter-spacing: 0.06em; text-transform: uppercase; }
@@ -558,7 +556,7 @@ blockquote { margin: 0; }
 .mailer__hint { font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-faint); }
 
 /* ---------- Newsletter (legacy) ---------- */
-.newsletter { }
+.newsletter.section { padding-top: clamp(28px, 3.5vw, 48px); }
 .newsletter__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .newsletter__form { display: flex; gap: 12px; flex: 1; min-width: 280px; max-width: 480px; }
 .field {
@@ -639,7 +637,7 @@ blockquote { margin: 0; }
   .cmp__vs { padding: 4px 0; }
   .reasons__list { grid-template-columns: 1fr; }
   .reason { grid-template-columns: 64px 1fr; gap: 18px; padding: 26px 4px; }
-  .reason__num { font-size: 40px; -webkit-text-stroke-width: 1px; }
+  .reason__num { font-size: 40px; }
   /* stack the hero on mobile: copy on top, cans below */
   .hero__inner { grid-template-columns: 1fr; gap: 28px; }
   .hero__copy { grid-column: 1; grid-row: 1; }
