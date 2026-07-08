@@ -4,6 +4,9 @@
 (function () {
   "use strict";
 
+  /* Mark that JS is live so reveal animations only hide content when they can be shown. */
+  document.documentElement.classList.add("js");
+
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* SVG marks for the comparison table */
