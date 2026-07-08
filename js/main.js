@@ -319,11 +319,11 @@
         el.appendChild(img);
         frames.push(img);
       }
-      var step = ROTATION_MS / count;
-      el.style.setProperty("--spin-fade", Math.min(Math.round(step * 0.85), 240) + "ms");
+      // short crossfade so frames track the scroll crisply
+      el.style.setProperty("--spin-fade", "110ms");
       // everyone rests on frame 0 (the front)
       frames[0].classList.add("is-active");
-      engines.push({ frames: frames, i: 0, step: step });
+      engines.push({ frames: frames, i: 0 });
     });
 
     if (!engines.length) return;
@@ -331,64 +331,48 @@
     // Static when reduced motion is requested — everyone stays on the front.
     if (prefersReduced) return;
 
-    // Sequencer: one can spins a full revolution, then the next, in a loop.
-    var cur = 0, mode = "spin", acc = 0, last = 0, running = true, rafId = null;
-
+    // Scroll-scrub: the cans rotate as the hero scrolls past — the product
+    // turns in your hands as you read. Reversible, tied to scroll position.
     function show(eng, idx) {
       if (idx === eng.i) return;
       eng.frames[eng.i].classList.remove("is-active");
       eng.i = idx;
       eng.frames[idx].classList.add("is-active");
     }
+    function clamp01(v) { return v < 0 ? 0 : (v > 1 ? 1 : v); }
 
-    function tick(now) {
-      if (!running) return;
-      if (last) {
-        var dt = now - last, e = engines[cur];
-        acc += dt;
-        if (mode === "spin") {
-          while (acc >= e.step) {
-            acc -= e.step;
-            if (e.i + 1 >= e.frames.length) {   // completed the turn → back to front
-              show(e, 0);
-              mode = "dwell"; acc = 0;
-              break;
-            }
-            show(e, e.i + 1);
-          }
-        } else if (acc >= DWELL_MS) {           // pause, then hand off to next can
-          acc = 0; mode = "spin";
-          cur = (cur + 1) % engines.length;
-          show(engines[cur], 0);
-        }
+    var heroEl = document.querySelector(".hero");
+    var cansWrap = document.querySelector(".hero__cans");
+
+    function progress() {
+      if (!heroEl) return 0;
+      var r = heroEl.getBoundingClientRect();
+      // 0 when the hero top meets the viewport top; 1 after scrolling one hero-height.
+      return clamp01(-r.top / (r.height || 1));
+    }
+    function render() {
+      var p = progress();
+      for (var k = 0; k < engines.length; k++) {
+        var e = engines[k];
+        var pk = clamp01(p + k * 0.05);          // slight cascade so cans don't move in lockstep
+        show(e, Math.round(pk * (e.frames.length - 1)));
       }
-      last = now;
-      rafId = window.requestAnimationFrame(tick);
-    }
-    function start() {
-      if (rafId) return;
-      running = true; last = 0;
-      rafId = window.requestAnimationFrame(tick);
-    }
-    function stop() {
-      running = false;
-      if (rafId) { window.cancelAnimationFrame(rafId); rafId = null; }
     }
 
-    // Pause when the tab is hidden (saves cycles, avoids drift).
-    document.addEventListener("visibilitychange", function () {
-      document.hidden ? stop() : start();
-    });
+    // render is cheap (one rect read + a class toggle on ≤4 cans) so we run it
+    // directly on scroll — no rAF gate that can stall in a backgrounded tab.
+    var active = true;
+    function onScroll() { if (active) render(); }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
 
-    // Pause when the hero scrolls out of view.
-    var hero = document.querySelector(".hero__cans");
-    if (hero && "IntersectionObserver" in window) {
+    if (cansWrap && "IntersectionObserver" in window) {
       new IntersectionObserver(function (entries) {
-        entries[0].isIntersecting ? start() : stop();
-      }, { threshold: 0.05 }).observe(hero);
-    } else {
-      start();
+        active = entries[0].isIntersecting;
+        if (active) render();
+      }, { threshold: 0 }).observe(cansWrap);
     }
+    render(); // set initial frames from current scroll position
   })();
 
 })();
