@@ -320,6 +320,9 @@ blockquote { margin: 0; }
 .press__logo { font-weight: 700; font-size: 22px; text-transform: uppercase; letter-spacing: 0.02em; color: rgba(245,245,245,0.4); white-space: nowrap; transition: color var(--t-micro) var(--ease-in); }
 .press__logo:hover { color: var(--off-white); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* pause the scroll so viewers can read on hover */
+.marquee:hover .marquee__track,
+.ticker:hover .ticker__track { animation-play-state: paused; }
 
 /* ---------- Reasons (numbered editorial list, no boxes) ---------- */
 .reasons__head { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-7); align-items: end; margin-bottom: var(--head-gap); }
@@ -368,6 +371,9 @@ blockquote { margin: 0; }
   background: rgba(245,245,245,0.025); border: 1px solid var(--hairline); border-radius: 16px;
   padding: clamp(24px, 3vw, 36px);
 }
+.cmp__panel.is-swap .cmp__side { animation: cmpSwap 320ms var(--ease-out-quint); }
+.cmp__panel.is-swap .cmp__side--other { animation-delay: 55ms; }
+@keyframes cmpSwap { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .cmp__side { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
 .cmp__side--kc { border-radius: 12px; }
 .cmp__logo {
