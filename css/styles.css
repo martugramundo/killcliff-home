@@ -58,6 +58,8 @@
   /* Motion */
   --ease-in: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-out: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);  /* snappy deceleration */
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);   /* confident, decisive */
   --t-micro: 200ms;
   --t-mid: 300ms;
 }
@@ -132,13 +134,15 @@ blockquote { margin: 0; }
   display: inline-flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: 0.04em;
   padding: 12px 22px; border: 2px solid transparent; border-radius: 8px;
-  transition: background var(--t-micro) var(--ease-in), color var(--t-micro) var(--ease-in),
-              transform var(--t-micro) var(--ease-in), border-color var(--t-micro) var(--ease-in);
+  transition: background var(--t-micro) var(--ease-out-quint), color var(--t-micro) var(--ease-out-quint),
+              transform var(--t-micro) var(--ease-out-quint), border-color var(--t-micro) var(--ease-out-quint),
+              box-shadow var(--t-mid) var(--ease-out-quint);
 }
 .btn--primary { background: var(--yellow); color: var(--dark); }
-.btn--primary:hover { background: #e6d017; transform: translateY(-2px); }
+.btn--primary:hover { background: #e6d017; transform: translateY(-2px); box-shadow: 0 10px 34px rgba(255, 232, 25, 0.32); }
 .btn--ghost { background: transparent; color: var(--off-white); border-color: var(--hairline); }
 .btn--ghost:hover { border-color: var(--off-white); transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(0.98); box-shadow: none; }
 .btn--sm { padding: 9px 16px; font-size: 13px; }
 .btn--lg { padding: 16px 32px; font-size: 16px; }
 
@@ -482,8 +486,9 @@ blockquote { margin: 0; }
 .product-grid { display: grid; gap: 22px; grid-template-columns: repeat(4, 1fr); }
 .product { background: var(--dark-2); border-radius: 14px; padding: 18px; border: 1px solid transparent; transition: transform var(--t-micro) var(--ease-in), background var(--t-micro) var(--ease-in), border-color var(--t-micro) var(--ease-in); }
 .product:hover { transform: translateY(-6px); background: var(--surface-hover); border-color: var(--hairline); }
-.product__media { position: relative; margin-bottom: 16px; }
-.product__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 10px; display: block; }
+.product__media { position: relative; margin-bottom: 16px; overflow: hidden; border-radius: var(--r-md); }
+.product__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transition: transform 500ms var(--ease-out-quint); }
+.product:hover .product__media img { transform: scale(1.05); }
 .product__badge {
   position: absolute; top: 10px; left: 10px;
   background: rgba(0,0,0,0.85); color: var(--off-white); border: 1px solid var(--hairline);
@@ -593,9 +598,9 @@ blockquote { margin: 0; }
 .footer__copy { font-size: 13px; color: var(--text-dim); margin: 0; }
 
 /* ---------- Scroll reveal (only hides when JS can reveal it) ---------- */
-.reveal { transition: opacity 600ms var(--ease-in), transform 600ms var(--ease-in); }
-html.js .reveal { opacity: 0; transform: translate(8px, 24px); }
-html.js .reveal.is-visible { opacity: 1; transform: translate(0, 0); }
+.reveal { transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+html.js .reveal { opacity: 0; transform: translateY(22px); }
+html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ---------- Can float (hero idle) ---------- */
 .float { animation: float 5s ease-in-out infinite; }

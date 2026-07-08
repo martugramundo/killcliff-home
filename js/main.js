@@ -7,6 +7,15 @@
   /* Mark that JS is live so reveal animations only hide content when they can be shown. */
   document.documentElement.classList.add("js");
 
+  /* Easter egg for the curious */
+  try {
+    console.log(
+      "%c KILL CLIFF %c Clean energy. Created by a Navy SEAL. Every purchase supports the Navy SEAL Foundation. ",
+      "background:#FFE819;color:#000;font-weight:700;padding:4px 8px;border-radius:4px 0 0 4px;",
+      "background:#111;color:#F5F5F5;padding:4px 8px;border-radius:0 4px 4px 0;"
+    );
+  } catch (e) {}
+
   var prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* SVG marks for the comparison table */
