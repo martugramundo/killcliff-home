@@ -7,12 +7,11 @@
    ========================================================= */
 
 /* ---------- Fonts (self-hosted) ---------- */
-@font-face { font-family: "Outfit"; src: url("../assets/fonts/Outfit-VariableFont_wght.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Regular.ttf") format("truetype"); font-weight: 400; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Medium.ttf") format("truetype"); font-weight: 500; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-SemiBold.ttf") format("truetype"); font-weight: 600; font-style: normal; font-display: swap; }
-@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Bold.ttf") format("truetype"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Outfit"; src: url("../assets/fonts/Outfit-VariableFont_wght.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
   /* Primary palette */
@@ -96,6 +95,10 @@ blockquote { margin: 0; }
   background: var(--yellow); color: var(--dark); padding: 10px 16px; font-weight: 700;
 }
 .skip-link:focus { left: 8px; top: 8px; }
+
+/* Keyboard focus — visible yellow ring on the dark surface (mouse clicks stay clean) */
+:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; border-radius: 3px; }
+a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-visible { outline-offset: 4px; }
 
 /* ---------- Layout helpers ---------- */
 .container {
@@ -579,7 +582,8 @@ blockquote { margin: 0; }
 .mailer__label { width: 72px; flex: none; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,245,245,0.5); }
 .mailer__input { flex: 1; min-width: 0; background: transparent; border: 0; color: var(--off-white); font-family: var(--font-body); font-size: clamp(16px, 2vw, 18px); font-weight: 400; }
 .mailer__input:focus { outline: none; }
-.mailer__input::placeholder { color: rgba(245,245,245,0.3); }
+.mailer__input:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; border-radius: 3px; }
+.mailer__input::placeholder { color: rgba(245,245,245,0.45); }
 .mailer__typed { flex: 1; margin: 0; font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; text-transform: uppercase; color: var(--off-white); line-height: 1.1; }
 .mailer__message { padding: 20px 0 6px; min-height: 78px; font-size: clamp(16px, 2vw, 18px); font-weight: 400; color: var(--text-dim); line-height: 1.55; }
 .mailer__caret { color: var(--yellow); font-weight: 400; animation: blink 1s steps(1) infinite; }

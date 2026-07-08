@@ -93,6 +93,25 @@
     return Math.min(i, 6);
   }
 
+  /* ---- Lazy videos: only fetch + play the loop while it's on screen ---- */
+  (function () {
+    var vids = document.querySelectorAll(".js-lazyvideo");
+    if (!vids.length) return;
+    if (prefersReduced || !("IntersectionObserver" in window)) return; // no autoplay loop on reduced motion / no IO
+    var vio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var v = entry.target;
+        if (entry.isIntersecting) {
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {}); // ignore autoplay-block rejection
+        } else if (!v.paused) {
+          v.pause();
+        }
+      });
+    }, { threshold: 0.25 });
+    vids.forEach(function (v) { vio.observe(v); });
+  })();
+
   /* ---- Comparison (interactive toggle) ---- */
   (function () {
     var CMP = {
@@ -314,6 +333,10 @@
       for (var f = 1; f <= count; f++) {
         var img = document.createElement("img");
         img.className = "can-spin__frame";
+        img.decoding = "async";
+        // frame 0 is the resting/front view (drawn first) — let it compete for the
+        // hero paint; defer the rest so they don't fight the LCP text + first frame.
+        img.setAttribute("fetchpriority", f === 1 ? "high" : "low");
         img.src = "assets/cans/" + id + "/" + (f < 10 ? "0" + f : f) + "." + ext;
         img.alt = "";
         img.setAttribute("aria-hidden", "true");

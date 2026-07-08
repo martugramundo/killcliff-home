@@ -24,8 +24,10 @@
   <meta name="twitter:description" content="Clean energy, hydration, and recovery created by a Navy SEAL. No sugar, real electrolytes, premium creatine HCl." />
   <meta name="twitter:image" content="assets/logos/og-image.png" />
 
-  <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted in css/styles.css -->
-  <link rel="stylesheet" href="css/styles.css?v=12" />
+  <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
+  <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css?v=13" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -287,7 +289,7 @@
           </div>
 
           <div class="stack__center">
-            <video class="stack__video" autoplay loop muted playsinline preload="auto">
+            <video class="stack__video js-lazyvideo" loop muted playsinline preload="metadata">
               <source src="assets/video/stack-h264.mp4" type="video/mp4" />
             </video>
           </div>
@@ -318,7 +320,7 @@
     <section class="rtm section" id="rtm" aria-labelledby="rtm-title">
       <div class="container rtm__inner">
         <div class="rtm__visual reveal">
-          <video class="rtm__video" autoplay loop muted playsinline preload="auto">
+          <video class="rtm__video js-lazyvideo" loop muted playsinline preload="metadata">
             <source src="assets/video/rtm-h264.mp4" type="video/mp4" />
           </video>
         </div>
@@ -373,77 +375,77 @@
 
         <ul class="product-grid">
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy can" loading="lazy" /><span class="product__badge product__badge--hot">Best seller</span></div>
+            <div class="product__media"><img src="assets/products/energy-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy can" loading="lazy" decoding="async" /><span class="product__badge product__badge--hot">Best seller</span></div>
             <p class="product__line">Energy</p>
             <h3 class="product__name">Spicy Pineapple</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-cherry-lime.jpg" alt="Kill Cliff Cherry Lime energy can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/energy-cherry-lime.jpg" alt="Kill Cliff Cherry Lime energy can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Energy</p>
             <h3 class="product__name">Cherry Lime</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-smashing.jpg" alt="Kill Cliff Smashing Citrus energy can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/energy-smashing.jpg" alt="Kill Cliff Smashing Citrus energy can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Energy</p>
             <h3 class="product__name">Smashing Citrus</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-cbd-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy + CBD can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/energy-cbd-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy + CBD can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Energy + CBD</p>
             <h3 class="product__name">Spicy Pineapple</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-cbd-elk.jpg" alt="Kill Cliff Elk Blood energy + CBD can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/energy-cbd-elk.jpg" alt="Kill Cliff Elk Blood energy + CBD can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Energy + CBD</p>
             <h3 class="product__name">Elk Blood</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/energy-cbd-killer.jpg" alt="Kill Cliff Killer Cliffsicle energy + CBD can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/energy-cbd-killer.jpg" alt="Kill Cliff Killer Cliffsicle energy + CBD can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Energy + CBD</p>
             <h3 class="product__name">Killer Cliffsicle</h3>
             <p class="product__meta">12-pack · Clean energy, no sugar</p>
             <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/recovery-berry.jpg" alt="Kill Cliff Berry Legit Lemonade recovery can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/recovery-berry.jpg" alt="Kill Cliff Berry Legit Lemonade recovery can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Recovery</p>
             <h3 class="product__name">Berry Legit Lemonade</h3>
             <p class="product__meta">12-pack · Real electrolytes</p>
             <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/recovery-lemon-lime.jpg" alt="Kill Cliff Lemon Lime Lightning recovery can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/recovery-lemon-lime.jpg" alt="Kill Cliff Lemon Lime Lightning recovery can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Recovery</p>
             <h3 class="product__name">Lemon Lime Lightning</h3>
             <p class="product__meta">12-pack · Real electrolytes</p>
             <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/recovery-tasty-blood.jpg" alt="Kill Cliff Tasty Blood Orange recovery can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/recovery-tasty-blood.jpg" alt="Kill Cliff Tasty Blood Orange recovery can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Recovery</p>
             <h3 class="product__name">Tasty Blood Orange</h3>
             <p class="product__meta">12-pack · Real electrolytes</p>
             <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/recovery-cbd-orange.jpg" alt="Kill Cliff Orange Kush recovery + CBD can" loading="lazy" /></div>
+            <div class="product__media"><img src="assets/products/recovery-cbd-orange.jpg" alt="Kill Cliff Orange Kush recovery + CBD can" loading="lazy" decoding="async" /></div>
             <p class="product__line">Recovery + CBD</p>
             <h3 class="product__name">Orange Kush</h3>
             <p class="product__meta">12-pack · Real electrolytes</p>
             <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
           </li>
           <li class="product reveal reveal--pop">
-            <div class="product__media"><img src="assets/products/recovery-cbd-the-goat.jpg" alt="Kill Cliff The G.O.A.T recovery + CBD can" loading="lazy" /><span class="product__badge">Rogan collab</span></div>
+            <div class="product__media"><img src="assets/products/recovery-cbd-the-goat.jpg" alt="Kill Cliff The G.O.A.T recovery + CBD can" loading="lazy" decoding="async" /><span class="product__badge">Rogan collab</span></div>
             <p class="product__line">Recovery + CBD</p>
             <h3 class="product__name">The G.O.A.T</h3>
             <p class="product__meta">12-pack · Real electrolytes</p>
@@ -497,8 +499,8 @@
     <section class="final-cta" aria-labelledby="final-title">
       <!-- B&W training collage background -->
       <div class="final-cta__bg" aria-hidden="true">
-        <img src="assets/images/train-1.jpg" alt="" loading="lazy" />
-        <img src="assets/images/train-2.jpg" alt="" loading="lazy" />
+        <img src="assets/images/train-1.jpg" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/train-2.jpg" alt="" loading="lazy" decoding="async" />
       </div>
       <div class="final-cta__overlay" aria-hidden="true"></div>
       <div class="container final-cta__inner reveal">
@@ -595,6 +597,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=12"></script>
+  <script src="js/main.js?v=13"></script>
 </body>
 </html>
