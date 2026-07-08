@@ -76,7 +76,7 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var el = entry.target;
-          var delay = el.dataset.delay ? parseInt(el.dataset.delay, 10) : indexInParent(el) * 70;
+          var delay = el.dataset.delay ? parseInt(el.dataset.delay, 10) : indexInParent(el) * 90;
           el.style.transitionDelay = delay + "ms";
           el.classList.add("is-visible");
           io.unobserve(el);

@@ -604,7 +604,7 @@ blockquote { margin: 0; }
 .footer__copy { font-size: 13px; color: var(--text-dim); margin: 0; }
 
 /* ---------- Scroll reveal (only hides when JS can reveal it) ---------- */
-.reveal { transition: opacity 700ms var(--ease-out-expo), transform 700ms var(--ease-out-expo); }
+.reveal { transition: opacity 950ms var(--ease-out-expo), transform 950ms var(--ease-out-expo); }
 html.js .reveal { opacity: 0; transform: translateY(22px); }
 html.js .reveal.is-visible { opacity: 1; transform: none; }
 
@@ -615,30 +615,30 @@ html.js .reveal--pop.is-visible { transform: none; }
 
 /* reasons — each big number stamps in as its row reveals */
 html.js .reason .reason__num { opacity: 0; transform: scale(0.62); transform-origin: left center; }
-html.js .reason.is-visible .reason__num { animation: kcNumStamp 560ms var(--ease-out-expo) 90ms both; }
+html.js .reason.is-visible .reason__num { animation: kcNumStamp 740ms var(--ease-out-expo) 120ms both; }
 @keyframes kcNumStamp { to { opacity: 1; transform: none; } }
 
 /* stack — connectors draw from the copy toward the can when the diagram reveals */
 html.js .stack__ing--l .stack__ing-link { transform-origin: left center; }
 html.js .stack__ing--r .stack__ing-link { transform-origin: right center; }
 html.js .stack__diagram.reveal .stack__ing-link { transform: scaleX(0); }
-html.js .stack__diagram.reveal.is-visible .stack__ing--l .stack__ing-link { animation: kcDraw 560ms var(--ease-out-expo) 240ms forwards; }
-html.js .stack__diagram.reveal.is-visible .stack__ing--r .stack__ing-link { animation: kcDraw 560ms var(--ease-out-expo) 380ms forwards; }
+html.js .stack__diagram.reveal.is-visible .stack__ing--l .stack__ing-link { animation: kcDraw 720ms var(--ease-out-expo) 300ms forwards; }
+html.js .stack__diagram.reveal.is-visible .stack__ing--r .stack__ing-link { animation: kcDraw 720ms var(--ease-out-expo) 460ms forwards; }
 @keyframes kcDraw { to { transform: scaleX(1); } }
 
 /* compare — benefit pills stagger in when the panel reveals */
 html.js .cmp.reveal .cmp__tab { opacity: 0; }
-html.js .cmp.reveal.is-visible .cmp__tab { animation: kcPill 480ms var(--ease-out-expo) both; }
-html.js .cmp.reveal.is-visible .cmp__tab:nth-child(1) { animation-delay: 40ms; }
-html.js .cmp.reveal.is-visible .cmp__tab:nth-child(2) { animation-delay: 100ms; }
-html.js .cmp.reveal.is-visible .cmp__tab:nth-child(3) { animation-delay: 160ms; }
-html.js .cmp.reveal.is-visible .cmp__tab:nth-child(4) { animation-delay: 220ms; }
-html.js .cmp.reveal.is-visible .cmp__tab:nth-child(5) { animation-delay: 280ms; }
+html.js .cmp.reveal.is-visible .cmp__tab { animation: kcPill 640ms var(--ease-out-expo) both; }
+html.js .cmp.reveal.is-visible .cmp__tab:nth-child(1) { animation-delay: 60ms; }
+html.js .cmp.reveal.is-visible .cmp__tab:nth-child(2) { animation-delay: 150ms; }
+html.js .cmp.reveal.is-visible .cmp__tab:nth-child(3) { animation-delay: 240ms; }
+html.js .cmp.reveal.is-visible .cmp__tab:nth-child(4) { animation-delay: 330ms; }
+html.js .cmp.reveal.is-visible .cmp__tab:nth-child(5) { animation-delay: 420ms; }
 @keyframes kcPill { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
 
 /* final CTA — the headline wipes in behind a clip mask */
 html.js .final-cta__inner .final-cta__title { clip-path: inset(0 100% 0 0); }
-html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 780ms var(--ease-out-expo) 140ms forwards; }
+html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000ms var(--ease-out-expo) 180ms forwards; }
 @keyframes kcWipe { to { clip-path: inset(0 0 0 0); } }
 
 /* ---------- Can float (hero idle) ---------- */
