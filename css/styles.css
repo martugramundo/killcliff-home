@@ -677,6 +677,20 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
   .stats__grid { grid-template-columns: 1fr 1fr; }
 }
 
+/* ---------- Safe area (notched phones, landscape, home indicator) ---------- */
+@supports (padding: env(safe-area-inset-left)) {
+  body { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
+  .footer { padding-bottom: max(var(--s-6), env(safe-area-inset-bottom)); }
+}
+
+/* ---------- Touch: no sticky hover transforms on tap ---------- */
+@media (hover: none) {
+  .btn:hover, .product:hover, .reason:hover, .stack__ing:hover,
+  .results__arrow:hover, .cmp__tab:hover { transform: none; box-shadow: none; }
+  .product:hover .product__media img { transform: none; }
+  .marquee:hover .marquee__track, .ticker:hover .ticker__track { animation-play-state: running; }
+}
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
