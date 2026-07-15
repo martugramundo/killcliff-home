@@ -775,8 +775,9 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 
 /* cross-sell — link tiles to other collections */
 .coll-cross.section { padding-block: var(--sect-std); border-top: 1px solid var(--hairline); }
-.coll-cross__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: var(--head-gap) 0 0; padding: 0; list-style: none; }
-.coll-cross__card { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border: 1px solid var(--hairline); border-radius: var(--r-md); color: var(--off-white); text-decoration: none; background: var(--dark-2); transition: border-color var(--t-micro) var(--ease-in), transform var(--t-mid) var(--ease-out-quint), background var(--t-micro) var(--ease-in); }
+.coll-cross__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: var(--head-gap) 0 0; padding: 0; list-style: none; align-items: stretch; }
+.coll-cross__grid > li { display: flex; }
+.coll-cross__card { flex: 1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 24px; border: 1px solid var(--hairline); border-radius: var(--r-md); color: var(--off-white); text-decoration: none; background: var(--dark-2); transition: border-color var(--t-micro) var(--ease-in), transform var(--t-mid) var(--ease-out-quint), background var(--t-micro) var(--ease-in); }
 .coll-cross__card:hover { border-color: var(--yellow); transform: translateY(-3px); }
 .coll-cross__name { font-family: var(--font-display); font-size: clamp(18px, 2vw, 23px); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
 .coll-cross__sub { display: block; font-family: var(--font-body); font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--text-dim); margin-top: 3px; }
