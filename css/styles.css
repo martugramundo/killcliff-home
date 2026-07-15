@@ -819,6 +819,17 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
   .rtm-callout--tl { left: 0; } .rtm-callout--tr { right: 0; }
   .rtm-callout--bl { left: 0; } .rtm-callout--br { right: 0; }
 }
+/* drink collections — yellow-dot callouts flanking the fanned cans (2 left / 2 right) */
+.rtm-callout--drink .rtm-callout__main { display: flex; align-items: center; gap: 8px; }
+.rtm-callout--drink .rtm-callout__main::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
+.rtm-callout--drink.rtm-callout--tl { top: 19%; left: -2%; bottom: auto; }
+.rtm-callout--drink.rtm-callout--tr { top: 19%; right: -2%; bottom: auto; }
+.rtm-callout--drink.rtm-callout--bl { top: auto; bottom: 19%; left: -2%; }
+.rtm-callout--drink.rtm-callout--br { top: auto; bottom: 19%; right: -2%; }
+@media (max-width: 860px) {
+  .rtm-callout--drink.rtm-callout--tl, .rtm-callout--drink.rtm-callout--bl { left: 0; }
+  .rtm-callout--drink.rtm-callout--tr, .rtm-callout--drink.rtm-callout--br { right: 0; }
+}
 .coll-hero__count { position: absolute; left: 16px; bottom: 16px; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--dark); background: var(--yellow); padding: 6px 12px; border-radius: 100px; }
 
 /* why-this-line band — 3 columns, hairline-separated (no boxes) */
