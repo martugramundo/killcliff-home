@@ -790,7 +790,8 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .coll-hero__chips li { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--off-white); border: 1px solid var(--hairline); border-radius: 100px; padding: 8px 14px; }
 .coll-hero__cta { margin-top: clamp(26px, 3.5vw, 36px); display: flex; gap: 14px; flex-wrap: wrap; }
 .coll-hero__media { position: relative; }
-.coll-hero__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--r-lg); display: block; }
+.coll-hero__media img,
+.coll-hero__media video { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--r-lg); display: block; background: #000; }
 .coll-hero__count { position: absolute; left: 16px; bottom: 16px; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--dark); background: var(--yellow); padding: 6px 12px; border-radius: 100px; }
 
 /* why-this-line band — 3 columns, hairline-separated (no boxes) */
