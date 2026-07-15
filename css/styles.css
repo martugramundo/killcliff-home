@@ -792,3 +792,29 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 @media (hover: none) {
   .coll-cross__card:hover { transform: none; }
 }
+
+/* RTM collection specifics */
+.coll-why__list--4 { grid-template-columns: repeat(4, 1fr); }
+.coll-why__pillar { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin: 0 0 10px; }
+.coll-why__kv { display: block; font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 30px); font-weight: 700; letter-spacing: -0.02em; color: var(--yellow); margin-bottom: 2px; }
+.coll-why__item h3 .coll-why__sub { display: block; font-family: var(--font-body); font-size: 12px; font-weight: 500; text-transform: none; letter-spacing: 0; color: var(--text-dim); margin-top: 4px; }
+
+.rtm-buy.section { padding-block: var(--sect-std); border-top: 1px solid var(--hairline); }
+.rtm-buy__inner { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+.rtm-buy__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--r-lg); display: block; }
+.rtm-buy__name { font-size: clamp(28px, 3.6vw, 46px); text-transform: uppercase; letter-spacing: -0.02em; line-height: 0.95; margin: 6px 0 0; }
+.rtm-buy__meta { margin: 12px 0 0; font-size: clamp(15px, 1.7vw, 18px); font-weight: 400; color: var(--text-dim); line-height: 1.55; max-width: 44ch; }
+.rtm-buy__row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: clamp(20px, 3vw, 28px); }
+.rtm-buy__price { font-family: var(--font-display); font-size: clamp(26px, 3vw, 34px); font-weight: 700; font-variant-numeric: tabular-nums; }
+.rtm-buy__price small { display: block; font-family: var(--font-body); font-size: 12px; font-weight: 500; color: var(--text-dim); letter-spacing: 0.02em; }
+.rtm-buy__dirs { margin-top: clamp(20px, 3vw, 26px); padding-top: 18px; border-top: 1px solid var(--hairline); font-size: 13.5px; font-weight: 400; color: var(--text-dim); line-height: 1.5; }
+.rtm-buy__dirs strong { color: var(--off-white); font-weight: 600; }
+
+@media (max-width: 860px) {
+  .coll-why__list--4 { grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 32px); }
+  .rtm-buy__inner { grid-template-columns: 1fr; gap: clamp(26px, 6vw, 36px); }
+  .rtm-buy__media { max-width: 420px; }
+}
+@media (max-width: 520px) {
+  .coll-why__list--4 { grid-template-columns: 1fr; gap: 0; }
+}
