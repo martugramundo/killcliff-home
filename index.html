@@ -31,7 +31,7 @@
   <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
   <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/styles.css?v=16" />
+  <link rel="stylesheet" href="css/styles.css?v=17" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -84,7 +84,16 @@
 
       <nav class="nav" aria-label="Primary">
         <ul class="nav__list">
-          <li><a href="#products">Drinks</a></li>
+          <li class="nav__item nav__item--has-menu">
+            <a href="#products" class="nav__link">Drinks <svg class="nav__caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="nav__menu">
+              <a href="collections/energy.html">Energy</a>
+              <a href="collections/recovery.html">Recovery</a>
+              <a href="collections/energy-cbd.html">Energy + CBD</a>
+              <a href="collections/recovery-cbd.html">Recovery + CBD</a>
+              <a href="collections/rogan.html">Joe Rogan Collabs</a>
+            </div>
+          </li>
           <li><a href="collections/ready-to-mix.html">RTM Powders</a></li>
           <li><a href="#products">Bundles</a></li>
           <li><a href="#products">Gear</a></li>
@@ -114,6 +123,13 @@
   <div class="drawer" id="mobileDrawer" aria-hidden="true">
     <nav class="drawer__nav" aria-label="Mobile">
       <a href="#products">Drinks</a>
+      <div class="drawer__sub">
+        <a href="collections/energy.html">Energy</a>
+        <a href="collections/recovery.html">Recovery</a>
+        <a href="collections/energy-cbd.html">Energy + CBD</a>
+        <a href="collections/recovery-cbd.html">Recovery + CBD</a>
+        <a href="collections/rogan.html">Joe Rogan Collabs</a>
+      </div>
       <a href="collections/ready-to-mix.html">RTM Powders</a>
       <a href="#products">Bundles</a>
       <a href="#products">Gear</a>
@@ -601,6 +617,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=16"></script>
+  <script src="js/main.js?v=17"></script>
 </body>
 </html>
