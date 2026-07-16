@@ -907,3 +907,62 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 @media (max-width: 520px) {
   .coll-why__list--4 { grid-template-columns: 1fr; gap: 0; }
 }
+
+/* =========================================================
+   Bundle builder  (collections/bundle-builder.html)
+   ========================================================= */
+.bundle__inner { display: grid; grid-template-columns: minmax(0, 1fr) 372px; gap: clamp(28px, 4vw, 56px); align-items: start; margin-top: var(--head-gap); }
+.bundle__group { margin-bottom: clamp(34px, 5vw, 60px); }
+.bundle__group:last-child { margin-bottom: 0; }
+.bundle__step { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+.bundle__group h2 { font-size: clamp(22px, 3vw, 32px); text-transform: uppercase; letter-spacing: -0.02em; margin: 5px 0 0; }
+.bundle__group > p { font-size: 14px; color: var(--text-dim); margin: 6px 0 0; }
+.bundle__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-top: clamp(16px, 2vw, 22px); }
+.bundle__card { display: flex; flex-direction: column; border: 1px solid var(--hairline); border-radius: var(--r-lg); background: var(--dark-2); padding: 14px; }
+.bundle__card-media { border-radius: var(--r-md); overflow: hidden; margin-bottom: 12px; }
+.bundle__card-media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.bundle__card-line { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-dim); }
+.bundle__card-name { font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; margin: 3px 0 2px; line-height: 1.12; }
+.bundle__card-meta { font-size: 12px; color: var(--text-dim); }
+.bundle__card-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 14px; }
+.bundle__card-price { font-family: var(--font-display); font-weight: 700; font-size: 17px; font-variant-numeric: tabular-nums; }
+.bundle__add { border: 1px solid var(--off-white); background: transparent; color: var(--off-white); font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 9px 12px; border-radius: 8px; cursor: pointer; white-space: nowrap; transition: background var(--t-micro) var(--ease-in), color var(--t-micro) var(--ease-in); }
+.bundle__add:hover { background: var(--off-white); color: var(--dark); }
+
+.bundle__panel { position: sticky; top: calc(var(--header-h) + 16px); border: 1px solid var(--hairline); border-radius: var(--r-lg); background: var(--dark-2); padding: clamp(18px, 2vw, 24px); }
+.bundle__panel-head { display: flex; align-items: baseline; justify-content: space-between; }
+.bundle__panel-head h2 { font-size: 20px; text-transform: uppercase; letter-spacing: -0.01em; }
+.bundle__count { font-family: var(--font-display); font-weight: 700; font-variant-numeric: tabular-nums; color: var(--text-dim); }
+.bundle__count b { color: var(--yellow); }
+.bundle__bar { height: 6px; border-radius: 100px; background: rgba(255,255,255,0.1); margin: 16px 0 8px; overflow: hidden; }
+.bundle__bar-fill { height: 100%; width: 0; background: var(--yellow); border-radius: 100px; transition: width 400ms var(--ease-out-quint); }
+.bundle__tiers { display: flex; justify-content: space-between; gap: 6px; }
+.bundle__tier { font-family: var(--font-body); font-size: 10.5px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(245,245,245,0.4); transition: color var(--t-micro) var(--ease-in); }
+.bundle__tier.is-on { color: var(--yellow); }
+.bundle__items { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 9px; }
+.bundle__item { display: flex; align-items: center; gap: 10px; font-size: 13px; }
+.bundle__item > img { width: 38px; height: 38px; border-radius: 6px; object-fit: cover; flex: none; background: #000; }
+.bundle__item-name { flex: 1; min-width: 0; line-height: 1.2; }
+.bundle__item-name span { display: block; color: var(--text-dim); font-size: 11px; }
+.bundle__item-price { font-variant-numeric: tabular-nums; color: var(--text-dim); }
+.bundle__item-remove { background: none; border: 0; color: var(--text-dim); cursor: pointer; font-size: 18px; line-height: 1; padding: 0 2px; }
+.bundle__item-remove:hover { color: var(--off-white); }
+.bundle__empty { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 18px 0 0; }
+.bundle__totals { border-top: 1px solid var(--hairline); margin-top: 18px; padding-top: 16px; display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; }
+.bundle__totals .row { display: flex; justify-content: space-between; color: var(--text-dim); }
+.bundle__totals .row--save { color: var(--yellow); }
+.bundle__totals .row--total { color: var(--off-white); font-family: var(--font-display); font-weight: 700; font-size: 19px; padding-top: 4px; }
+.bundle__totals .row--total span:last-child { font-variant-numeric: tabular-nums; }
+.bundle__toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+.bundle__opt { border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 11px 12px; text-align: left; background: transparent; color: var(--off-white); cursor: pointer; transition: border-color var(--t-micro) var(--ease-in), background var(--t-micro) var(--ease-in); }
+.bundle__opt.is-on { border-color: var(--yellow); background: rgba(255,232,25,0.06); }
+.bundle__opt b { display: block; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.03em; }
+.bundle__opt small { display: block; font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+.bundle__cta { width: 100%; margin-top: 16px; }
+.bundle__cta:disabled { opacity: 0.4; cursor: not-allowed; }
+.bundle__note { font-size: 11.5px; color: var(--text-dim); text-align: center; margin-top: 10px; }
+
+@media (max-width: 980px) {
+  .bundle__inner { grid-template-columns: 1fr; }
+  .bundle__panel { position: static; margin-top: 4px; }
+}
