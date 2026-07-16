@@ -841,11 +841,23 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
 .coll-why__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); margin: var(--head-gap) 0 0; padding: 0; list-style: none; }
 .coll-why__item { position: relative; padding-top: 22px; border-top: 1px solid var(--hairline); }
 .coll-why__mark { position: absolute; top: -1px; left: 0; width: 40px; height: 3px; background: var(--yellow); transform-origin: left center; }
-html.js .coll-why__mark { animation: markFill 2.8s var(--ease-in-out, ease-in-out) infinite; }
-.coll-why__item:nth-child(2) .coll-why__mark { animation-delay: 0.45s; }
-.coll-why__item:nth-child(3) .coll-why__mark { animation-delay: 0.9s; }
-.coll-why__item:nth-child(4) .coll-why__mark { animation-delay: 1.35s; }
-@keyframes markFill { 0% { transform: scaleX(0); } 42% { transform: scaleX(1); } 58% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
+/* sequential fill: one line fills at a time, left -> right; when all are full it resets and repeats */
+html.js .coll-why__mark { animation-duration: 6s; animation-timing-function: var(--ease-out-quint); animation-iteration-count: infinite; }
+html.js .coll-why__list:not(.coll-why__list--4) .coll-why__item:nth-child(1) .coll-why__mark { animation-name: seq3a; }
+html.js .coll-why__list:not(.coll-why__list--4) .coll-why__item:nth-child(2) .coll-why__mark { animation-name: seq3b; }
+html.js .coll-why__list:not(.coll-why__list--4) .coll-why__item:nth-child(3) .coll-why__mark { animation-name: seq3c; }
+html.js .coll-why__list--4 .coll-why__mark { animation-duration: 7.6s; }
+html.js .coll-why__list--4 .coll-why__item:nth-child(1) .coll-why__mark { animation-name: seq4a; }
+html.js .coll-why__list--4 .coll-why__item:nth-child(2) .coll-why__mark { animation-name: seq4b; }
+html.js .coll-why__list--4 .coll-why__item:nth-child(3) .coll-why__mark { animation-name: seq4c; }
+html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animation-name: seq4d; }
+@keyframes seq3a { 0% { transform: scaleX(0); } 15% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq3b { 0%, 33% { transform: scaleX(0); } 48% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq3c { 0%, 66% { transform: scaleX(0); } 81% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq4a { 0% { transform: scaleX(0); } 12% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq4b { 0%, 25% { transform: scaleX(0); } 37% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq4c { 0%, 50% { transform: scaleX(0); } 62% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
+@keyframes seq4d { 0%, 75% { transform: scaleX(0); } 87% { transform: scaleX(1); } 100% { transform: scaleX(1); } }
 .coll-why__item h3 { font-size: clamp(17px, 2vw, 22px); text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 8px; }
 .coll-why__item p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0; }
 
