@@ -966,3 +966,45 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
   .bundle__inner { grid-template-columns: 1fr; }
   .bundle__panel { position: static; margin-top: 4px; }
 }
+
+/* =========================================================
+   Apparel & Gear  (collections/apparel-gear.html)
+   ========================================================= */
+.gear__filters { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: var(--head-gap) 0 clamp(20px,3vw,30px); }
+.gear__filter { background: #000; color: var(--text-dim); border: 1px solid var(--hairline); padding: 9px 15px; border-radius: 100px; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; cursor: pointer; transition: all var(--t-micro) var(--ease-in); }
+.gear__filter:hover { color: var(--off-white); border-color: var(--off-white); }
+.gear__filter.is-active { background: var(--yellow); color: #000; border-color: var(--yellow); }
+.gear__count { margin-left: auto; font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); }
+
+.gear__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: clamp(14px, 2vw, 22px); }
+.gear__card { display: flex; flex-direction: column; }
+.gear__card[hidden] { display: none; }
+.gear__media { position: relative; border-radius: var(--r-md); overflow: hidden; margin-bottom: 14px; }
+.gear__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
+.gear__ph { aspect-ratio: 1 / 1; display: grid; place-items: center; background: linear-gradient(155deg, #191919, #0c0c0c); }
+.gear__ph-logo { width: 58%; height: 34px; background: rgba(245,245,245,0.13); -webkit-mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat; mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat; }
+.gear__cat { position: absolute; top: 12px; left: 12px; font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+.gear__card--soldout .gear__ph { opacity: 0.5; }
+.gear__badge { position: absolute; top: 12px; right: 12px; font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--off-white); background: rgba(0,0,0,0.7); border: 1px solid var(--hairline); padding: 5px 9px; border-radius: 100px; }
+.gear__name { font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; line-height: 1.15; margin: 0 0 4px; }
+.gear__price { font-family: var(--font-display); font-weight: 700; font-size: 16px; font-variant-numeric: tabular-nums; }
+.gear__sizes { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 0; }
+.gear__size { min-width: 34px; padding: 6px 8px; text-align: center; background: transparent; color: var(--text-dim); border: 1px solid var(--hairline); border-radius: 7px; font-family: var(--font-body); font-size: 11px; font-weight: 600; cursor: pointer; transition: all var(--t-micro) var(--ease-in); }
+.gear__size:hover { color: var(--off-white); border-color: var(--off-white); }
+.gear__size.is-sel { background: var(--off-white); color: #000; border-color: var(--off-white); }
+.gear__cta { margin-top: 14px; width: 100%; }
+.gear__cta--notify { background: transparent; color: var(--text-dim); border: 1px solid var(--hairline); }
+.gear__cta--notify:hover { color: var(--off-white); border-color: var(--off-white); background: transparent; box-shadow: none; transform: none; }
+
+/* trust / reviews band */
+.gear__reviews { border-top: 1px solid var(--hairline); }
+.gear__rev-head { text-align: center; }
+.gear__stars { color: var(--yellow); font-size: 20px; letter-spacing: 2px; }
+.gear__rev-sub { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
+.gear__rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: var(--head-gap); }
+.gear__rev { border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 22px; background: var(--dark-2); }
+.gear__rev-stars { color: var(--yellow); font-size: 13px; letter-spacing: 1px; }
+.gear__rev-title { font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; margin: 10px 0 6px; }
+.gear__rev p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
+.gear__rev cite { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--off-white); font-style: normal; }
+.gear__rev cite span { color: var(--text-dim); font-weight: 500; }
