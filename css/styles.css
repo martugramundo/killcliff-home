@@ -764,7 +764,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
   }
   .reveal { opacity: 1; transform: none; }
   /* new per-section entrance sub-elements: show instantly, no delayed reveal */
-  .reason__num, .stack__ing-link, .cmp__tab, .final-cta__title, .rtm-callout {
+  .reason__num, .stack__ing-link, .cmp__tab, .final-cta__title, .rtm-callout, .coll-why__mark {
     opacity: 1 !important; transform: none !important; clip-path: none !important; animation: none !important;
   }
   .marquee__track, .ticker__track, .float { animation: none; }
@@ -801,10 +801,10 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .rtm-callout__main { font-family: var(--font-body); font-size: 13.5px; font-weight: 500; color: var(--off-white); white-space: nowrap; line-height: 1.2; }
 .rtm-callout__v { font-family: var(--font-display); font-weight: 700; color: var(--yellow); }
 .rtm-callout__k { font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
-.rtm-callout--tl { top: 3%; left: -2%; }
+.rtm-callout--tl { top: 16%; left: 20%; }
 .rtm-callout--tr { top: 34%; right: -3%; }
 .rtm-callout--bl { bottom: 19%; left: -3%; }
-.rtm-callout--br { bottom: 3%; right: -2%; }
+.rtm-callout--br { bottom: 20%; right: 8%; }
 /* callouts: one-shot pop-in (opacity) + constant floating loop (transform), staggered per corner */
 html.js .coll-hero__media--annot .rtm-callout { opacity: 0; }
 html.js .coll-hero__media--annot.is-visible .rtm-callout {
@@ -840,7 +840,12 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
 .coll-why.section { padding-block: var(--sect-std); border-top: 1px solid var(--hairline); }
 .coll-why__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); margin: var(--head-gap) 0 0; padding: 0; list-style: none; }
 .coll-why__item { position: relative; padding-top: 22px; border-top: 1px solid var(--hairline); }
-.coll-why__mark { position: absolute; top: -1px; left: 0; width: 40px; height: 3px; background: var(--yellow); }
+.coll-why__mark { position: absolute; top: -1px; left: 0; width: 40px; height: 3px; background: var(--yellow); transform-origin: left center; }
+html.js .coll-why__mark { animation: markFill 2.8s var(--ease-in-out, ease-in-out) infinite; }
+.coll-why__item:nth-child(2) .coll-why__mark { animation-delay: 0.45s; }
+.coll-why__item:nth-child(3) .coll-why__mark { animation-delay: 0.9s; }
+.coll-why__item:nth-child(4) .coll-why__mark { animation-delay: 1.35s; }
+@keyframes markFill { 0% { transform: scaleX(0); } 42% { transform: scaleX(1); } 58% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
 .coll-why__item h3 { font-size: clamp(17px, 2vw, 22px); text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 8px; }
 .coll-why__item p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0; }
 
