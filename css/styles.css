@@ -808,14 +808,14 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 /* callouts: one-shot pop-in (opacity) + constant floating loop (transform), staggered per corner */
 html.js .coll-hero__media--annot .rtm-callout { opacity: 0; }
 html.js .coll-hero__media--annot.is-visible .rtm-callout {
-  animation: rtmFade 520ms var(--ease-out-expo) both, rtmFloat 5s ease-in-out infinite;
+  animation: rtmFade 520ms var(--ease-out-expo) both, rtmFloat 3.8s ease-in-out infinite;
 }
 html.js .coll-hero__media--annot.is-visible .rtm-callout--tl { animation-delay: 240ms, -0.2s; }
 html.js .coll-hero__media--annot.is-visible .rtm-callout--tr { animation-delay: 360ms, -1.6s; }
 html.js .coll-hero__media--annot.is-visible .rtm-callout--bl { animation-delay: 480ms, -3.0s; }
 html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 600ms, -4.2s; }
 @keyframes rtmFade { from { opacity: 0; } to { opacity: 1; } }
-@keyframes rtmFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-6px) scale(1.02); } }
+@keyframes rtmFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.04); } }
 @media (max-width: 860px) {
   .rtm-annot__img { max-width: 66%; }
   .rtm-callout { padding: 7px 10px; }
@@ -826,10 +826,10 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
 /* drink collections — yellow-dot callouts flanking the fanned cans (2 left / 2 right) */
 .rtm-callout--drink .rtm-callout__main { display: flex; align-items: center; gap: 8px; }
 .rtm-callout--drink .rtm-callout__main::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
-.rtm-callout--drink.rtm-callout--tl { top: 19%; left: -2%; bottom: auto; }
-.rtm-callout--drink.rtm-callout--tr { top: 19%; right: -2%; bottom: auto; }
-.rtm-callout--drink.rtm-callout--bl { top: auto; bottom: 19%; left: -2%; }
-.rtm-callout--drink.rtm-callout--br { top: auto; bottom: 19%; right: -2%; }
+.rtm-callout--drink.rtm-callout--tl { top: 15%; left: 7%; bottom: auto; }
+.rtm-callout--drink.rtm-callout--tr { top: 15%; right: 7%; bottom: auto; }
+.rtm-callout--drink.rtm-callout--bl { top: auto; bottom: 16%; left: 7%; }
+.rtm-callout--drink.rtm-callout--br { top: auto; bottom: 16%; right: 7%; }
 @media (max-width: 860px) {
   .rtm-callout--drink.rtm-callout--tl, .rtm-callout--drink.rtm-callout--bl { left: 0; }
   .rtm-callout--drink.rtm-callout--tr, .rtm-callout--drink.rtm-callout--br { right: 0; }
