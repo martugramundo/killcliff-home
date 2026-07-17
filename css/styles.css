@@ -1003,7 +1003,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .gear__rev-sub { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
 .gear__rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: var(--head-gap); }
 .gear__rev { border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 22px; background: var(--dark-2); }
-.gear__rev-stars { color: var(--yellow); font-size: 13px; letter-spacing: 1px; }
+.gear__rev p.gear__rev-stars { color: var(--yellow); font-size: 13px; letter-spacing: 1px; }
 .gear__rev-title { font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; margin: 10px 0 6px; }
 .gear__rev p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
 .gear__rev cite { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--off-white); font-style: normal; }
@@ -1232,7 +1232,7 @@ html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-
 .labx__can { height: clamp(340px, 40vw, 460px); width: auto; filter: drop-shadow(0 26px 46px rgba(0,0,0,0.6)); }
 
 /* nodes — horizontal connectors */
-.labx__node { position: absolute; display: flex; align-items: center; gap: 16px; width: 40%; }
+.labx__node { position: absolute; display: flex; align-items: center; gap: 15px; width: 43%; }
 .labx__node--l { left: 0; flex-direction: row; text-align: right; }
 .labx__node--r { right: 0; flex-direction: row; text-align: left; }
 .labx__l1, .labx__r1 { top: 15%; }
@@ -1240,23 +1240,30 @@ html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-
 .labx__l3, .labx__r3 { bottom: 15%; }
 
 .labx__node .t { flex: none; }
-.labx__node .t b { display: block; font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; }
-.labx__node .t span { display: block; font-size: 12.5px; color: var(--text-dim); margin-top: 3px; }
-.labx__node .swatch { width: 44px; height: 44px; flex: none; border-radius: 50%; border: 1px solid var(--hairline); background: var(--dark-2); display: grid; place-items: center; }
-.labx__node .swatch b { font-family: var(--font-display); font-weight: 700; font-size: 13px; color: var(--yellow); }
+.labx__val { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.4vw, 42px); line-height: 0.92; letter-spacing: -0.03em; color: var(--yellow); }
+.labx__val em { font-style: normal; font-weight: 700; font-size: 0.4em; letter-spacing: 0; margin-left: 2px; }
+.labx__val--sm { font-size: clamp(24px, 2.6vw, 32px); }
+.labx__name { display: block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: -0.01em; margin-top: 5px; }
+.labx__sub { display: block; font-size: 12.5px; color: var(--text-dim); margin-top: 2px; }
 
-/* the connector line: thin white, grows to fill the gap between text and swatch */
-.labx__line { flex: 1 1 auto; min-width: 34px; height: 1px; background: rgba(245,245,245,0.55); }
+/* the connector line: thin white, grows to fill the gap between text and the tip */
+.labx__line { flex: 1 1 auto; min-width: 30px; height: 1px; background: rgba(245,245,245,0.6); }
 .labx__node--l .labx__line { transform-origin: right center; }
 .labx__node--r .labx__line { transform-origin: left center; }
 
-/* sequential reveal: line draws first, then swatch + text fade in — one node at a time */
+/* small white tip that touches the can */
+.labx__tip { flex: none; width: 9px; height: 9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.10); }
+
+/* reveal per node in random order: tip pops -> line draws -> copy pops */
+html.js .labx .labx__tip { opacity: 0; transform: scale(0); }
 html.js .labx .labx__line { transform: scaleX(0); }
-html.js .labx .labx__node .t, html.js .labx .labx__node .swatch { opacity: 0; }
-html.js .labx.is-visible .labx__line { animation: labLine 480ms var(--ease-out-expo) both; animation-delay: calc(var(--i) * 0.16s); }
-html.js .labx.is-visible .labx__node .t,
-html.js .labx.is-visible .labx__node .swatch { animation: labItem 480ms var(--ease-out-expo) both; animation-delay: calc(var(--i) * 0.16s + 0.2s); }
+html.js .labx .labx__node .t { opacity: 0; }
+html.js .labx.is-visible .labx__tip { animation: labTip 340ms var(--ease-out-expo) both; animation-delay: calc(var(--i) * 0.52s); }
+html.js .labx.is-visible .labx__line { animation: labLine 420ms var(--ease-out-quint) both; animation-delay: calc(var(--i) * 0.52s + 0.24s); }
+html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out-expo) both; animation-delay: calc(var(--i) * 0.52s + 0.5s); }
+@keyframes labTip { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
 @keyframes labLine { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes labPop { from { opacity: 0; transform: translateY(9px) scale(0.96); } to { opacity: 1; transform: none; } }
 
 @media (max-width: 820px) {
   .pdp__showcase { grid-template-columns: 1fr; }
@@ -1271,7 +1278,8 @@ html.js .labx.is-visible .labx__node .swatch { animation: labItem 480ms var(--ea
 @media (prefers-reduced-motion: reduce) {
   .pdp__hot-dot::before { animation: none; }
   .labx__line { transform: scaleX(1); }
-  .labx__node .t, .labx__node .swatch { opacity: 1 !important; }
+  .labx__tip { opacity: 1 !important; transform: none !important; }
+  .labx__node .t { opacity: 1 !important; }
   .pdp__curve .ln-kc, .pdp__curve .ln-alt { stroke-dashoffset: 0 !important; }
   .pdp__curve .ar-kc, .pdp__curve .ar-alt, .pdp__curve .dot-kc, .pdp__curve .dot-alt, .pdp__curve .anno, .pdp__curve .axis, .pdp__curve .axis-l { opacity: 1 !important; }
 }
