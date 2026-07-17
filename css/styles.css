@@ -1070,7 +1070,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 
 .pdp__bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; transform: translateY(115%); transition: transform 340ms var(--ease-out-quint); background: rgba(8,8,8,0.96); backdrop-filter: blur(12px); border-top: 1px solid var(--hairline); }
 .pdp__bar.is-on { transform: none; }
-.pdp__bar-inner { display: flex; align-items: center; gap: 14px; padding: 12px 0; }
+.pdp__bar-inner { display: flex; align-items: center; gap: 14px; padding-block: 12px; }
 .pdp__bar-name { font-family: var(--font-display); font-weight: 700; font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; }
 .pdp__bar-price { font-family: var(--font-body); font-size: 13px; color: var(--text-dim); font-variant-numeric: tabular-nums; }
 .pdp__bar .btn { margin-left: auto; }
@@ -1177,6 +1177,7 @@ html.js .pdp__bens .coll-why__mark { animation-duration: 7.6s; animation-timing-
 .pdp__hot { display: flex; align-items: center; gap: 11px; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; }
 .pdp__hot-dot { position: relative; width: 36px; height: 36px; flex: none; display: grid; place-items: center; border: 1px solid var(--hairline); border-radius: 50%; color: var(--yellow); transition: border-color var(--t-micro) var(--ease-in), background var(--t-micro) var(--ease-in); }
 .pdp__hot-dot::before { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 1.5px solid var(--yellow); opacity: 0; animation: hotPulse 2.6s ease-out infinite; }
+.pdp__hot-dot::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; } /* extends the tap target to ~46px without a visual change */
 .pdp__hot:nth-child(2) .pdp__hot-dot::before { animation-delay: 0.65s; }
 .pdp__hot:nth-child(3) .pdp__hot-dot::before { animation-delay: 1.3s; }
 .pdp__hot:nth-child(4) .pdp__hot-dot::before { animation-delay: 1.95s; }
