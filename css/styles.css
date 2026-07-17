@@ -1190,13 +1190,38 @@ html.js .pdp__bens .coll-why__mark { animation-duration: 7.6s; animation-timing-
 .pdp__hotbox .hb-l { display: block; font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--off-white); margin-top: 7px; }
 .pdp__hotbox .hb-s { display: block; font-size: 12px; color: var(--text-dim); margin-top: 4px; max-width: 22ch; line-height: 1.4; }
 
-/* intensity: stacked deck */
-.pdp__deck { position: relative; height: clamp(280px, 34vw, 340px); }
-.pdp__deck .pdp__pair { position: absolute; left: 0; right: 0; top: 0; margin: 0; transition: transform 640ms var(--ease-out-quint), opacity 640ms var(--ease-out-quint); }
-.pdp__deck .pdp__pair[data-pos="0"] { transform: translateY(0) scale(1); opacity: 1; z-index: 4; }
-.pdp__deck .pdp__pair[data-pos="1"] { transform: translateY(20px) scale(0.955); opacity: 0.5; z-index: 3; }
-.pdp__deck .pdp__pair[data-pos="2"] { transform: translateY(40px) scale(0.91); opacity: 0.22; z-index: 2; }
-.pdp__deck .pdp__pair[data-pos="3"] { transform: translateY(58px) scale(0.87); opacity: 0; z-index: 1; }
+/* intensity: energy-over-time curve */
+.pdp__curve { position: relative; }
+.pdp__curve svg { display: block; width: 100%; height: auto; overflow: visible; }
+.pdp__curve .axis line { stroke: var(--hairline); stroke-width: 1; }
+.pdp__curve .ln-kc { stroke: var(--yellow); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.pdp__curve .ln-alt { stroke: rgba(160,160,160,0.75); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.pdp__curve .dot-kc { fill: var(--yellow); }
+.pdp__curve .dot-alt { fill: rgba(180,180,180,0.9); }
+.pdp__curve .anno-t { font-family: var(--font-body); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; }
+.pdp__curve .anno-t--kc { fill: var(--yellow); }
+.pdp__curve .anno-t--alt { fill: #cfcfcf; }
+.pdp__curve .anno-s { font-family: var(--font-body); font-size: 11.5px; font-weight: 500; fill: var(--text-dim); }
+.pdp__curve .axis-l { font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; fill: var(--text-dim); }
+.pdp__curve-legend { display: flex; flex-wrap: wrap; gap: 26px; justify-content: center; margin-top: 20px; }
+.pdp__curve-legend .lg { position: relative; padding-left: 20px; font-size: 13px; font-weight: 500; color: var(--text-dim); }
+.pdp__curve-legend .lg::before { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 12px; height: 12px; border-radius: 50%; }
+.pdp__curve-legend .lg--kc::before { background: var(--yellow); }
+.pdp__curve-legend .lg--alt::before { background: rgba(160,160,160,0.85); }
+/* draw-in animation */
+html.js .pdp__curve .ln-kc, html.js .pdp__curve .ln-alt { stroke-dasharray: 1; stroke-dashoffset: 1; }
+html.js .pdp__curve .ar-kc, html.js .pdp__curve .ar-alt, html.js .pdp__curve .dot-kc, html.js .pdp__curve .dot-alt, html.js .pdp__curve .anno, html.js .pdp__curve .axis, html.js .pdp__curve .axis-l { opacity: 0; }
+html.js .pdp__curve.is-visible .axis { animation: curveFade 0.6s ease forwards; }
+html.js .pdp__curve.is-visible .axis-l { animation: curveFade 0.6s ease 0.2s forwards; }
+html.js .pdp__curve.is-visible .ln-kc { animation: curveDraw 1.3s var(--ease-out-quint) 0.3s forwards; }
+html.js .pdp__curve.is-visible .ln-alt { animation: curveDraw 1.3s var(--ease-out-quint) 0.8s forwards; }
+html.js .pdp__curve.is-visible .ar-kc { animation: curveFade 0.9s ease 1.2s forwards; }
+html.js .pdp__curve.is-visible .ar-alt { animation: curveFade 0.9s ease 1.55s forwards; }
+html.js .pdp__curve.is-visible .dot-alt { animation: curveFade 0.5s ease 1.15s forwards; }
+html.js .pdp__curve.is-visible .dot-kc { animation: curveFade 0.5s ease 1.5s forwards; }
+html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-expo) forwards; animation-delay: calc(var(--d) * 1s); }
+@keyframes curveDraw { to { stroke-dashoffset: 0; } }
+@keyframes curveFade { to { opacity: 1; } }
 
 /* banner wider */
 .pdp__banner-inner { max-width: 1000px; }
@@ -1247,4 +1272,6 @@ html.js .labx.is-visible .labx__node .swatch { animation: labItem 480ms var(--ea
   .pdp__hot-dot::before { animation: none; }
   .labx__line { transform: scaleX(1); }
   .labx__node .t, .labx__node .swatch { opacity: 1 !important; }
+  .pdp__curve .ln-kc, .pdp__curve .ln-alt { stroke-dashoffset: 0 !important; }
+  .pdp__curve .ar-kc, .pdp__curve .ar-alt, .pdp__curve .dot-kc, .pdp__curve .dot-alt, .pdp__curve .anno, .pdp__curve .axis, .pdp__curve .axis-l { opacity: 1 !important; }
 }

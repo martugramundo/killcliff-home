@@ -21,7 +21,7 @@
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" as="image" href="../assets/cans/cbd-energy/01.webp" />
-  <link rel="stylesheet" href="../css/styles.css?v=36" />
+  <link rel="stylesheet" href="../css/styles.css?v=37" />
 
   <script type="application/ld+json">
   {
@@ -235,11 +235,45 @@
           <h2 id="octane-title" class="section__title">Intensity, with discipline</h2>
           <p class="coll-hero__intro">Elevated output, regulated edge. Built for those who want intensity they can actually steer.</p>
         </div>
-        <div class="pdp__deck reveal" id="pdpDeck" aria-label="Product highlights">
-          <div class="pdp__pair"><span class="vibe">Middle of the workday</span><b>120mg caffeine</b><p>A performance-calibrated dose to elevate energy and sharpen output — without overstimulation.</p></div>
-          <div class="pdp__pair"><span class="vibe">Creative zone-in</span><b>0g sugar</b><p>No sugar, no crash cycle. Clean, functional energy built to hold steady.</p></div>
-          <div class="pdp__pair"><span class="vibe">Composed under pressure</span><b>25mg CBD</b><p>Premium HempCell&trade; CBD supports composure when stimulation runs high.</p></div>
-          <div class="pdp__pair"><span class="vibe">Endurance mindset</span><b>Rogan × Hanes</b><p>Built on a standard of endurance, focus, and control.</p></div>
+        <div class="pdp__curve reveal" id="pdpCurve">
+          <svg viewBox="0 0 760 460" role="img" aria-labelledby="curveT curveD">
+            <title id="curveT">Energy over time</title>
+            <desc id="curveD">Kill Cliff Elk Blood delivers sustained, steerable energy, while a typical energy drink spikes then crashes.</desc>
+            <defs>
+              <linearGradient id="gKc" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFE819" stop-opacity="0.30"/>
+                <stop offset="1" stop-color="#FFE819" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="gAlt" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9A9A9A" stop-opacity="0.16"/>
+                <stop offset="1" stop-color="#9A9A9A" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g class="axis">
+              <line x1="64" y1="44" x2="64" y2="388"/>
+              <line x1="64" y1="388" x2="732" y2="388"/>
+            </g>
+            <path class="ar-alt" d="M64,388 C120,382 138,118 182,96 C214,80 236,94 252,142 C276,222 300,338 344,364 C440,384 610,382 732,380 L732,388 L64,388 Z" fill="url(#gAlt)"/>
+            <path class="ar-kc" d="M64,388 C150,382 170,176 255,152 C330,130 430,128 512,152 C600,176 676,256 732,292 L732,388 L64,388 Z" fill="url(#gKc)"/>
+            <path class="ln-alt" pathLength="1" fill="none" d="M64,388 C120,382 138,118 182,96 C214,80 236,94 252,142 C276,222 300,338 344,364 C440,384 610,382 732,380"/>
+            <path class="ln-kc" pathLength="1" fill="none" d="M64,388 C150,382 170,176 255,152 C330,130 430,128 512,152 C600,176 676,256 732,292"/>
+            <circle class="dot-alt" cx="205" cy="86" r="4"/>
+            <circle class="dot-kc" cx="418" cy="128" r="5"/>
+            <g class="anno" style="--d:1.55">
+              <text class="anno-t anno-t--alt" x="150" y="56">SPIKE &amp; CRASH</text>
+              <text class="anno-s" x="150" y="74">jitters, then empty</text>
+            </g>
+            <g class="anno" style="--d:1.75">
+              <text class="anno-t anno-t--kc" x="450" y="98">SUSTAINED DRIVE</text>
+              <text class="anno-s" x="450" y="116">steady focus · no crash</text>
+            </g>
+            <text class="axis-l" x="60" y="34" text-anchor="end">ENERGY</text>
+            <text class="axis-l" x="732" y="408" text-anchor="end">TIME →</text>
+          </svg>
+          <div class="pdp__curve-legend">
+            <span class="lg lg--kc">Kill Cliff Elk Blood</span>
+            <span class="lg lg--alt">Typical energy drink</span>
+          </div>
         </div>
       </div>
     </section>
@@ -374,7 +408,7 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=36"></script>
+  <script src="../js/main.js?v=37"></script>
   <script>
   (function () {
     /* ---- hero image slider (thumbs) ---- */
@@ -423,25 +457,6 @@
         h.addEventListener('click', function () { activate(i, h); });
       });
       paint(0); // preload copy; box stays hidden until hover/focus
-    })();
-
-    /* ---- intensity stacked deck ---- */
-    (function () {
-      var deck = document.getElementById('pdpDeck'); if (!deck) return;
-      var cards = [].slice.call(deck.querySelectorAll('.pdp__pair')), N = cards.length, active = 0;
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      function place() { cards.forEach(function (c, i) { c.setAttribute('data-pos', (i - active + N) % N); }); }
-      place();
-      if (!reduce) {
-        var run = null;
-        function tick() { active = (active + 1) % N; place(); }
-        function start() { if (!run) run = setInterval(tick, 3200); }
-        function stop() { if (run) { clearInterval(run); run = null; } }
-        if ('IntersectionObserver' in window) {
-          new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: 0.3 }).observe(deck);
-        } else { start(); }
-        deck.addEventListener('mouseenter', stop); deck.addEventListener('mouseleave', start);
-      }
     })();
 
     /* ---- buy box ---- */
