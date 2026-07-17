@@ -1229,7 +1229,16 @@ html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-
 /* ===== Nothing to hide — line-art can (loop draw) + callouts ===== */
 .labx { margin-top: var(--head-gap); }
 .labx__stage { position: relative; max-width: 1120px; margin-inline: auto; min-height: 560px; display: grid; place-items: center; }
-.labx__can { height: clamp(340px, 40vw, 460px); width: auto; filter: drop-shadow(0 26px 46px rgba(0,0,0,0.6)); }
+.labx__canwrap { position: relative; }
+.labx__can { display: block; height: clamp(340px, 40vw, 460px); width: auto; filter: drop-shadow(0 26px 46px rgba(0,0,0,0.6)); position: relative; z-index: 1; }
+/* orbital dashed rings spinning around the can axis */
+.labx__rings { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 132%; height: 82%; z-index: 2; pointer-events: none; }
+.labx__rings svg { width: 100%; height: 100%; overflow: visible; }
+.labx__rings .ring { fill: none; stroke: var(--yellow); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 4 8; stroke-linecap: round; opacity: 0.9; }
+html.js .labx__rings .ring { animation: ringSpin 5s linear infinite; }
+html.js .labx__rings .ring--2 { animation-duration: 6.4s; animation-direction: reverse; }
+html.js .labx__rings .ring--3 { animation-duration: 5.6s; }
+@keyframes ringSpin { to { stroke-dashoffset: -120; } }
 
 /* nodes — horizontal connectors */
 .labx__node { position: absolute; display: flex; align-items: center; gap: 15px; width: 43%; }
@@ -1270,7 +1279,8 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
   .pdp__hot-rail { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 14px; order: 2; margin-top: 14px; }
   .pdp__hotbox { position: static; top: auto !important; transform: none; margin-top: 14px; min-width: 0; }
   .labx__stage { min-height: 0; display: block; max-width: 460px; }
-  .labx__can { display: block; height: 300px; width: auto; margin: 0 auto 26px; }
+  .labx__canwrap { width: max-content; margin: 0 auto 26px; }
+  .labx__can { display: block; height: 300px; width: auto; }
   .labx__node { position: static; width: 100%; margin-bottom: 12px; transform: none; }
   .labx__node--l { flex-direction: row; text-align: left; }
   .labx__line { min-width: 20px; }
@@ -1280,6 +1290,7 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
   .labx__line { transform: scaleX(1); }
   .labx__tip { opacity: 1 !important; transform: none !important; }
   .labx__node .t { opacity: 1 !important; }
+  .labx__rings .ring { animation: none; }
   .pdp__curve .ln-kc, .pdp__curve .ln-alt { stroke-dashoffset: 0 !important; }
   .pdp__curve .ar-kc, .pdp__curve .ar-alt, .pdp__curve .dot-kc, .pdp__curve .dot-alt, .pdp__curve .anno, .pdp__curve .axis, .pdp__curve .axis-l { opacity: 1 !important; }
 }
