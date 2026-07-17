@@ -21,7 +21,7 @@
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" as="image" href="../assets/cans/cbd-energy/01.webp" />
-  <link rel="stylesheet" href="../css/styles.css?v=31" />
+  <link rel="stylesheet" href="../css/styles.css?v=33" />
 
   <script type="application/ld+json">
   {
@@ -113,6 +113,7 @@
   <div class="drawer-overlay" id="drawerOverlay" hidden></div>
 
   <main id="main">
+    <!-- HERO -->
     <section class="pdp section" aria-labelledby="pdp-title">
       <div class="container">
         <nav class="crumbs reveal" aria-label="Breadcrumb">
@@ -120,15 +121,24 @@
         </nav>
 
         <div class="pdp__hero">
-          <!-- Rotating product viewer -->
           <div class="pdp__gallery reveal">
-            <div class="pdp__viewer" id="elkViewer" data-frames="31" role="img" aria-label="Kill Cliff Elk Blood Energy + CBD can — drag to rotate">
-              <img class="pdp__frame" id="elkFrame" src="../assets/cans/cbd-energy/01.webp" alt="Kill Cliff Elk Blood Energy + CBD can" decoding="async" />
-              <span class="pdp__hint"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 1 2.3 5.6"/><path d="M4 20v-4h4"/></svg> Drag to spin</span>
+            <div class="pdp__stage" id="pdpStage">
+              <div class="pdp__slide is-on" data-slide="view">
+                <div class="pdp__viewer" id="elkViewer" role="img" aria-label="Kill Cliff Elk Blood can — drag to rotate">
+                  <img class="pdp__frame" id="elkFrame" src="../assets/cans/cbd-energy/01.webp" alt="Kill Cliff Elk Blood Energy + CBD can" decoding="async" />
+                  <span class="pdp__hint"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 1 1 2.3 5.6"/><path d="M4 20v-4h4"/></svg> Drag to spin</span>
+                </div>
+              </div>
+              <div class="pdp__slide" data-slide="0">
+                <img src="../assets/products/energy-cbd-elk.jpg" alt="Kill Cliff Elk Blood can" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="pdp__thumbs" id="pdpThumbs">
+              <button class="pdp__thumb is-on" type="button" data-target="view" aria-label="360° view">360°</button>
+              <button class="pdp__thumb" type="button" data-target="0" aria-label="Product photo"><img src="../assets/products/energy-cbd-elk.jpg" alt="" /></button>
             </div>
           </div>
 
-          <!-- Buy box -->
           <div class="pdp__buy reveal" id="pdpBuy">
             <p class="eyebrow pdp__eyebrow">Energy + CBD &middot; Joe Rogan &times; Cam Hanes</p>
             <h1 id="pdp-title" class="pdp__title">Elk Blood</h1>
@@ -171,46 +181,65 @@
             <p class="pdp__ship">Ships free over $50 · No crash, no compromise · Supports the Navy SEAL Foundation.</p>
           </div>
         </div>
+      </div>
 
-        <!-- Stat bar -->
-        <div class="pdp__stats reveal" aria-label="Key specs">
-          <div class="pdp__stat"><b>120<span style="font-size:.5em">mg</span></b><span>Clean caffeine</span></div>
-          <div class="pdp__stat"><b>25<span style="font-size:.5em">mg</span></b><span>HempCell&trade; CBD</span></div>
-          <div class="pdp__stat"><b>0<span style="font-size:.5em">g</span></b><span>Sugar</span></div>
-          <div class="pdp__stat"><b>8×</b><span>Faster absorption</span></div>
+      <!-- Big rotating stat -->
+      <div class="pdp__bigstat" aria-live="off">
+        <div class="container pdp__bigstat-inner">
+          <b id="bigStatVal">120<em>mg</em></b>
+          <span id="bigStatLabel">Clean caffeine</span>
         </div>
       </div>
     </section>
 
-    <!-- Story -->
-    <section class="section" aria-labelledby="story-title" style="border-top:1px solid var(--hairline)">
-      <div class="container">
-        <div class="pdp__story-inner reveal">
-          <span class="pdp__hemp">Powered by HempCell&trade;</span>
-          <h2 id="story-title">Born in the lab. Built for the hunt.</h2>
-          <p>Born from the minds of Joe Rogan and Cam Hanes, this one-of-a-kind cherry bomb packs a bold punch with just the right hint of spice — smooth, fiery, and impossible to put down.</p>
-          <p>Fueled with 120mg of caffeine, electrolytes, and antioxidants, it keeps you locked in and ready to go. HempCell&trade; technology delivers hemp-derived ingredients up to <strong>8× faster</strong> and more effectively — for real performance and recovery, with no crash and no compromise.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Spec + vibe pairs -->
-    <section class="section" aria-labelledby="octane-title" style="border-top:1px solid var(--hairline)">
+    <!-- WHAT'S INSIDE — lab graphic -->
+    <section class="section" aria-labelledby="ing-title" style="border-top:1px solid var(--hairline)">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Controlled octane</p>
-          <h2 id="octane-title" class="section__title">Intensity, with discipline</h2>
+          <p class="eyebrow">What's inside</p>
+          <h2 id="ing-title" class="section__title">Nothing to hide</h2>
         </div>
-        <div class="pdp__pairs">
-          <div class="pdp__pair reveal reveal--pop"><span class="vibe">Middle of the workday</span><b>120mg caffeine</b><p>A performance-calibrated dose to elevate energy and sharpen output — focus and momentum without the overstimulation.</p></div>
-          <div class="pdp__pair reveal reveal--pop"><span class="vibe">Creative zone-in</span><b>0g sugar</b><p>No sugar, no crash cycle. Clean, functional energy built to hold steady through demanding hours.</p></div>
-          <div class="pdp__pair reveal reveal--pop"><span class="vibe">Composed under pressure</span><b>25mg CBD</b><p>Premium HempCell&trade; CBD supports composure and internal balance when stimulation runs high — clarity without the edge.</p></div>
-          <div class="pdp__pair reveal reveal--pop"><span class="vibe">Endurance mindset</span><b>Rogan × Hanes</b><p>Built on a standard of endurance, focus, and control — where performance means intensity you can actually steer.</p></div>
+        <div class="pdp__lab reveal">
+          <div class="pdp__lab-stage" aria-hidden="true">
+            <svg class="pdp__lab-svg" viewBox="0 0 400 400" fill="none">
+              <!-- can body -->
+              <rect class="draw" pathLength="1" x="150" y="74" width="100" height="250" rx="18" stroke="#FFE819" stroke-width="2"/>
+              <ellipse class="draw draw--2" pathLength="1" cx="200" cy="80" rx="50" ry="12" stroke="#FFE819" stroke-width="2"/>
+              <!-- guide lines -->
+              <line class="draw draw--3" pathLength="1" x1="150" y1="150" x2="250" y2="150" stroke="rgba(245,245,245,0.35)" stroke-width="1"/>
+              <line class="draw draw--3" pathLength="1" x1="150" y1="210" x2="250" y2="210" stroke="rgba(245,245,245,0.35)" stroke-width="1"/>
+              <line class="draw draw--3" pathLength="1" x1="150" y1="270" x2="250" y2="270" stroke="rgba(245,245,245,0.35)" stroke-width="1"/>
+              <!-- nodes: connectors + molecule dots + formula -->
+              <g class="node node--1">
+                <line x1="250" y1="150" x2="322" y2="132" stroke="rgba(255,232,25,0.5)" stroke-width="1"/>
+                <circle cx="326" cy="130" r="5" fill="#FFE819"/>
+                <text x="300" y="116" fill="#F5F5F5" font-family="Rajdhani, sans-serif" font-size="13" font-weight="600">C8H10N4O2</text>
+              </g>
+              <g class="node node--2">
+                <line x1="250" y1="210" x2="322" y2="210" stroke="rgba(255,232,25,0.5)" stroke-width="1"/>
+                <circle cx="326" cy="210" r="5" fill="#FFE819"/>
+                <text x="300" y="196" fill="#F5F5F5" font-family="Rajdhani, sans-serif" font-size="13" font-weight="600">CBD · C21H30O2</text>
+              </g>
+              <g class="node node--3">
+                <line x1="150" y1="270" x2="78" y2="288" stroke="rgba(255,232,25,0.5)" stroke-width="1"/>
+                <circle cx="74" cy="290" r="5" fill="#FFE819"/>
+                <text x="40" y="276" fill="#F5F5F5" font-family="Rajdhani, sans-serif" font-size="13" font-weight="600">0g SUGAR</text>
+              </g>
+            </svg>
+          </div>
+          <div class="pdp__lab-ing">
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>Natural cherry</b><span class="sub">Bold cherry bomb, hint of spice</span></div></div>
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>120mg caffeine</b><span class="sub">Clean, sustained energy</span></div></div>
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>25mg HempCell&trade; CBD</b><span class="sub">Nano-encapsulated, 8× faster</span></div></div>
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>Electrolytes &amp; antioxidants</b><span class="sub">Hydration + recovery</span></div></div>
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>B-vitamins &amp; niacin</b><span class="sub">Energy metabolism</span></div></div>
+            <div class="pdp__lab-item"><span class="dot"></span><div><b>Ginseng &amp; ginger root</b><span class="sub">Clarity &amp; resilience</span></div></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Benefits -->
+    <!-- FOUR SYSTEMS -->
     <section class="section" aria-labelledby="ben-title" style="border-top:1px solid var(--hairline)">
       <div class="container">
         <div class="section__head reveal">
@@ -226,20 +255,39 @@
       </div>
     </section>
 
-    <!-- What's inside -->
-    <section class="section" aria-labelledby="ing-title" style="border-top:1px solid var(--hairline)">
-      <div class="container">
-        <div class="section__head reveal">
-          <p class="eyebrow">What's inside</p>
-          <h2 id="ing-title" class="section__title">Nothing to hide</h2>
+    <!-- INTENSITY — 2 col + vertical loop -->
+    <section class="section" aria-labelledby="octane-title" style="border-top:1px solid var(--hairline)">
+      <div class="container pdp__octane">
+        <div class="pdp__octane-head reveal">
+          <p class="eyebrow">Controlled octane</p>
+          <h2 id="octane-title" class="section__title">Intensity, with discipline</h2>
+          <p class="coll-hero__intro">Elevated output, regulated edge. Built for those who want intensity they can actually steer.</p>
         </div>
-        <div class="pdp__ing reveal">
-          <span>Natural cherry flavor</span><span>120mg caffeine</span><span>25mg broad-spectrum CBD</span><span>Electrolytes</span><span>Antioxidants</span><span>B-vitamins</span><span>Niacin</span><span>Pantothenic acid</span><span>Ginseng</span><span>Ginger root</span><span>0g sugar</span><span>No artificial colors</span>
+        <div class="pdp__octane-loop reveal" aria-label="Product highlights">
+          <div class="pdp__octane-track">
+            <div class="pdp__pair"><span class="vibe">Middle of the workday</span><b>120mg caffeine</b><p>A performance-calibrated dose to elevate energy and sharpen output — without overstimulation.</p></div>
+            <div class="pdp__pair"><span class="vibe">Creative zone-in</span><b>0g sugar</b><p>No sugar, no crash cycle. Clean, functional energy built to hold steady.</p></div>
+            <div class="pdp__pair"><span class="vibe">Composed under pressure</span><b>25mg CBD</b><p>Premium HempCell&trade; CBD supports composure when stimulation runs high.</p></div>
+            <div class="pdp__pair"><span class="vibe">Endurance mindset</span><b>Rogan × Hanes</b><p>Built on a standard of endurance, focus, and control.</p></div>
+            <div class="pdp__pair" aria-hidden="true"><span class="vibe">Middle of the workday</span><b>120mg caffeine</b><p>A performance-calibrated dose to elevate energy and sharpen output — without overstimulation.</p></div>
+            <div class="pdp__pair" aria-hidden="true"><span class="vibe">Creative zone-in</span><b>0g sugar</b><p>No sugar, no crash cycle. Clean, functional energy built to hold steady.</p></div>
+            <div class="pdp__pair" aria-hidden="true"><span class="vibe">Composed under pressure</span><b>25mg CBD</b><p>Premium HempCell&trade; CBD supports composure when stimulation runs high.</p></div>
+            <div class="pdp__pair" aria-hidden="true"><span class="vibe">Endurance mindset</span><b>Rogan × Hanes</b><p>Built on a standard of endurance, focus, and control.</p></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Reviews -->
+    <!-- BORN IN THE LAB — banner -->
+    <section class="pdp__banner" aria-labelledby="story-title">
+      <div class="container pdp__banner-inner reveal">
+        <span class="pdp__hemp">Powered by HempCell&trade;</span>
+        <h2 id="story-title">Born in the lab. Built for the hunt.</h2>
+        <p>Born from the minds of Joe Rogan and Cam Hanes, this one-of-a-kind cherry bomb packs a bold punch with just the right hint of spice — smooth, fiery, and impossible to put down. HempCell&trade; technology delivers hemp-derived ingredients up to <strong>8× faster</strong> — real performance and recovery, no crash and no compromise.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
     <section class="gear__reviews section" aria-labelledby="rev-title">
       <div class="container">
         <div class="gear__rev-head reveal">
@@ -256,7 +304,7 @@
       </div>
     </section>
 
-    <!-- Related -->
+    <!-- RELATED -->
     <section class="coll-cross section" aria-labelledby="rel-title">
       <div class="container">
         <div class="section__head reveal">
@@ -271,7 +319,7 @@
       </div>
     </section>
 
-    <!-- Newsletter -->
+    <!-- NEWSLETTER -->
     <section class="newsletter section" id="newsletter" aria-labelledby="newsletter-title">
       <div class="container">
         <div class="mailer reveal">
@@ -301,7 +349,6 @@
     </section>
   </main>
 
-  <!-- Sticky add-to-cart bar -->
   <div class="pdp__bar" id="pdpBar" aria-hidden="true">
     <div class="container pdp__bar-inner">
       <span class="pdp__bar-name">Elk Blood</span>
@@ -361,29 +408,67 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=31"></script>
+  <script src="../js/main.js?v=33"></script>
   <script>
   (function () {
     /* ---- rotating product viewer ---- */
+    var viewerActive = true;
     (function () {
       var v = document.getElementById('elkViewer'), img = document.getElementById('elkFrame');
       if (!v || !img) return;
-      var N = 31, base = '../assets/cans/cbd-energy/', frames = [], cur = 0, auto = null;
+      var N = 31, base = '../assets/cans/cbd-energy/', frames = [], cur = 0, auto = null, inView = true;
       var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       for (var i = 1; i <= N; i++) { var im = new Image(); im.src = base + (i < 10 ? '0' + i : i) + '.webp'; frames.push(im.src); }
       function show(i) { cur = ((i % N) + N) % N; img.src = frames[cur]; }
-      function start() { if (reduce || auto) return; auto = setInterval(function () { show(cur + 1); }, 130); }
-      function stop() { if (auto) { clearInterval(auto); auto = null; } }
+      window.__elkStart = function () { if (reduce || auto || !viewerActive || !inView) return; auto = setInterval(function () { show(cur + 1); }, 130); };
+      window.__elkStop = function () { if (auto) { clearInterval(auto); auto = null; } };
       var drag = false, sx = 0, sf = 0;
-      v.addEventListener('pointerdown', function (e) { drag = true; sx = e.clientX; sf = cur; stop(); v.classList.add('is-drag'); try { v.setPointerCapture(e.pointerId); } catch (x) {} });
+      v.addEventListener('pointerdown', function (e) { drag = true; sx = e.clientX; sf = cur; window.__elkStop(); v.classList.add('is-drag'); try { v.setPointerCapture(e.pointerId); } catch (x) {} });
       v.addEventListener('pointermove', function (e) { if (!drag) return; show(sf - Math.round((e.clientX - sx) / 9)); });
-      function end() { if (drag) { drag = false; v.classList.remove('is-drag'); start(); } }
+      function end() { if (drag) { drag = false; v.classList.remove('is-drag'); window.__elkStart(); } }
       v.addEventListener('pointerup', end); v.addEventListener('pointercancel', end);
-      v.addEventListener('mouseenter', stop); v.addEventListener('mouseleave', function () { if (!drag) start(); });
-      // only auto-spin while in view
+      v.addEventListener('mouseenter', window.__elkStop); v.addEventListener('mouseleave', function () { if (!drag) window.__elkStart(); });
       if ('IntersectionObserver' in window) {
-        new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? start() : stop(); }); }, { threshold: 0.2 }).observe(v);
-      } else { start(); }
+        new IntersectionObserver(function (es) { es.forEach(function (e) { inView = e.isIntersecting; inView ? window.__elkStart() : window.__elkStop(); }); }, { threshold: 0.2 }).observe(v);
+      } else { window.__elkStart(); }
+    })();
+
+    /* ---- gallery thumbs ---- */
+    (function () {
+      var thumbs = document.querySelectorAll('#pdpThumbs .pdp__thumb'), slides = document.querySelectorAll('#pdpStage .pdp__slide');
+      thumbs.forEach(function (t) {
+        t.addEventListener('click', function () {
+          var tgt = t.dataset.target;
+          thumbs.forEach(function (x) { x.classList.remove('is-on'); }); t.classList.add('is-on');
+          slides.forEach(function (s) { s.classList.toggle('is-on', s.dataset.slide === tgt); });
+          viewerActive = (tgt === 'view');
+          if (viewerActive) { window.__elkStart && window.__elkStart(); } else { window.__elkStop && window.__elkStop(); }
+        });
+      });
+    })();
+
+    /* ---- big rotating stat ---- */
+    (function () {
+      var valEl = document.getElementById('bigStatVal'), labEl = document.getElementById('bigStatLabel');
+      if (!valEl) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var stats = [
+        { v: '120', u: 'mg', l: 'Clean caffeine' },
+        { v: '25', u: 'mg', l: 'HempCell&trade; CBD' },
+        { v: '0', u: 'g', l: 'Sugar' },
+        { v: '8&times;', u: '', l: 'Faster absorption' }
+      ];
+      var i = 0;
+      function paint() {
+        var s = stats[i];
+        valEl.innerHTML = s.v + (s.u ? '<em>' + s.u + '</em>' : '');
+        labEl.innerHTML = s.l;
+        valEl.classList.remove('is-anim'); labEl.classList.remove('is-anim');
+        void valEl.offsetWidth;
+        valEl.classList.add('is-anim'); labEl.classList.add('is-anim');
+      }
+      if (reduce) return;
+      setInterval(function () { i = (i + 1) % stats.length; paint(); }, 2600);
     })();
 
     /* ---- buy box ---- */
@@ -414,12 +499,12 @@
     });
     document.getElementById('qtyPlus').addEventListener('click', function () { qty = Math.min(qty + 1, 24); refresh(); });
     document.getElementById('qtyMinus').addEventListener('click', function () { qty = Math.max(qty - 1, 1); refresh(); });
-    function added(btn, label) { var t = btn.textContent; btn.disabled = true; btn.textContent = label || 'Added ✓'; setTimeout(function () { btn.disabled = false; btn.innerHTML = t; }, 1500); }
-    document.getElementById('pdpAdd').addEventListener('click', function () { added(this, 'Added ✓'); });
-    document.getElementById('pdpBarAdd').addEventListener('click', function () { added(this, 'Added ✓'); });
+    function added(btn) { var t = btn.innerHTML; btn.disabled = true; btn.textContent = 'Added ✓'; setTimeout(function () { btn.disabled = false; btn.innerHTML = t; }, 1500); }
+    document.getElementById('pdpAdd').addEventListener('click', function () { added(this); });
+    document.getElementById('pdpBarAdd').addEventListener('click', function () { added(this); });
     refresh();
 
-    /* ---- sticky bar when the buy box scrolls away ---- */
+    /* ---- sticky bar ---- */
     var buy = document.getElementById('pdpBuy'), bar = document.getElementById('pdpBar');
     if ('IntersectionObserver' in window && buy && bar) {
       new IntersectionObserver(function (es) {
