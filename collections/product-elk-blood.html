@@ -21,7 +21,7 @@
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" as="image" href="../assets/cans/cbd-energy/01.webp" />
-  <link rel="stylesheet" href="../css/styles.css?v=34" />
+  <link rel="stylesheet" href="../css/styles.css?v=35" />
 
   <script type="application/ld+json">
   {
@@ -124,7 +124,7 @@
           <div class="pdp__gallery reveal">
             <div class="pdp__showcase">
               <div class="pdp__hot-rail" id="pdpHots">
-                <button class="pdp__hot is-on" type="button" data-stat="0"><span class="pdp__hot-dot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><span class="pdp__hot-label">Caffeine</span></button>
+                <button class="pdp__hot" type="button" data-stat="0"><span class="pdp__hot-dot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><span class="pdp__hot-label">Caffeine</span></button>
                 <button class="pdp__hot" type="button" data-stat="1"><span class="pdp__hot-dot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 4 13c5 0 7 2 7 7Z"/><path d="M20 5c0 7-4 10-9 10"/></svg></span><span class="pdp__hot-label">CBD</span></button>
                 <button class="pdp__hot" type="button" data-stat="2"><span class="pdp__hot-dot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3s6 6 6 11a6 6 0 0 1-12 0c0-5 6-11 6-11Z"/><line x1="4" y1="20" x2="20" y2="4"/></svg></span><span class="pdp__hot-label">Sugar</span></button>
                 <button class="pdp__hot" type="button" data-stat="3"><span class="pdp__hot-dot"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6z"/></svg></span><span class="pdp__hot-label">Absorption</span></button>
@@ -408,7 +408,7 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=34"></script>
+  <script src="../js/main.js?v=35"></script>
   <script>
   (function () {
     /* ---- hero image slider (thumbs) ---- */
@@ -439,15 +439,24 @@
       }
       function activate(i, el) {
         hots.forEach(function (h) { h.classList.remove('is-on'); }); if (el) el.classList.add('is-on');
-        paint(i); box.classList.add('is-on');
+        paint(i);
+        // align the box vertically to the hovered hotspot's center
+        box.style.top = (el.offsetTop + el.offsetHeight / 2) + 'px';
+        box.classList.add('is-on');
+      }
+      function deactivate() {
+        hots.forEach(function (h) { h.classList.remove('is-on'); });
+        box.classList.remove('is-on');
       }
       hots.forEach(function (h) {
         var i = parseInt(h.dataset.stat, 10);
         h.addEventListener('mouseenter', function () { activate(i, h); });
+        h.addEventListener('mouseleave', deactivate);
         h.addEventListener('focus', function () { activate(i, h); });
+        h.addEventListener('blur', deactivate);
         h.addEventListener('click', function () { activate(i, h); });
       });
-      paint(0); box.classList.add('is-on'); // default shows caffeine
+      paint(0); // preload copy; box stays hidden until hover/focus
     })();
 
     /* ---- intensity stacked deck ---- */
