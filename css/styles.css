@@ -1095,7 +1095,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .pdp__slide > img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--r-lg); background: #000; display: block; }
 .pdp__viewer { width: 100%; height: 100%; }
 .pdp__frame { width: auto; height: 84%; max-width: 84%; }
-.pdp__thumbs { display: flex; gap: 10px; margin-top: 12px; }
+.pdp__thumbs { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
 .pdp__thumb { width: 64px; height: 64px; flex: none; border: 1px solid var(--hairline); border-radius: var(--r-md); background: var(--dark-2); overflow: hidden; cursor: pointer; display: grid; place-items: center; color: var(--text-dim); font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; transition: border-color var(--t-micro) var(--ease-in); }
 .pdp__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .pdp__thumb.is-on { border-color: var(--yellow); }
