@@ -1305,7 +1305,7 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
 /* split hero: copy + image */
 .sub-hero--split .sub-hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .sub-hero--split .sub-hero__inner { max-width: none; }
-.sub-hero__media img { width: 100%; height: auto; display: block; border-radius: var(--r-lg); }
+.sub-hero__media img { width: 100%; height: auto; display: block; border-radius: var(--r-lg); -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 99%); mask-image: linear-gradient(to bottom, #000 76%, transparent 99%); }
 /* perks: forced 3-up */
 .sub-perks--3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 900px) {
