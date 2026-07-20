@@ -534,6 +534,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .product__badge--hot { background: var(--yellow); color: var(--dark); border-color: var(--yellow); font-weight: 700; }
 .product__line { font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin: 0 0 4px; }
 .product__name { font-size: 16px; font-weight: 700; text-transform: uppercase; line-height: 1.05; margin: 0 0 6px; }
+.product__name a { color: inherit; text-decoration: none; transition: color var(--t-micro) var(--ease-out-quint); }
+.product__name a:hover { color: var(--yellow); }
 .product__meta { font-size: 12.5px; font-weight: 400; color: var(--text-dim); margin: 0 0 16px; }
 .product__row { display: flex; align-items: center; justify-content: space-between; }
 .product__price { font-family: var(--font-display); font-size: 21px; font-weight: 700; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
