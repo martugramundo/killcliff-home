@@ -20,7 +20,7 @@
 
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="../css/styles.css?v=48" />
+  <link rel="stylesheet" href="../css/styles.css?v=49" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -137,20 +137,22 @@
   <main id="main">
 
     <!-- HERO -->
-    <section class="sub-hero" aria-labelledby="sub-title">
-      <div class="container">
+    <section class="sub-hero sub-hero--split" aria-labelledby="sub-title">
+      <div class="container sub-hero__grid">
         <div class="sub-hero__inner reveal">
+          <span class="sub-hero__toptag">Save 15% &middot; ships free</span>
           <p class="eyebrow">Kill Cliff Subscription</p>
-          <h1 id="sub-title" class="sub-hero__title">Join<br>the Club</h1>
+          <h1 id="sub-title" class="sub-hero__title"><span class="sub-hero__accent">Join</span><br>the Club</h1>
           <p class="sub-hero__intro">Exclusive benefits for active subscribers only. Lock in 15% off every order, free shipping for life, and first dibs on every new drop &mdash; skip, swap, or cancel anytime, no strings.</p>
           <div class="sub-hero__cta">
             <a href="#plans" class="btn btn--primary">Start subscribing</a>
             <a href="../index.html#products" class="btn btn--ghost">Browse drinks</a>
-            <span class="sub-hero__badge">Save 15% &middot; ships free</span>
           </div>
         </div>
+        <div class="sub-hero__media reveal">
+          <img src="../assets/hero/elk-blood/05.webp" alt="Kill Cliff drink lineup" decoding="async" />
+        </div>
       </div>
-      <span class="sub-hero__mark" aria-hidden="true">15%</span>
     </section>
 
     <!-- PERKS -->
@@ -160,7 +162,7 @@
           <p class="eyebrow">Member perks</p>
           <h2 id="perks-title" class="section__title">Everything you get in the club</h2>
         </div>
-        <div class="sub-perks reveal">
+        <div class="sub-perks sub-perks--3 reveal">
           <div class="sub-perk"><span class="sub-perk__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></span><h3>15% off every order</h3><p>Members lock in 15% off every drink, every delivery &mdash; automatically, for as long as you stay in the club.</p></div>
           <div class="sub-perk"><span class="sub-perk__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></span><h3>Free shipping, always</h3><p>Every subscription order ships free &mdash; no minimums, no fine print, no surprises at checkout.</p></div>
           <div class="sub-perk"><span class="sub-perk__ico"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Skip or cancel anytime</h3><p>Total control from your account: pause, skip a month, swap flavors, or cancel in a tap. No fees, no calls.</p></div>
@@ -332,6 +334,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=48"></script>
+  <script src="../js/main.js?v=49"></script>
 </body>
 </html>
