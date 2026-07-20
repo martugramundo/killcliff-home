@@ -1403,3 +1403,40 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
   .kc-form--wide { grid-template-columns: 1fr; }
   .kc-tiers { grid-template-columns: 1fr; }
 }
+
+/* ===================== MORE/LOGIN pages: motion + bolder + color ===================== */
+/* card hover micro-interactions */
+.sub-perk, .kc-tier, .kc-article, .gear__rev { transition: transform .35s var(--ease-out-quint), border-color .35s var(--ease-out-quint), box-shadow .35s var(--ease-out-quint); }
+.sub-perk:hover, .kc-article:hover, .gear__rev:hover { transform: translateY(-4px); border-color: rgba(255,232,25,0.45); box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+.kc-tier:hover { transform: translateY(-5px); border-color: var(--yellow); }
+.sub-perk__ico { transition: background .3s var(--ease-out-quint), color .3s var(--ease-out-quint), border-color .3s var(--ease-out-quint); }
+.sub-perk:hover .sub-perk__ico { background: var(--yellow); border-color: var(--yellow); color: var(--dark); }
+/* doc-list rows */
+.kc-list__row { transition: padding-left .3s var(--ease-out-quint), border-color .3s; }
+.kc-list__row:hover { padding-left: 14px; }
+.kc-list__row:hover b { color: var(--yellow); }
+.kc-list__link { transition: transform .25s var(--ease-out-quint); }
+.kc-list__row:hover .kc-list__link { transform: translateX(5px); }
+/* article kicker + title pop on hover */
+.kc-article h3 { transition: color .3s var(--ease-out-quint); }
+.kc-article:hover h3 { color: var(--yellow); }
+/* staggered grid entrance (built on .reveal gating, like .cmp) */
+html.js .sub-perks.reveal .sub-perk,
+html.js .sub-steps.reveal .sub-step,
+html.js .kc-tiers.reveal .kc-tier,
+html.js .kc-articles.reveal .kc-article { opacity: 0; }
+html.js .sub-perks.reveal.is-visible .sub-perk,
+html.js .sub-steps.reveal.is-visible .sub-step,
+html.js .kc-tiers.reveal.is-visible .kc-tier,
+html.js .kc-articles.reveal.is-visible .kc-article { animation: subUp 560ms var(--ease-out-expo) both; }
+html.js .reveal.is-visible .sub-perk:nth-child(2), html.js .reveal.is-visible .sub-step:nth-child(2), html.js .reveal.is-visible .kc-tier:nth-child(2), html.js .reveal.is-visible .kc-article:nth-child(2) { animation-delay: 90ms; }
+html.js .reveal.is-visible .sub-perk:nth-child(3), html.js .reveal.is-visible .sub-step:nth-child(3), html.js .reveal.is-visible .kc-tier:nth-child(3), html.js .reveal.is-visible .kc-article:nth-child(3) { animation-delay: 180ms; }
+html.js .reveal.is-visible .sub-perk:nth-child(4), html.js .reveal.is-visible .kc-article:nth-child(4) { animation-delay: 270ms; }
+html.js .reveal.is-visible .sub-perk:nth-child(5), html.js .reveal.is-visible .kc-article:nth-child(5) { animation-delay: 360ms; }
+html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .kc-article:nth-child(6) { animation-delay: 450ms; }
+@keyframes subUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .sub-perk, .kc-tier, .kc-article, .gear__rev, .sub-perk__ico, .kc-list__row, .kc-list__link, .kc-article h3 { transition: none; }
+  .sub-perk:hover, .kc-article:hover, .kc-tier:hover, .gear__rev:hover { transform: none; }
+  html.js .sub-perks .sub-perk, html.js .sub-steps .sub-step, html.js .kc-tiers .kc-tier, html.js .kc-articles .kc-article { opacity: 1 !important; animation: none !important; }
+}
