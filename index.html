@@ -31,7 +31,7 @@
   <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
   <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/styles.css?v=65" />
+  <link rel="stylesheet" href="css/styles.css?v=66" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -177,31 +177,46 @@
 
   <main id="main">
 
-    <!-- 3. Hero (centered + horizontal can lineup) -->
+    <!-- 3. Hero (centered lineup + brand-new RTM launch band) -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__inner">
-        <div class="hero__copy reveal">
-          <p class="hero__seal">Created by a Navy SEAL</p>
-          <h1 id="hero-title" class="hero__title">
-            Clean energy.<br /><span class="accent">Bold</span> performance.
-          </h1>
-          <p class="hero__sub">
-            Built for the people who train, lift, deploy, hunt, and serve.
-          </p>
-          <div class="hero__cta">
-            <a href="#products" class="btn btn--primary">Shop now</a>
-            <a href="#compare" class="btn btn--ghost">See how we stack up</a>
-          </div>
-        </div>
+      <div class="container">
+        <div class="hero__stage">
+          <div class="hero__inner">
+            <div class="hero__copy reveal">
+              <p class="hero__seal">Created by a Navy SEAL</p>
+              <h1 id="hero-title" class="hero__title">
+                Clean energy.<br /><span class="accent">Bold</span> performance.
+              </h1>
+              <p class="hero__sub">
+                Built for the people who train, lift, deploy, hunt, and serve.
+              </p>
+              <div class="hero__cta">
+                <a href="#products" class="btn btn--primary">Shop now</a>
+                <a href="#compare" class="btn btn--ghost">See how we stack up</a>
+              </div>
+            </div>
 
-        <!-- CAN LINEUP — each can spins on its own axis (crossfade flipbook).
-             Frames are built by js/main.js from the CANS config; swap the
-             placeholder SVGs in assets/cans/<id>/NN.* for real renders. -->
-        <div class="hero__cans cans--horizontal reveal" aria-hidden="true">
-          <div class="can-spin" data-can="spicy-pineapple" data-frames="31" data-ext="webp" style="--i:0"></div>
-          <div class="can-spin" data-can="cbd-energy"      data-frames="31" data-ext="webp" style="--i:1"></div>
-          <div class="can-spin" data-can="lemon-lime"      data-frames="31" data-ext="webp" style="--i:2"></div>
-          <div class="can-spin" data-can="orange-kush"     data-frames="31" data-ext="webp" style="--i:3"></div>
+            <!-- CAN LINEUP — each can spins on its own axis (crossfade flipbook). -->
+            <div class="hero__cans cans--horizontal reveal" aria-hidden="true">
+              <div class="can-spin" data-can="spicy-pineapple" data-frames="31" data-ext="webp" style="--i:0"></div>
+              <div class="can-spin" data-can="cbd-energy"      data-frames="31" data-ext="webp" style="--i:1"></div>
+              <div class="can-spin" data-can="lemon-lime"      data-frames="31" data-ext="webp" style="--i:2"></div>
+              <div class="can-spin" data-can="orange-kush"     data-frames="31" data-ext="webp" style="--i:3"></div>
+            </div>
+          </div>
+
+          <!-- Brand-new: Ready to Mix launch band -->
+          <div class="rtm-band reveal">
+            <video class="rtm-band__vid js-lazyvideo" loop muted playsinline preload="metadata" aria-hidden="true">
+              <source src="assets/video/rtm-hero.mp4" type="video/mp4" />
+            </video>
+            <div class="rtm-band__copy">
+              <p class="rtm-band__k">Brand-new</p>
+              <h2 class="rtm-band__t">Ready to Mix daily performance powder</h2>
+              <p class="rtm-band__s">Creatine, focus, clean caffeine &amp; recovery &mdash; one stick, four systems.</p>
+              <a class="btn btn--primary rtm-band__cta" href="collections/ready-to-mix.html">Shop RTM</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -667,6 +682,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=65"></script>
+  <script src="js/main.js?v=66"></script>
 </body>
 </html>
