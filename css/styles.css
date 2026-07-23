@@ -292,20 +292,29 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* Brand-new RTM launch band — spans the full hero-stage width */
 .rtm-band {
   display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
-  gap: clamp(14px, 1.6vw, 26px);
-  width: 100%;
-  padding: clamp(16px, 1.8vw, 24px) clamp(18px, 2.2vw, 30px);
+  gap: clamp(8px, 1vw, 18px);
+  width: 100%; max-width: 940px; margin-inline: auto;
+  padding: clamp(16px, 1.7vw, 22px) clamp(20px, 2.3vw, 30px);
   border: 1px solid var(--hairline); border-radius: 16px;
   background: linear-gradient(90deg, rgba(255, 232, 25, 0.07), transparent 60%);
 }
-.rtm-band__vid { width: clamp(170px, 23vw, 280px); height: auto; display: block; border-radius: 12px; }
+/* crop the square video's transparent side-margins so the box fills its frame and sits close to the copy */
+.rtm-band__vid { width: clamp(140px, 16vw, 200px); aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 12px; }
 .rtm-band__copy { min-width: 0; }
-.rtm-band__k { font-family: var(--font-body); font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 12px; color: var(--yellow); margin: 0 0 5px; }
-.rtm-band__t { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; font-size: clamp(20px, 2.4vw, 30px); line-height: 1; margin: 0 0 8px; }
-.rtm-band__s { font-size: 14px; color: var(--text-dim); line-height: 1.5; margin: 0; max-width: 48ch; }
-.rtm-band__cta { margin-top: 16px; }
+/* "Brand-new" — same pill badge as the hero's "Created by a Navy SEAL" */
+.rtm-band__k {
+  display: inline-flex; align-items: center;
+  margin: 0 0 15px; padding: 8px 16px;
+  border: 1px solid rgba(255, 232, 25, 0.42); border-radius: 999px;
+  background: rgba(255, 232, 25, 0.07);
+  font-family: var(--font-body); font-size: 13px; font-weight: 600;
+  letter-spacing: 0.1em; line-height: 1; text-transform: uppercase; color: var(--off-white);
+}
+.rtm-band__t { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: -0.015em; font-size: clamp(27px, 3.3vw, 40px); line-height: 1.02; margin: 0 0 12px; text-wrap: balance; }
+.rtm-band__s { font-size: clamp(15px, 1.6vw, 17px); font-weight: 400; color: var(--text-dim); line-height: 1.55; margin: 0; max-width: 44ch; }
+.rtm-band__cta { margin-top: 18px; }
 @media (max-width: 640px) {
-  .rtm-band { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 14px; }
+  .rtm-band { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 16px; }
   .rtm-band__s { margin-inline: auto; }
 }
 
