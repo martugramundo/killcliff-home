@@ -16,6 +16,8 @@
 :root {
   /* Primary palette */
   --dark: #000000;          /* default background — pure black */
+  --surface-1: #0c0c0c;     /* near-black panel */
+  --surface-2: #141414;     /* elevated popover / callout */
   --dark-2: #202020;        /* Secondary Dark — cards, elevated surfaces */
   --black: #000000;
   --yellow: #FFE819;        /* Accent — used sparingly */
@@ -386,7 +388,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .can-slot {
   position: relative; display: grid; place-items: center;
   border: 2px dashed rgba(245, 245, 245, 0.22); border-radius: 14px;
-  background: repeating-linear-gradient(45deg, rgba(245,245,245,0.025) 0 12px, transparent 12px 24px), var(--dark-2);
+  background: var(--dark-2);
   color: var(--text-faint);
 }
 .can-slot__label { font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; line-height: 1.3; }
@@ -661,7 +663,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* ---------- Newsletter — email composer ---------- */
 .mailer {
   max-width: 720px; margin-inline: auto;
-  background: #0c0c0c; border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden;
+  background: var(--surface-1); border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden;
 }
 .mailer__bar { display: flex; align-items: center; gap: 8px; padding: 14px 18px; background: #161616; border-bottom: 1px solid var(--hairline); }
 .mailer__dot { width: 11px; height: 11px; border-radius: 50%; background: #3a3a3a; flex: none; }
@@ -867,7 +869,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .coll-hero__media--annot { background: none; }
 .rtm-annot { position: relative; width: 100%; aspect-ratio: 1 / 1; display: grid; place-items: center; }
 .coll-hero__media--annot .rtm-annot__img { width: 100%; height: 100%; object-fit: contain; border-radius: 0; background: none; filter: drop-shadow(0 26px 48px rgba(0,0,0,0.55)); }
-.rtm-callout { position: absolute; z-index: 2; display: grid; gap: 2px; background: #141414; border: 1px solid var(--hairline); border-radius: 12px; padding: 9px 13px; box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
+.rtm-callout { position: absolute; z-index: 2; display: grid; gap: 2px; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: 12px; padding: 9px 13px; box-shadow: 0 14px 30px rgba(0,0,0,0.45); }
 .rtm-callout__main { font-family: var(--font-body); font-size: 13.5px; font-weight: 500; color: var(--off-white); white-space: nowrap; line-height: 1.2; }
 .rtm-callout__v { font-family: var(--font-display); font-weight: 700; color: var(--yellow); }
 .rtm-callout__k { font-family: var(--font-body); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
@@ -1051,7 +1053,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .gear__card[hidden] { display: none; }
 .gear__media { position: relative; border-radius: var(--r-md); overflow: hidden; margin-bottom: 14px; }
 .gear__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; }
-.gear__ph { aspect-ratio: 1 / 1; display: grid; place-items: center; background: linear-gradient(155deg, #191919, #0c0c0c); }
+.gear__ph { aspect-ratio: 1 / 1; display: grid; place-items: center; background: linear-gradient(155deg, var(--dark-2), var(--surface-1)); }
 .gear__ph-logo { width: 58%; height: 34px; background: rgba(245,245,245,0.13); -webkit-mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat; mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat; }
 .gear__cat { position: absolute; top: 12px; left: 12px; font-family: var(--font-body); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
 .gear__card--soldout .gear__ph { opacity: 0.5; }
@@ -1257,7 +1259,7 @@ html.js .pdp__bens .coll-why__mark { animation-duration: 7.6s; animation-timing-
 @keyframes hotPulse { 0% { transform: scale(0.8); opacity: 0.7; } 100% { transform: scale(1.55); opacity: 0; } }
 .pdp__hot-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .pdp__hot:hover .pdp__hot-dot, .pdp__hot.is-on .pdp__hot-dot { border-color: var(--yellow); background: rgba(255,232,25,0.09); }
-.pdp__hotbox { position: absolute; left: 58px; top: 0; transform: translateY(-50%); z-index: 4; min-width: 190px; background: #141414; border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 15px 17px; box-shadow: 0 16px 34px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 200ms var(--ease-out-quint), visibility 200ms; }
+.pdp__hotbox { position: absolute; left: 58px; top: 0; transform: translateY(-50%); z-index: 4; min-width: 190px; background: var(--surface-2); border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 15px 17px; box-shadow: 0 16px 34px rgba(0,0,0,0.5); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 200ms var(--ease-out-quint), visibility 200ms; }
 .pdp__hotbox.is-on { opacity: 1; visibility: visible; }
 .pdp__hotbox b { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 4vw, 46px); line-height: 0.9; letter-spacing: -0.02em; color: var(--yellow); }
 .pdp__hotbox b em { font-style: normal; font-size: 0.42em; }
@@ -1490,7 +1492,7 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
 /* ===================== MORE/LOGIN pages: motion + bolder + color ===================== */
 /* card hover micro-interactions */
 .sub-perk, .kc-tier, .kc-article, .gear__rev { transition: transform .35s var(--ease-out-quint), border-color .35s var(--ease-out-quint), box-shadow .35s var(--ease-out-quint); }
-.sub-perk:hover, .kc-article:hover, .gear__rev:hover { transform: translateY(-4px); border-color: rgba(255,232,25,0.45); box-shadow: 0 18px 40px rgba(0,0,0,0.45); }
+.sub-perk:hover, .kc-article:hover, .gear__rev:hover { transform: translateY(-4px); border-color: rgba(255,232,25,0.45); box-shadow: 0 8px 14px rgba(0,0,0,0.5); }
 .kc-tier:hover { transform: translateY(-5px); border-color: var(--yellow); }
 .sub-perk__ico { transition: background .3s var(--ease-out-quint), color .3s var(--ease-out-quint), border-color .3s var(--ease-out-quint); }
 .sub-perk:hover .sub-perk__ico { background: var(--yellow); border-color: var(--yellow); color: var(--dark); }
