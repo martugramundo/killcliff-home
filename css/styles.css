@@ -1330,7 +1330,7 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
 .sub-hero__accent { color: var(--yellow); }
 .sub-hero__toptag { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dark); background: var(--yellow); padding: 7px 13px; border-radius: 999px; margin-bottom: 18px; }
 /* split hero: copy + image */
-.sub-hero--split .sub-hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.sub-hero--split .sub-hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
 .sub-hero--split .sub-hero__inner { max-width: none; }
 .sub-hero__media img { width: 100%; height: auto; display: block; border-radius: var(--r-lg); -webkit-mask-image: linear-gradient(to bottom, #000 76%, transparent 99%); mask-image: linear-gradient(to bottom, #000 76%, transparent 99%); }
 /* perks: forced 3-up */
