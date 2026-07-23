@@ -298,7 +298,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   width: fit-content; max-width: 100%; margin-inline: auto;
   padding: clamp(16px, 1.7vw, 22px) clamp(20px, 2.3vw, 30px);
   border: 1px solid var(--hairline); border-radius: 16px;
-  background: linear-gradient(90deg, rgba(255, 232, 25, 0.07), transparent 62%);
+  /* same pure black as the video's background so there's no black-on-black seam */
+  background: var(--dark);
 }
 /* crop the square video's transparent side-margins so the box fills its frame and sits close to the copy */
 .rtm-band__vid { width: clamp(140px, 16vw, 200px); aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 12px; }
