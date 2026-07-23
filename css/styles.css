@@ -1412,6 +1412,19 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
 .kc-tier__n { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.4vw, 44px); letter-spacing: -0.02em; line-height: 1; margin: 0 0 4px; }
 .kc-tier p { font-size: 14px; color: var(--text-dim); margin: 10px auto 0; line-height: 1.5; max-width: 34ch; }
 
+/* VerifyPass eligibility (Hero Discounts) */
+.hd-vp { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: clamp(14px, 2vw, 22px); margin-top: var(--head-gap); }
+.hd-vp__card { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; border: 1px solid var(--hairline); border-radius: var(--r-lg); padding: clamp(28px, 3vw, 40px) clamp(20px, 2.4vw, 30px); background: var(--dark-2); transition: transform .35s var(--ease-out-quint), border-color .35s var(--ease-out-quint); }
+.hd-vp__card:hover { transform: translateY(-5px); border-color: var(--yellow); }
+.hd-vp__ico { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--hairline); color: var(--yellow); margin-bottom: 4px; }
+.hd-vp__title { font-family: var(--font-display); font-weight: 700; font-size: clamp(18px, 2vw, 22px); letter-spacing: -0.01em; text-transform: uppercase; margin: 0; }
+.hd-vp__desc { font-size: 14px; color: var(--text-dim); line-height: 1.45; margin: 0; max-width: 26ch; }
+.hd-vp__btn { margin-top: auto; width: 100%; justify-content: center; }
+.hd-vp__desc { margin-bottom: 12px; }
+.hd-vp__note { text-align: center; margin: clamp(22px, 3vw, 32px) auto 0; font-size: 13px; color: var(--text-faint); letter-spacing: 0.02em; }
+.hd-vp__note span { color: var(--text-dim); }
+@media (prefers-reduced-motion: reduce) { .hd-vp__card { transition: none; } .hd-vp__card:hover { transform: none; } }
+
 /* doc / article list */
 .kc-list { margin-top: var(--head-gap); border-top: 1px solid var(--hairline); }
 .kc-list__row { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--hairline); }
