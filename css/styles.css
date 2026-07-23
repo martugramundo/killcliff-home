@@ -28,7 +28,7 @@
   --hairline: rgba(245, 245, 245, 0.16);
   --surface-hover: #262626;
   --text-dim: rgba(245, 245, 245, 0.75);
-  --text-faint: rgba(245, 245, 245, 0.34);
+  --text-faint: rgba(245, 245, 245, 0.58);
 
   /* Type */
   --font-display: "Outfit", system-ui, sans-serif;   /* titles, subtitles, stats */
