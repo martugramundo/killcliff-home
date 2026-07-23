@@ -1474,3 +1474,15 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 .sub-hero--center .sub-hero__cta { justify-content: center; }
 .sub-hero--center .sub-hero__toptag { }
 .sub-hero--center .sub-hero__mark { left: 50%; right: auto; transform: translateX(-50%); bottom: -6%; }
+
+/* Troops backdrop (Navy SEAL Foundation hero) — subtle, emerging from the bottom */
+.sub-hero--troops .sub-hero__mark { display: none; }
+.sub-hero__troops {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 86%;
+  background: url(../assets/nsf-troops.webp) no-repeat bottom center / min(1500px, 108%) auto;
+  opacity: 0.4;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 58%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 58%);
+  pointer-events: none; z-index: 0;
+}
