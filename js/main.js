@@ -414,4 +414,17 @@
     }
   })();
 
+  /* Reviews: "View more" reveal */
+  (function () {
+    var btn = document.getElementById("rvMore");
+    if (!btn) return;
+    var grid = document.querySelector(".gear__rev-grid");
+    if (!grid) return;
+    btn.addEventListener("click", function () {
+      var expanded = grid.classList.toggle("is-expanded");
+      btn.setAttribute("aria-expanded", expanded ? "true" : "false");
+      btn.textContent = expanded ? "Show less" : "View more reviews";
+    });
+  })();
+
 })();

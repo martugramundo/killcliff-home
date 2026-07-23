@@ -1034,6 +1034,9 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .gear__rev-sub { font-family: var(--font-body); font-size: 13px; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--text-dim); margin-top: 8px; }
 .gear__rev-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin-top: var(--head-gap); }
 .gear__rev { border: 1px solid var(--hairline); border-radius: var(--r-md); padding: 22px; background: var(--dark-2); }
+.gear__rev--more { display: none; }
+.gear__rev-grid.is-expanded .gear__rev--more { display: block; }
+.gear__rev-more { text-align: center; margin-top: clamp(24px, 3vw, 36px); }
 .gear__rev p.gear__rev-stars { color: var(--yellow); font-size: 13px; letter-spacing: 1px; }
 .gear__rev-title { font-size: 15px; text-transform: uppercase; letter-spacing: -0.01em; margin: 10px 0 6px; }
 .gear__rev p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
@@ -1436,6 +1439,7 @@ html.js .labx.is-visible .labx__node .t { animation: labPop 460ms var(--ease-out
 .kc-article { border: 1px solid var(--hairline); border-radius: var(--r-lg); overflow: hidden; background: var(--dark-2); }
 .kc-article__body { padding: clamp(20px, 2.2vw, 28px); }
 .kc-article__k { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--yellow); }
+.kc-article__k span { color: var(--text-dim); font-weight: 500; }
 .kc-article h3 { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(17px, 1.7vw, 21px); letter-spacing: -0.01em; margin: 10px 0 8px; }
 .kc-article p { font-size: 14px; color: var(--text-dim); line-height: 1.55; margin: 0; }
 
