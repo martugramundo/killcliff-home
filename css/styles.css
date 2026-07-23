@@ -291,12 +291,14 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 
 /* Brand-new RTM launch band — spans the full hero-stage width */
 .rtm-band {
-  display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
+  /* fixed copy-column width so the container hugs the content (equal L/R inset, no empty right gap) */
+  display: grid; grid-template-columns: auto clamp(280px, 40vw, 480px); align-items: center;
   gap: clamp(8px, 1vw, 18px);
-  width: 100%; max-width: 940px; margin-inline: auto;
+  align-self: center;
+  width: fit-content; max-width: 100%; margin-inline: auto;
   padding: clamp(16px, 1.7vw, 22px) clamp(20px, 2.3vw, 30px);
   border: 1px solid var(--hairline); border-radius: 16px;
-  background: linear-gradient(90deg, rgba(255, 232, 25, 0.07), transparent 60%);
+  background: linear-gradient(90deg, rgba(255, 232, 25, 0.07), transparent 62%);
 }
 /* crop the square video's transparent side-margins so the box fills its frame and sits close to the copy */
 .rtm-band__vid { width: clamp(140px, 16vw, 200px); aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 12px; }
