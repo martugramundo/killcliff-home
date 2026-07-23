@@ -491,14 +491,15 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* ---------- Stack — ingredient diagram around the can ---------- */
 .stack__diagram {
   display: grid; grid-template-columns: 1fr auto 1fr;
-  gap: clamp(6px, 1.2vw, 20px); align-items: center;
+  gap: 0; align-items: center;
 }
 .stack__center { display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
 .stack__center .can-slot--stack { width: clamp(220px, 22vw, 320px); aspect-ratio: 4 / 5; }
-.stack__video { width: clamp(240px, 26vw, 340px); aspect-ratio: 4 / 5; object-fit: cover; height: auto; display: block; transform: scale(1.12); }
+.stack__video { width: clamp(240px, 26vw, 340px); aspect-ratio: 4 / 5; object-fit: cover; height: auto; display: block; transform: scale(1.6); }
 .stack__col { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
-.stack__col--left { text-align: right; }
-.stack__col--right { text-align: left; }
+/* Zoom fills the can in-frame + pull the ingredient columns inward so each item hugs it */
+.stack__col--left { text-align: right; margin-right: clamp(-72px, -4.5vw, -36px); }
+.stack__col--right { text-align: left; margin-left: clamp(-72px, -4.5vw, -36px); }
 .stack__ing { display: flex; align-items: center; gap: 16px; }
 .stack__ing-text { flex: 1; }
 .stack__ing-title { font-size: clamp(16px, 1.8vw, 20px); text-transform: uppercase; margin-bottom: 6px; letter-spacing: -0.005em; transition: color var(--t-micro) var(--ease-in); }
@@ -725,7 +726,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
   .stack__diagram { grid-template-columns: 1fr; justify-items: center; gap: 32px; }
   .stack__center { order: -1; }
   .stack__col { flex-direction: row; gap: clamp(28px, 6vw, 56px); }
-  .stack__col--left, .stack__col--right { text-align: center; }
+  .stack__col--left, .stack__col--right { text-align: center; margin: 0; }
   .stack__ing { flex-direction: column; gap: 8px; text-align: center; }
   .stack__ing-link { display: none; }
   .can-slot--stack { width: min(300px, 70%); }
