@@ -535,10 +535,12 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   display: grid; grid-template-columns: 1fr auto 1fr;
   gap: 0; align-items: center;
 }
-.stack__center { display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
+.stack__center { position: relative; z-index: 1; display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
 .stack__center .can-slot--stack { width: clamp(220px, 22vw, 320px); aspect-ratio: 4 / 5; }
-.stack__video { width: clamp(240px, 26vw, 340px); aspect-ratio: 4 / 5; object-fit: cover; height: auto; display: block; transform: scale(1.6); }
-.stack__col { display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
+/* scale kept under the crop threshold so the can is never cut top/bottom on side-view frames */
+.stack__video { width: clamp(240px, 26vw, 340px); aspect-ratio: 4 / 5; object-fit: cover; height: auto; display: block; transform: scale(1.2); }
+/* columns paint above the center video so the left connectors aren't hidden behind it */
+.stack__col { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
 /* Zoom fills the can in-frame + pull the ingredient columns inward so each item hugs it */
 .stack__col--left { text-align: right; margin-right: clamp(-72px, -4.5vw, -36px); }
 .stack__col--right { text-align: left; margin-left: clamp(-72px, -4.5vw, -36px); }
