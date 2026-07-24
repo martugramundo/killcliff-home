@@ -31,7 +31,7 @@
   <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
   <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/styles.css?v=85" />
+  <link rel="stylesheet" href="css/styles.css?v=86" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -302,8 +302,10 @@
         </div>
 
         <div class="cmp reveal">
+          <p class="eyebrow cmp__eyebrow">Why most energy drinks suck</p>
           <div class="cmp__tabs" role="tablist" aria-label="Compare by">
             <button class="cmp__tab is-active" type="button" role="tab" aria-selected="true" data-k="sugar">Zero sugar</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="caffeine">Clean caffeine</button>
             <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="electrolytes">Electrolytes</button>
             <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="creatine">Creatine HCl</button>
             <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="crash">No crash</button>
@@ -316,12 +318,14 @@
           <div class="cmp__panel" id="cmpPanel" aria-live="polite">
             <div class="cmp__side cmp__side--kc">
               <span class="cmp__logo" role="img" aria-label="Kill Cliff"></span>
+              <span class="cmp__can" aria-hidden="true"><img src="assets/cans/renders/spicy-pineapple.webp" alt="" loading="lazy" decoding="async" /></span>
               <span class="cmp__mark" id="cmpKcMark" aria-hidden="true">✓</span>
               <p class="cmp__note" id="cmpKcNote">0g sugar — clean energy</p>
             </div>
             <div class="cmp__vs" aria-hidden="true">vs</div>
             <div class="cmp__side cmp__side--other">
               <span class="cmp__label">Other energy drinks</span>
+              <span class="cmp__can cmp__can--blank" aria-hidden="true"><img src="assets/generic-can.webp" alt="" loading="lazy" decoding="async" /></span>
               <span class="cmp__mark" id="cmpOtherMark" aria-hidden="true">✕</span>
               <p class="cmp__note" id="cmpOtherNote">Up to 50g of sugar</p>
             </div>
@@ -334,7 +338,8 @@
           <h3>How Kill Cliff compares to other energy drinks</h3>
           <ul>
             <li>Zero sugar — Kill Cliff: 0g sugar, clean energy. Other energy drinks: up to 50g of sugar.</li>
-            <li>Real electrolytes — Kill Cliff: sodium, potassium and magnesium. Other energy drinks: no real electrolytes.</li>
+            <li>Clean caffeine from green tea — Kill Cliff: smooth, sustained energy. Other energy drinks: harsh stimulants, jitters and a racing heart.</li>
+            <li>Real electrolytes — Kill Cliff: sodium, potassium, magnesium and B-vitamins. Other energy drinks: no real electrolytes.</li>
             <li>Premium creatine HCl — Kill Cliff: premium creatine HCl. Other energy drinks: none, or cheap monohydrate.</li>
             <li>No crash, no jitters — Kill Cliff: clean, sustained energy. Other energy drinks: spike, then crash.</li>
             <li>No artificial dyes — Kill Cliff: no artificial dyes. Other energy drinks: synthetic colors and fillers.</li>
@@ -728,6 +733,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=85"></script>
+  <script src="js/main.js?v=86"></script>
 </body>
 </html>

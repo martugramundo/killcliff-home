@@ -116,7 +116,8 @@
   (function () {
     var CMP = {
       sugar: { label: "Zero sugar", kc: "0g sugar — clean energy", other: "Up to 50g of sugar" },
-      electrolytes: { label: "Real electrolytes", kc: "Sodium, potassium & magnesium", other: "No real electrolytes" },
+      caffeine: { label: "Clean caffeine from green tea", kc: "Smooth, sustained energy", other: "Harsh stimulants — jitters & a racing heart" },
+      electrolytes: { label: "Real electrolytes", kc: "Sodium, potassium, magnesium & B-vitamins", other: "No real electrolytes" },
       creatine: { label: "Premium creatine HCl", kc: "Premium creatine HCl", other: "None, or cheap monohydrate" },
       crash: { label: "No crash, no jitters", kc: "Clean, sustained energy", other: "Spike, then crash" },
       dyes: { label: "No artificial dyes", kc: "No artificial dyes", other: "Synthetic colors & fillers" },

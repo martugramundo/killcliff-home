@@ -470,6 +470,10 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat;
 }
 .cmp__label { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-dim); height: 17px; display: flex; align-items: center; }
+.cmp__eyebrow { margin-bottom: 14px; }
+/* product shots under each side's identity */
+.cmp__can img { height: clamp(140px, 13vw, 190px); width: auto; display: block; filter: drop-shadow(0 16px 22px rgba(0, 0, 0, 0.5)); }
+.cmp__can--blank img { filter: grayscale(1) brightness(0.85) drop-shadow(0 16px 22px rgba(0, 0, 0, 0.5)); }
 .cmp__mark { font-size: 34px; line-height: 1; color: var(--text-dim); }
 .cmp__side--kc .cmp__mark { color: var(--yellow); }
 .cmp__mark .mark { width: 40px; height: 40px; animation: pop var(--t-mid) var(--ease-in); }
