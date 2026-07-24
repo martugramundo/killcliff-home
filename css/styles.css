@@ -1607,9 +1607,6 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
   box-shadow: 0 0 0 8px var(--dark);
 }
 
-.vsx__outro { margin-top: clamp(28px, 4vw, 46px); display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-.vsx__outro-q { margin: 0; font-size: clamp(15px, 1.6vw, 17px); color: var(--text-dim); }
-
 /* entrance: panels slide in from opposite sides, VS pops, rows stagger */
 html.js .vsx__duel.reveal .vsx__side { opacity: 0; }
 html.js .vsx__duel.reveal.is-visible .vsx__side--them { animation: vsxInL 720ms var(--ease-out-expo) 60ms both; }
