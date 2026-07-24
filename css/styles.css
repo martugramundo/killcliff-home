@@ -537,9 +537,9 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .stack__center { position: relative; z-index: 1; display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
 .stack__center .can-slot--stack { width: clamp(220px, 22vw, 320px); aspect-ratio: 4 / 5; }
-/* aspect matches the source (9/16) so object-fit cover never crops the can top/bottom;
-   the light scale only trims the black side-margins of the frame */
-.stack__video { width: clamp(200px, 21vw, 290px); aspect-ratio: 1080 / 1920; object-fit: cover; height: auto; display: block; transform: scale(1.12); }
+/* box hugs the can band (source y 283–1487) via object-position, cropping only the black
+   top/bottom margins of the frame — never the can — so there's no dead space around it */
+.stack__video { width: clamp(210px, 22vw, 300px); aspect-ratio: 1080 / 1240; object-fit: cover; object-position: 50% 46%; height: auto; display: block; }
 /* columns paint above the center video so the left connectors aren't hidden behind it */
 .stack__col { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
 /* Zoom fills the can in-frame + pull the ingredient columns inward so each item hugs it */
@@ -768,7 +768,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
   .compare__inner { grid-template-columns: 1fr; gap: 28px; align-items: start; }
   .rtm__inner { grid-template-columns: 1fr; gap: 36px; }
   .rtm__visual { order: -1; }
-  .stack__diagram { grid-template-columns: 1fr; justify-items: center; gap: 32px; }
+  .stack__diagram { grid-template-columns: 1fr; justify-items: center; gap: 14px; }
   .stack__center { order: -1; }
   .stack__col { flex-direction: row; gap: clamp(28px, 6vw, 56px); }
   .stack__col--left, .stack__col--right { text-align: center; margin: 0; }
