@@ -1584,22 +1584,10 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 .vsx__stage { position: relative; display: grid; place-items: center; height: clamp(180px, 21vw, 270px); width: 100%; }
 .vsx__stage img { height: clamp(180px, 21vw, 270px); width: auto; filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.5)); animation: float 6s ease-in-out infinite; }
 .vsx__side--kc .vsx__stage::before { content: ""; position: absolute; inset: -8%; background: radial-gradient(closest-side, rgba(255, 232, 25, 0.13), transparent 72%); }
-/* the nameless silver can (CSS-built) */
+/* the nameless silver can — dimmed so it sits in the washed "them" panel */
 .vsx__blank {
-  position: relative; height: clamp(168px, 19.6vw, 252px); aspect-ratio: 10 / 23;
-  border-radius: 12px 12px 14px 14px / 9px 9px 11px 11px;
-  background: linear-gradient(90deg, #3f3f3f 0%, #8c8c8c 14%, #e9e9e9 32%, #f8f8f8 42%, #c9c9c9 58%, #8a8a8a 80%, #474747 100%);
-  filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.5));
-}
-.vsx__blank::before {
-  content: ""; position: absolute; inset: 0 0 auto 0; height: 12px;
-  border-radius: 12px 12px 40% 40% / 9px 9px 14px 14px;
-  background: linear-gradient(90deg, #2c2c2c, #7d7d7d 25%, #d4d4d4 45%, #6c6c6c 75%, #262626);
-}
-.vsx__blank::after {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 8px;
-  border-radius: 0 0 14px 14px / 0 0 11px 11px;
-  background: linear-gradient(90deg, #262626, #6a6a6a 30%, #bdbdbd 45%, #5c5c5c 78%, #1f1f1f);
+  height: clamp(180px, 21vw, 270px); width: auto;
+  filter: grayscale(1) brightness(0.85) drop-shadow(0 22px 30px rgba(0, 0, 0, 0.5));
 }
 
 .vsx__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; text-align: left; width: 100%; max-width: 380px; }
@@ -1699,3 +1687,16 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
   .subsave__panel { grid-template-columns: 1fr; gap: 22px; }
   .subsave__list { grid-template-columns: 1fr; }
 }
+
+/* dark variant — Subscribe & Save riding the final-cta collage */
+.subsave--dark { text-align: left; }
+.subsave--dark .subsave__panel { position: relative; background: transparent; border-radius: 0; padding: clamp(40px, 6vw, 76px) 0; }
+.subsave--dark .subsave__title { color: var(--off-white); }
+.subsave--dark .subsave__amp { -webkit-text-stroke: 2.5px var(--off-white); }
+.subsave--dark .subsave__kicker { background: var(--yellow); color: #000; }
+.subsave--dark .subsave__sub { color: var(--off-white); }
+.subsave--dark .subsave__list li { color: rgba(245, 245, 245, 0.88); }
+.subsave--dark .subsave__list li::before { background: var(--yellow); }
+.subsave--dark .subsave__list li::after { border-color: #000; }
+.subsave--dark .subsave__cta { background: var(--yellow); color: var(--dark); }
+.subsave--dark .subsave__cta:hover { background: #e6d017; box-shadow: 0 10px 34px rgba(255, 232, 25, 0.32); }
