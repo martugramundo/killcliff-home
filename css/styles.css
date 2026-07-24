@@ -1647,7 +1647,9 @@ html.js .vsx__duel.reveal.is-visible .vsx__list li:nth-child(3) { animation-dela
 /* =========================================================
    Subscribe & Save — yellow conversion band
    ========================================================= */
-.subsave { padding-block: 0 var(--sect-std); }
+.subsave { padding-block: 0; }
+/* tighten the benefits -> banner -> results run (was a full sect-std at each seam) */
+.vsx.section { padding-block: var(--sect-std) calc(var(--sect-std) / 2); }
 .subsave__panel {
   display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
   gap: clamp(28px, 5vw, 84px);
@@ -1680,10 +1682,8 @@ html.js .vsx__duel.reveal.is-visible .vsx__list li:nth-child(3) { animation-dela
 .subsave__cta { background: #000; color: var(--yellow); }
 .subsave__cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); }
 
-/* entrance: the band wipes open, then the checklist and CTA stagger in */
-html.js .subsave__panel.reveal { opacity: 1; transform: none; clip-path: inset(0 100% 0 0 round var(--r-lg)); }
-html.js .subsave__panel.reveal.is-visible { animation: ssWipe 850ms var(--ease-out-expo) forwards; }
-@keyframes ssWipe { to { clip-path: inset(0 0 0 0 round var(--r-lg)); } }
+/* entrance: the band rides the standard reveal (never visibility-gated on a
+   custom animation), then the checklist and CTA stagger in */
 html.js .subsave__panel.reveal .subsave__list li { opacity: 0; }
 html.js .subsave__panel.reveal.is-visible .subsave__list li { animation: subUp 520ms var(--ease-out-expo) both; }
 html.js .subsave__panel.reveal.is-visible .subsave__list li:nth-child(1) { animation-delay: 260ms; }
