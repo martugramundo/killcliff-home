@@ -844,10 +844,9 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
   .reveal { opacity: 1; transform: none; }
   /* new per-section entrance sub-elements: show instantly, no delayed reveal */
   .reason__num, .stack__ing-link, .cmp__tab, .final-cta__title, .rtm-callout, .coll-why__mark,
-  .vsx__side, .vsx__vs, .vsx__list li, .subsave__panel, .subsave__list li, .subsave__cta {
+  .subsave__panel, .subsave__list li, .subsave__cta {
     opacity: 1 !important; transform: none !important; clip-path: none !important; animation: none !important;
   }
-  .vsx__stage img { animation: none; }
   .marquee__track, .ticker__track, .float { animation: none; }
 }
 
@@ -1559,86 +1558,9 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 }
 
 /* =========================================================
-   Our benefits — VS duel (generic can vs Kill Cliff)
-   ========================================================= */
-.vsx__duel { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 24px); max-width: 1040px; margin-inline: auto; }
-.vsx__side {
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-  gap: clamp(18px, 2.4vw, 28px);
-  padding: clamp(26px, 3.2vw, 44px) clamp(20px, 2.8vw, 40px);
-  border-radius: var(--r-lg);
-}
-.vsx__side--them { background: var(--surface-1); border: 1px solid var(--hairline); }
-.vsx__side--kc { background: var(--dark-2); border: 1px solid rgba(255, 232, 25, 0.38); transition: border-color var(--t-mid) var(--ease-in); }
-.vsx__side--kc:hover { border-color: rgba(255, 232, 25, 0.62); }
-
-.vsx__head {
-  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-  font-size: clamp(16px, 1.75vw, 21px); line-height: 1.18; letter-spacing: -0.01em;
-  color: var(--text-dim); min-height: 2.4em; display: grid; place-items: center;
-}
-.vsx__head strong { color: var(--off-white); }
-.vsx__logo {
-  display: inline-block; width: clamp(132px, 14vw, 186px); height: 26px; background-color: var(--off-white);
-  -webkit-mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat;
-  mask: url(../assets/logos/kill-cliff-logo.svg) center / contain no-repeat;
-}
-
-/* product stage — fixed height on both sides so the lists align */
-.vsx__stage { position: relative; display: grid; place-items: center; height: clamp(180px, 21vw, 270px); width: 100%; }
-.vsx__stage img { height: clamp(180px, 21vw, 270px); width: auto; filter: drop-shadow(0 22px 30px rgba(0, 0, 0, 0.5)); animation: float 6s ease-in-out infinite; }
-.vsx__side--kc .vsx__stage::before { content: ""; position: absolute; inset: -8%; background: radial-gradient(closest-side, rgba(255, 232, 25, 0.13), transparent 72%); }
-/* the nameless silver can — dimmed so it sits in the washed "them" panel */
-.vsx__blank {
-  height: clamp(180px, 21vw, 270px); width: auto;
-  filter: grayscale(1) brightness(0.85) drop-shadow(0 22px 30px rgba(0, 0, 0, 0.5));
-}
-
-.vsx__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; text-align: left; width: 100%; max-width: 380px; }
-.vsx__list li { display: flex; gap: 12px; align-items: flex-start; }
-.vsx__list p { margin: 0; font-size: 15px; font-weight: 400; line-height: 1.45; color: var(--text-dim); }
-.vsx__side--them .vsx__list strong { color: var(--off-white); }
-.vsx__side--kc .vsx__list strong { color: var(--yellow); }
-.vsx__mark { flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; margin-top: 1px; }
-.vsx__mark--no { border: 1px solid var(--hairline); color: var(--text-dim); }
-.vsx__mark--yes { background: var(--yellow); color: #000; }
-
-.vsx__vs {
-  position: absolute; left: 50%; top: 42%; translate: -50% -50%; z-index: 2;
-  display: grid; place-items: center; width: 54px; height: 54px; border-radius: 50%;
-  background: var(--yellow); color: #000;
-  font-family: var(--font-display); font-weight: 800; font-size: 17px; letter-spacing: 0.02em;
-  box-shadow: 0 0 0 8px var(--dark);
-}
-
-/* entrance: panels slide in from opposite sides, VS pops, rows stagger */
-html.js .vsx__duel.reveal .vsx__side { opacity: 0; }
-html.js .vsx__duel.reveal.is-visible .vsx__side--them { animation: vsxInL 720ms var(--ease-out-expo) 60ms both; }
-html.js .vsx__duel.reveal.is-visible .vsx__side--kc { animation: vsxInR 720ms var(--ease-out-expo) 140ms both; }
-html.js .vsx__duel.reveal .vsx__vs { opacity: 0; transform: scale(0.4); }
-html.js .vsx__duel.reveal.is-visible .vsx__vs { animation: vsxPop 460ms var(--ease-out-expo) 480ms both; }
-html.js .vsx__duel.reveal .vsx__list li { opacity: 0; }
-html.js .vsx__duel.reveal.is-visible .vsx__list li { animation: subUp 560ms var(--ease-out-expo) both; }
-html.js .vsx__duel.reveal.is-visible .vsx__list li:nth-child(1) { animation-delay: 340ms; }
-html.js .vsx__duel.reveal.is-visible .vsx__list li:nth-child(2) { animation-delay: 430ms; }
-html.js .vsx__duel.reveal.is-visible .vsx__list li:nth-child(3) { animation-delay: 520ms; }
-@keyframes vsxInL { from { opacity: 0; transform: translateX(-26px); } to { opacity: 1; transform: none; } }
-@keyframes vsxInR { from { opacity: 0; transform: translateX(26px); } to { opacity: 1; transform: none; } }
-@keyframes vsxPop { to { opacity: 1; transform: scale(1); } }
-
-@media (max-width: 820px) {
-  .vsx__duel { grid-template-columns: 1fr; }
-  .vsx__vs { position: static; translate: none; justify-self: center; margin-block: -6px; }
-  .vsx__head { min-height: 0; }
-  .vsx__stage { height: clamp(170px, 44vw, 230px); }
-}
-
-/* =========================================================
    Subscribe & Save — yellow conversion band
    ========================================================= */
 .subsave { padding-block: 0; }
-/* tighten the benefits -> banner -> results run (was a full sect-std at each seam) */
-.vsx.section { padding-block: var(--sect-std) calc(var(--sect-std) / 2); }
 .subsave__panel {
   display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center;
   gap: clamp(28px, 5vw, 84px);
