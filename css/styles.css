@@ -537,8 +537,9 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .stack__center { position: relative; z-index: 1; display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
 .stack__center .can-slot--stack { width: clamp(220px, 22vw, 320px); aspect-ratio: 4 / 5; }
-/* scale kept under the crop threshold so the can is never cut top/bottom on side-view frames */
-.stack__video { width: clamp(240px, 26vw, 340px); aspect-ratio: 4 / 5; object-fit: cover; height: auto; display: block; transform: scale(1.2); }
+/* aspect matches the source (9/16) so object-fit cover never crops the can top/bottom;
+   the light scale only trims the black side-margins of the frame */
+.stack__video { width: clamp(200px, 21vw, 290px); aspect-ratio: 1080 / 1920; object-fit: cover; height: auto; display: block; transform: scale(1.12); }
 /* columns paint above the center video so the left connectors aren't hidden behind it */
 .stack__col { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
 /* Zoom fills the can in-frame + pull the ingredient columns inward so each item hugs it */
