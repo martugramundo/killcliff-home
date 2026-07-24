@@ -1692,7 +1692,7 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
 .subsave--dark { text-align: left; }
 .subsave--dark .subsave__panel { position: relative; background: transparent; border-radius: 0; padding: clamp(40px, 6vw, 76px) 0; }
 .subsave--dark .subsave__title { color: var(--off-white); }
-.subsave--dark .subsave__amp { -webkit-text-stroke: 2.5px var(--off-white); }
+.subsave--dark .subsave__amp { -webkit-text-stroke: 0; color: var(--yellow); }
 .subsave--dark .subsave__kicker { background: var(--yellow); color: #000; }
 .subsave--dark .subsave__sub { color: var(--off-white); }
 .subsave--dark .subsave__list li { color: rgba(245, 245, 245, 0.88); }
