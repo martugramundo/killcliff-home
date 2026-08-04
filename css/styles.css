@@ -1623,3 +1623,34 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
 .subsave--dark .subsave__list li::after { border-color: #000; }
 .subsave--dark .subsave__cta { background: var(--yellow); color: var(--dark); }
 .subsave--dark .subsave__cta:hover { background: #e6d017; box-shadow: 0 10px 34px rgba(255, 232, 25, 0.32); }
+
+/* =========================================================
+   Joe Rogan collabs (homepage band)
+   ========================================================= */
+.jr__inner { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.jr__lede { margin: 18px 0 0; font-size: clamp(15px, 1.7vw, 17px); font-weight: 400; color: var(--text-dim); line-height: 1.55; max-width: 52ch; }
+.jr__facts { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
+.jr__facts li { position: relative; padding-left: 27px; font-size: 15px; font-weight: 600; color: var(--off-white); }
+.jr__facts li::before { content: ""; position: absolute; left: 0; top: 2px; width: 17px; height: 17px; border-radius: 50%; background: var(--yellow); }
+.jr__facts li::after { content: ""; position: absolute; left: 4px; top: 8px; width: 8px; height: 4px; border-left: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); }
+.jr__cta { margin-top: 26px; }
+.jr__cans { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 24px); }
+.jr__can {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+  padding: clamp(22px, 2.6vw, 34px) 16px;
+  border: 1px solid var(--hairline); border-radius: var(--r-lg); background: var(--dark-2);
+  color: var(--off-white);
+  transition: transform .35s var(--ease-out-quint), border-color .35s var(--ease-out-quint);
+}
+.jr__can:hover { transform: translateY(-5px); border-color: rgba(255, 232, 25, 0.5); }
+.jr__can img { height: clamp(180px, 19vw, 270px); width: auto; margin-bottom: 14px; filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.5)); animation: float 6s ease-in-out infinite; }
+.jr__can:nth-child(2) img { animation-delay: 0.6s; }
+.jr__can-name { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(17px, 1.9vw, 22px); letter-spacing: -0.01em; transition: color .3s var(--ease-out-quint); }
+.jr__can:hover .jr__can-name { color: var(--yellow); }
+.jr__can-k { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+@media (max-width: 860px) {
+  .jr__inner { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (hover: none) {
+  .jr__can:hover { transform: none; }
+}

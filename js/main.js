@@ -415,17 +415,18 @@
     }
   })();
 
-  /* Reviews: "View more" reveal */
-  (function () {
-    var btn = document.getElementById("rvMore");
+  /* Reviews: "View more" reveal (reviews page + homepage Okendo widget) */
+  ["rvMore", "okeMore"].forEach(function (id) {
+    var btn = document.getElementById(id);
     if (!btn) return;
-    var grid = document.querySelector(".gear__rev-grid");
+    var section = btn.closest("section");
+    var grid = section && section.querySelector(".gear__rev-grid");
     if (!grid) return;
     btn.addEventListener("click", function () {
       var expanded = grid.classList.toggle("is-expanded");
       btn.setAttribute("aria-expanded", expanded ? "true" : "false");
       btn.textContent = expanded ? "Show less" : "View more reviews";
     });
-  })();
+  });
 
 })();
