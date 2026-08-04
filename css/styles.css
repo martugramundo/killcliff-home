@@ -844,7 +844,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
   .reveal { opacity: 1; transform: none; }
   /* new per-section entrance sub-elements: show instantly, no delayed reveal */
   .reason__num, .stack__ing-link, .cmp__tab, .final-cta__title, .rtm-callout, .coll-why__mark,
-  .subsave__panel, .subsave__list li, .subsave__cta {
+  .subsave__panel, .subsave__list li, .subsave__cta, .jr__face {
     opacity: 1 !important; transform: none !important; clip-path: none !important; animation: none !important;
   }
   .marquee__track, .ticker__track, .float { animation: none; }
@@ -1651,6 +1651,14 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
 .jr__can-name { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(15px, 1.5vw, 19px); letter-spacing: -0.01em; transition: color .3s var(--ease-out-quint); }
 .jr__can:hover .jr__can-name { color: var(--yellow); }
 .jr__can-k { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
+/* entrance: the portrait slides in from the page edge, revealed left-to-right */
+html.js .jr__face.reveal { opacity: 0; transform: translateX(-32px); transition: none; }
+html.js .jr__face.reveal.is-visible { animation: jrFaceIn 1000ms var(--ease-out-expo) 120ms both; }
+@keyframes jrFaceIn {
+  from { opacity: 0; transform: translateX(-32px); clip-path: inset(0 100% 0 0); }
+  to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
+}
+
 @media (max-width: 860px) {
   .jr__inner { grid-template-columns: 1fr; gap: 32px; }
   .jr__face { display: none; }
