@@ -1653,7 +1653,7 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
 .jr__can-k { font-size: 12.5px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); }
 /* entrance: the portrait slides in from the page edge, revealed left-to-right */
 html.js .jr__face.reveal { opacity: 0; transform: translateX(-32px); transition: none; }
-html.js .jr__face.reveal.is-visible { animation: jrFaceIn 1000ms var(--ease-out-expo) 120ms both; }
+html.js .jr__face.reveal.is-visible { animation: jrFaceIn 2200ms var(--ease-out-quint) 150ms both; }
 @keyframes jrFaceIn {
   from { opacity: 0; transform: translateX(-32px); clip-path: inset(0 100% 0 0); }
   to { opacity: 1; transform: none; clip-path: inset(0 0 0 0); }
