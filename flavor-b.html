@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+  <!-- Primary SEO -->
+  <title>Find your flavor — Option B (stack deck)</title>
+  <meta name="description" content="Clean energy, hydration, and recovery created by a Navy SEAL. No sugar, real electrolytes, premium creatine HCl. Every purchase supports the Navy SEAL Foundation." />
+  <link rel="canonical" href="https://killcliff.com/" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kill Cliff" />
+  <meta property="og:title" content="Kill Cliff — Clean Energy, Hydration & Recovery" />
+  <meta property="og:description" content="Clean energy, hydration, and recovery created by a Navy SEAL. No sugar, real electrolytes, premium creatine HCl." />
+  <meta property="og:url" content="https://killcliff.com/" />
+  <meta property="og:image" content="https://martugramundo.github.io/killcliff-home/assets/logos/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kill Cliff — Clean energy. Bold performance. Created by a Navy SEAL." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kill Cliff — Clean Energy, Hydration & Recovery" />
+  <meta name="twitter:description" content="Clean energy, hydration, and recovery created by a Navy SEAL. No sugar, real electrolytes, premium creatine HCl." />
+  <meta name="twitter:image" content="https://martugramundo.github.io/killcliff-home/assets/logos/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Kill Cliff — Clean energy. Bold performance. Created by a Navy SEAL." />
+
+  <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
+  <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css?v=98" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Kill Cliff",
+    "url": "https://killcliff.com/",
+    "logo": "https://martugramundo.github.io/killcliff-home/assets/logos/kill-cliff-logo.png",
+    "description": "Clean energy, hydration, and recovery created by a Navy SEAL. Every purchase supports the Navy SEAL Foundation.",
+    "brand": { "@type": "Brand", "name": "Kill Cliff" },
+    "sameAs": [
+      "https://www.instagram.com/killcliff",
+      "https://www.facebook.com/killcliff",
+      "https://www.youtube.com/killcliff"
+    ]
+  }
+  </script>
+
+  <style id="fdeckPrev">
+    .fdeck { display: flex; flex-direction: column; gap: 26px; }
+    .fdeck__panel {
+      position: sticky; top: calc(var(--header-h) + 14px + (var(--i) * 14px));
+      background: var(--surface-1); border-radius: 16px;
+      padding: clamp(20px, 2.6vw, 30px);
+      box-shadow: 0 -20px 44px rgba(0, 0, 0, 0.6);
+    }
+    .fdeck__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+    .fdeck__title { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(21px, 2.4vw, 30px); letter-spacing: -0.01em; margin: 0; }
+    .fdeck__sub { margin: 4px 0 0; font-size: 14px; color: var(--text-dim); }
+    .fdeck__cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .fdeck__all a {
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; height: 100%;
+      min-height: 260px; border: 1px dashed var(--hairline); border-radius: 14px;
+      font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: clamp(17px, 1.8vw, 22px);
+      text-align: center; color: var(--text-dim); transition: color .3s var(--ease-out-quint), border-color .3s var(--ease-out-quint);
+    }
+    .fdeck__all a:hover { color: var(--yellow); border-color: rgba(255,232,25,0.5); }
+    @media (max-width: 860px) {
+      .fdeck__panel { position: static; }
+      .fdeck__cards { grid-auto-flow: column; grid-auto-columns: min(230px, 64vw); grid-template-columns: none; overflow-x: auto; scroll-snap-type: x proximity; scrollbar-width: none; padding-bottom: 6px; }
+      .fdeck__cards::-webkit-scrollbar { display: none; }
+      .fdeck__cards .product { scroll-snap-align: start; }
+      .fdeck__head { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- 1. Kinetic ticker (above the navbar) -->
+  <div class="ticker" aria-label="Announcements">
+    <div class="ticker__track">
+      <span>0G sugar</span><span class="ticker__dot"></span>
+      <span>Real electrolytes</span><span class="ticker__dot"></span>
+      <span>Creatine HCl</span><span class="ticker__dot"></span>
+      <span>No crash</span><span class="ticker__dot"></span>
+      <span>No jitters</span><span class="ticker__dot"></span>
+      <span>Free shipping over $50</span><span class="ticker__dot"></span>
+      <span>Navy SEAL founded · supports the Foundation</span><span class="ticker__dot"></span>
+      <span>New formula. Same mission.</span><span class="ticker__dot"></span>
+      <!-- duplicate for seamless loop -->
+      <span aria-hidden="true">0G sugar</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">Real electrolytes</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">Creatine HCl</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">No crash</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">No jitters</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">Free shipping over $50</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">Navy SEAL founded · supports the Foundation</span><span class="ticker__dot"></span>
+      <span aria-hidden="true">New formula. Same mission.</span><span class="ticker__dot"></span>
+    </div>
+  </div>
+
+  <!-- 2. Header -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="/" class="logo" aria-label="Kill Cliff home"><span class="sr-only">Kill Cliff</span></a>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--has-menu">
+            <a href="#products" class="nav__link">Drinks <svg class="nav__caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="nav__menu">
+              <a href="collections/energy.html">Energy</a>
+              <a href="collections/recovery.html">Recovery</a>
+              <a href="collections/energy-cbd.html">Energy + CBD</a>
+              <a href="collections/recovery-cbd.html">Recovery + CBD</a>
+              <a href="collections/rogan.html">Joe Rogan Collabs</a>
+            </div>
+          </li>
+          <li><a href="collections/ready-to-mix.html">RTM Powders</a></li>
+          <li><a href="collections/bundle-builder.html">Bundles</a></li>
+          <li><a href="collections/apparel-gear.html">Gear</a></li>
+          <li><a href="collections/subscribe.html">Subscribe</a></li>
+          <li class="nav__item nav__item--has-menu">
+            <a href="collections/kill-club.html" class="nav__link">More <svg class="nav__caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="nav__menu">
+              <a href="collections/kill-club.html">Kill Club</a>
+              <a href="collections/our-mission.html">Our Mission</a>
+              <a href="collections/navy-seal-foundation.html">Navy SEAL Foundation</a>
+              <a href="collections/hero-discounts.html">Hero Discounts</a>
+              <a href="collections/tasty-times.html">The Tasty Times</a>
+              <a href="collections/cbd-coa.html">CBD COA</a>
+              <a href="collections/reviews.html">Reviews</a>
+            </div>
+          </li>
+          <li class="nav__item nav__item--has-menu">
+            <a href="collections/login.html" class="nav__link">Login <svg class="nav__caret" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></a>
+            <div class="nav__menu">
+              <a href="collections/login.html">Login</a>
+              <a href="collections/quick-order.html">Quick Order</a>
+              <a href="collections/wholesale.html">Wholesale Application</a>
+              <a href="collections/loyalty.html">Loyalty</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Account">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </button>
+        <button class="icon-btn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 7h12l-1.5 12.5a1 1 0 0 1-1 .9H8.5a1 1 0 0 1-1-.9L6 7Z"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg>
+        </button>
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="drawer__nav" aria-label="Mobile">
+      <a href="#products">Drinks</a>
+      <div class="drawer__sub">
+        <a href="collections/energy.html">Energy</a>
+        <a href="collections/recovery.html">Recovery</a>
+        <a href="collections/energy-cbd.html">Energy + CBD</a>
+        <a href="collections/recovery-cbd.html">Recovery + CBD</a>
+        <a href="collections/rogan.html">Joe Rogan Collabs</a>
+      </div>
+      <a href="collections/ready-to-mix.html">RTM Powders</a>
+      <a href="collections/bundle-builder.html">Bundles</a>
+      <a href="collections/apparel-gear.html">Gear</a>
+      <a href="collections/subscribe.html">Subscribe</a>
+      <a href="collections/kill-club.html">More</a>
+      <div class="drawer__sub">
+        <a href="collections/kill-club.html">Kill Club</a>
+        <a href="collections/our-mission.html">Our Mission</a>
+        <a href="collections/navy-seal-foundation.html">Navy SEAL Foundation</a>
+        <a href="collections/hero-discounts.html">Hero Discounts</a>
+        <a href="collections/tasty-times.html">The Tasty Times</a>
+        <a href="collections/cbd-coa.html">CBD COA</a>
+        <a href="collections/reviews.html">Reviews</a>
+      </div>
+      <a href="collections/login.html">Login</a>
+      <div class="drawer__sub">
+        <a href="collections/login.html">Login</a>
+        <a href="collections/quick-order.html">Quick Order</a>
+        <a href="collections/wholesale.html">Wholesale Application</a>
+        <a href="collections/loyalty.html">Loyalty</a>
+      </div>
+    </nav>
+  </div>
+  <div class="drawer-overlay" id="drawerOverlay" hidden></div>
+
+  <main id="main">
+
+    <!-- 3. Hero (centered lineup + brand-new RTM launch band) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero__stage">
+          <div class="hero__inner">
+            <div class="hero__copy reveal">
+              <p class="hero__seal">Created by a Navy SEAL</p>
+              <h1 id="hero-title" class="hero__title">
+                Clean energy.<br /><span class="accent">Bold</span> performance.
+              </h1>
+              <p class="hero__sub">
+                Built for the people who train, lift, deploy, hunt, and serve.
+              </p>
+              <div class="hero__cta">
+                <a href="#products" class="btn btn--primary">Shop now</a>
+                <a href="#compare" class="btn btn--ghost">See how we stack up</a>
+              </div>
+            </div>
+
+            <!-- CAN LINEUP — each can spins on its own axis (crossfade flipbook). -->
+            <div class="hero__cans cans--horizontal reveal" aria-hidden="true">
+              <div class="can-spin" data-can="spicy-pineapple" data-frames="31" data-ext="webp" style="--i:0"></div>
+              <div class="can-spin" data-can="cbd-energy"      data-frames="31" data-ext="webp" style="--i:1"></div>
+              <div class="can-spin" data-can="lemon-lime"      data-frames="31" data-ext="webp" style="--i:2"></div>
+              <div class="can-spin" data-can="orange-kush"     data-frames="31" data-ext="webp" style="--i:3"></div>
+            </div>
+          </div>
+
+          <!-- Brand-new: Ready to Mix launch band -->
+          <div class="rtm-band reveal">
+            <video class="rtm-band__vid js-lazyvideo" loop muted playsinline preload="metadata" poster="assets/rtm-poster.webp" aria-hidden="true">
+              <source src="assets/video/rtm-hero.mp4" type="video/mp4" />
+            </video>
+            <div class="rtm-band__copy">
+              <p class="rtm-band__k">Brand-new</p>
+              <h2 class="rtm-band__t">Ready to Mix daily performance powder</h2>
+              <p class="rtm-band__s">Creatine, focus, clean caffeine &amp; recovery &mdash; one stick, four systems.</p>
+              <a class="btn btn--primary rtm-band__cta" href="collections/ready-to-mix.html">Shop RTM</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. As Seen In -->
+    <section class="press" aria-labelledby="press-title">
+      <div class="container">
+        <h2 id="press-title" class="press__title">As seen in</h2>
+      </div>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span class="press__logo">TMZ</span>
+          <span class="press__logo">Sports Illustrated</span>
+          <span class="press__logo">ESPN</span>
+          <span class="press__logo">Maxim</span>
+          <span class="press__logo">GQ</span>
+          <span class="press__logo">Forbes</span>
+          <span class="press__logo">Bleacher Report</span>
+          <span class="press__logo">Leafly</span>
+          <span class="press__logo" aria-hidden="true">TMZ</span>
+          <span class="press__logo" aria-hidden="true">Sports Illustrated</span>
+          <span class="press__logo" aria-hidden="true">ESPN</span>
+          <span class="press__logo" aria-hidden="true">Maxim</span>
+          <span class="press__logo" aria-hidden="true">GQ</span>
+          <span class="press__logo" aria-hidden="true">Forbes</span>
+          <span class="press__logo" aria-hidden="true">Bleacher Report</span>
+          <span class="press__logo" aria-hidden="true">Leafly</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. The problem — bold numbered editorial list (no boxes) -->
+    <section class="reasons section" aria-labelledby="reasons-title">
+      <div class="container">
+        <div class="reasons__head">
+          <div class="section__head reveal">
+            <h2 id="reasons-title" class="section__title">Why most energy drinks <span class="accent">suck</span></h2>
+          </div>
+          <p class="reasons__lede reveal">
+            Most cans hit you with sugar, junk, and a crash. We left that out and put back what your body and mind actually run on.
+          </p>
+        </div>
+
+        <ol class="reasons__list">
+          <li class="reason reveal">
+            <span class="reason__num">01</span>
+            <div class="reason__body">
+              <h3 class="reason__title">Loaded with sugar</h3>
+              <p>Up to 50g a can. A spike, then a slump. We run 0g — clean energy, no sugar load.</p>
+            </div>
+          </li>
+          <li class="reason reveal">
+            <span class="reason__num">02</span>
+            <div class="reason__body">
+              <h3 class="reason__title">Artificial junk &amp; dyes</h3>
+              <p>Synthetic colors and fillers you can't pronounce. We keep the label short and the ingredients real.</p>
+            </div>
+          </li>
+          <li class="reason reveal">
+            <span class="reason__num">03</span>
+            <div class="reason__body">
+              <h3 class="reason__title">The 3pm crash</h3>
+              <p>Jitters now, a wall later. Ours is mind energy, not body buzz — sustained focus, no crash.</p>
+            </div>
+          </li>
+          <li class="reason reveal">
+            <span class="reason__num">04</span>
+            <div class="reason__body">
+              <h3 class="reason__title">Zero recovery</h3>
+              <p>They stop at caffeine. We put back what sweat takes out — real electrolytes and the creatine stack.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 6. Interactive comparison -->
+    <section class="compare section" id="compare" aria-labelledby="compare-title">
+      <div class="container compare__inner">
+        <div class="compare__head reveal">
+          <h2 id="compare-title" class="section__title">Kill Cliff vs<br>the can you're drinking now</h2>
+          <p class="compare__lede">Pick a benefit and see how the can in your hand actually measures up.</p>
+        </div>
+
+        <div class="cmp reveal">
+          <p class="eyebrow cmp__eyebrow">Why most energy drinks suck</p>
+          <div class="cmp__tabs" role="tablist" aria-label="Compare by">
+            <button class="cmp__tab is-active" type="button" role="tab" aria-selected="true" data-k="sugar">Zero sugar</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="caffeine">Clean caffeine</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="electrolytes">Electrolytes</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="creatine">Creatine HCl</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="crash">No crash</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="dyes">No dyes</button>
+            <button class="cmp__tab" type="button" role="tab" aria-selected="false" data-k="mission">The Foundation</button>
+          </div>
+
+          <h3 class="cmp__attr" id="cmpAttr">Zero sugar</h3>
+
+          <div class="cmp__panel" id="cmpPanel" aria-live="polite">
+            <div class="cmp__side cmp__side--kc">
+              <span class="cmp__logo" role="img" aria-label="Kill Cliff"></span>
+              <span class="cmp__can" aria-hidden="true"><img src="assets/cans/renders/spicy-pineapple.webp" alt="" loading="lazy" decoding="async" /></span>
+              <span class="cmp__mark" id="cmpKcMark" aria-hidden="true">✓</span>
+              <p class="cmp__note" id="cmpKcNote">0g sugar — clean energy</p>
+            </div>
+            <div class="cmp__vs" aria-hidden="true">vs</div>
+            <div class="cmp__side cmp__side--other">
+              <span class="cmp__label">Other energy drinks</span>
+              <span class="cmp__can cmp__can--blank" aria-hidden="true"><img src="assets/generic-can.webp" alt="" loading="lazy" decoding="async" /></span>
+              <span class="cmp__mark" id="cmpOtherMark" aria-hidden="true">✕</span>
+              <p class="cmp__note" id="cmpOtherNote">Up to 50g of sugar</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full comparison, always present in the DOM for search engines
+             (the tabs above swap this same data client-side). -->
+        <div class="sr-only">
+          <h3>How Kill Cliff compares to other energy drinks</h3>
+          <ul>
+            <li>Zero sugar — Kill Cliff: 0g sugar, clean energy. Other energy drinks: up to 50g of sugar.</li>
+            <li>Clean caffeine from green tea — Kill Cliff: smooth, sustained energy. Other energy drinks: harsh stimulants, jitters and a racing heart.</li>
+            <li>Real electrolytes — Kill Cliff: sodium, potassium, magnesium and B-vitamins. Other energy drinks: no real electrolytes.</li>
+            <li>Premium creatine HCl — Kill Cliff: premium creatine HCl. Other energy drinks: none, or cheap monohydrate.</li>
+            <li>No crash, no jitters — Kill Cliff: clean, sustained energy. Other energy drinks: spike, then crash.</li>
+            <li>No artificial dyes — Kill Cliff: no artificial dyes. Other energy drinks: synthetic colors and fillers.</li>
+            <li>Supports the Navy SEAL Foundation — Kill Cliff: every purchase gives back. Other energy drinks: no mission.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Joe Rogan collabs -->
+    <section class="jr section" id="rogan" aria-labelledby="rogan-title">
+      <div class="container jr__inner">
+        <img class="jr__face reveal" src="assets/rogan-face.webp" alt="" aria-hidden="true" width="432" height="1100" loading="lazy" decoding="async" />
+        <div class="jr__copy reveal">
+          <p class="eyebrow">Dialed in with Joe</p>
+          <h2 id="rogan-title" class="section__title">The <span class="accent">Joe Rogan</span> collabs</h2>
+          <p class="jr__lede">Joe didn&rsquo;t just slap his face on a can and cash a check. He&rsquo;s in the lab tweaking recipes &mdash; eight rounds of obsessive fine-tuning on Spicy Pineapple alone, plus an Elk Blood built with bowhunter Cam Hanes.</p>
+          <ul class="jr__facts">
+            <li>Fan-formulated with Joe, round after round</li>
+            <li>Zero sugar &middot; clean caffeine &middot; no crash</li>
+            <li>Every can backs the Navy SEAL Foundation</li>
+          </ul>
+          <div class="jr__cta"><a class="btn btn--primary" href="collections/rogan.html">Shop the Rogan line</a></div>
+        </div>
+        <div class="jr__cans reveal">
+          <a class="jr__can" href="collections/product-spicy-pineapple.html">
+            <img src="assets/cans/renders/spicy-pineapple.webp" alt="Kill Cliff Energy — Joe Rogan's Spicy Pineapple" loading="lazy" decoding="async" />
+            <span class="jr__can-name">Spicy Pineapple</span>
+            <span class="jr__can-k">Energy &middot; with Joe Rogan</span>
+          </a>
+          <a class="jr__can" href="collections/product-elk-blood.html">
+            <img src="assets/cans/renders/elk-blood.webp" alt="Kill Cliff Energy + CBD — Elk Blood, Joe Rogan x Cam Hanes" loading="lazy" decoding="async" />
+            <span class="jr__can-name">Elk Blood</span>
+            <span class="jr__can-k">Energy + CBD &middot; Rogan x Cam Hanes</span>
+          </a>
+          <a class="jr__can" href="collections/product-spicy-pineapple-cbd.html">
+            <img src="assets/cans/renders/spicy-pineapple-cbd.webp" alt="Kill Cliff Energy + CBD — Spicy Pineapple with Joe Rogan" loading="lazy" decoding="async" />
+            <span class="jr__can-name">Spicy Pineapple CBD</span>
+            <span class="jr__can-k">Energy + CBD &middot; with Joe Rogan</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. The stack — ingredient diagram around the can -->
+    <section class="stack section" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <div class="section__head section__head--center reveal">
+          <p class="eyebrow">Why it works</p>
+          <h2 id="stack-title" class="section__title">The clean energy advantage</h2>
+          <p class="section__lede">The reformulated lineup leads with the stack — the actual stuff your muscles and mind run on.</p>
+        </div>
+
+        <div class="stack__diagram reveal">
+          <div class="stack__col stack__col--left">
+            <div class="stack__ing stack__ing--l">
+              <div class="stack__ing-text">
+                <h3 class="stack__ing-title">Creatine HCl</h3>
+                <p class="stack__ing-body">Premium-form creatine for explosive power and recovery.</p>
+              </div>
+              <span class="stack__ing-link" aria-hidden="true"></span>
+            </div>
+            <div class="stack__ing stack__ing--l">
+              <div class="stack__ing-text">
+                <h3 class="stack__ing-title">Glutamine</h3>
+                <p class="stack__ing-body">Recovery support between sessions and long days.</p>
+              </div>
+              <span class="stack__ing-link" aria-hidden="true"></span>
+            </div>
+          </div>
+
+          <div class="stack__center">
+            <video class="stack__video js-lazyvideo" loop muted playsinline preload="metadata" poster="assets/stack-poster.webp" aria-hidden="true">
+              <source src="assets/video/stack-h264.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <div class="stack__col stack__col--right">
+            <div class="stack__ing stack__ing--r">
+              <span class="stack__ing-link" aria-hidden="true"></span>
+              <div class="stack__ing-text">
+                <h3 class="stack__ing-title">Lion's Mane</h3>
+                <p class="stack__ing-body">The cognitive edge — sharp, sustained focus.</p>
+              </div>
+            </div>
+            <div class="stack__ing stack__ing--r">
+              <span class="stack__ing-link" aria-hidden="true"></span>
+              <div class="stack__ing-text">
+                <h3 class="stack__ing-title">Real electrolytes</h3>
+                <p class="stack__ing-body">Clean hydration — sodium, potassium, magnesium.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack__cta reveal"><a href="#products" class="btn btn--ghost">Explore the lineup</a></div>
+      </div>
+    </section>
+
+    <!-- 9. Ready to Mix (RTM) product -->
+    <section class="rtm section" id="rtm" aria-labelledby="rtm-title">
+      <div class="container rtm__inner">
+        <div class="rtm__visual reveal">
+          <video class="rtm__video js-lazyvideo" loop muted playsinline preload="metadata">
+            <source src="assets/video/rtm-h264.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div class="rtm__copy">
+          <p class="eyebrow reveal">Ready to Mix</p>
+          <h2 id="rtm-title" class="section__title reveal">The whole stack, in a scoop</h2>
+
+          <ul class="rtm__list">
+            <li class="rtm__item reveal" data-delay="0">
+              <span class="rtm__plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></span>
+              <div>
+                <h3 class="rtm__item-title">Creatine HCl, not monohydrate</h3>
+                <p class="rtm__item-body">~38x more soluble. Zero grit. Zero bloat.</p>
+              </div>
+            </li>
+            <li class="rtm__item reveal" data-delay="140">
+              <span class="rtm__plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></span>
+              <div>
+                <h3 class="rtm__item-title">Real mushrooms. Real results.</h3>
+                <p class="rtm__item-body">100% fruiting body Lion's Mane and whole-plant Cordyceps. No mycelium on grain. No filler.</p>
+              </div>
+            </li>
+            <li class="rtm__item reveal" data-delay="280">
+              <span class="rtm__plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></span>
+              <div>
+                <h3 class="rtm__item-title">No B.S. formula</h3>
+                <p class="rtm__item-body">10 calories. 0g sugar. No artificial flavors or synthetic colors.</p>
+              </div>
+            </li>
+            <li class="rtm__item reveal" data-delay="420">
+              <span class="rtm__plus" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round"><path d="M12 4v16M4 12h16"/></svg></span>
+              <div>
+                <h3 class="rtm__item-title">Precision over bulk</h3>
+                <p class="rtm__item-body">Micro-dosed for daily performance — not stomach-wrecking mega scoops.</p>
+              </div>
+            </li>
+          </ul>
+
+          <a href="collections/ready-to-mix.html" class="btn btn--primary reveal">Shop RTM Creatine</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Products — stack deck (Option B preview) -->
+    <section class="products section" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 id="products-title" class="section__title">Find your flavor</h2>
+        </div>
+        <div class="fdeck">
+          <article class="fdeck__panel" style="--i:0">
+            <header class="fdeck__head">
+              <div><h3 class="fdeck__title">Energy</h3><p class="fdeck__sub">108mg clean caffeine, zero sugar, no crash.</p></div>
+              <a class="btn btn--ghost btn--sm" href="collections/energy.html">Shop Energy</a>
+            </header>
+            <ul class="fdeck__cards">
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy can" loading="lazy" decoding="async" /><span class="product__badge product__badge--hot">Best seller</span></div>
+            <p class="product__line">Energy</p>
+            <h3 class="product__name">Spicy Pineapple</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-cherry-lime.jpg" alt="Kill Cliff Cherry Lime energy can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Energy</p>
+            <h3 class="product__name">Cherry Lime</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-smashing.jpg" alt="Kill Cliff Smashing Citrus energy can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Energy</p>
+            <h3 class="product__name">Smashing Citrus</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$35.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+            </ul>
+          </article>
+          <article class="fdeck__panel" style="--i:1">
+            <header class="fdeck__head">
+              <div><h3 class="fdeck__title">Energy + CBD</h3><p class="fdeck__sub">Clean energy with 25mg of nano CBD.</p></div>
+              <a class="btn btn--ghost btn--sm" href="collections/energy-cbd.html">Shop Energy + CBD</a>
+            </header>
+            <ul class="fdeck__cards">
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-cbd-spicy.jpg" alt="Kill Cliff Spicy Pineapple energy + CBD can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Energy + CBD</p>
+            <h3 class="product__name">Spicy Pineapple</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-cbd-elk.jpg" alt="Kill Cliff Elk Blood energy + CBD can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Energy + CBD</p>
+            <h3 class="product__name">Elk Blood</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/energy-cbd-killer.jpg" alt="Kill Cliff Killer Cliffsicle energy + CBD can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Energy + CBD</p>
+            <h3 class="product__name">Killer Cliffsicle</h3>
+            <p class="product__meta">12-pack · Clean energy, no sugar</p>
+            <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+            </ul>
+          </article>
+          <article class="fdeck__panel" style="--i:2">
+            <header class="fdeck__head">
+              <div><h3 class="fdeck__title">Recovery</h3><p class="fdeck__sub">Real electrolytes and B-vitamins, no sugar.</p></div>
+              <a class="btn btn--ghost btn--sm" href="collections/recovery.html">Shop Recovery</a>
+            </header>
+            <ul class="fdeck__cards">
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/recovery-berry.jpg" alt="Kill Cliff Berry Legit Lemonade recovery can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Recovery</p>
+            <h3 class="product__name">Berry Legit Lemonade</h3>
+            <p class="product__meta">12-pack · Real electrolytes</p>
+            <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/recovery-lemon-lime.jpg" alt="Kill Cliff Lemon Lime Lightning recovery can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Recovery</p>
+            <h3 class="product__name">Lemon Lime Lightning</h3>
+            <p class="product__meta">12-pack · Real electrolytes</p>
+            <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/recovery-tasty-blood.jpg" alt="Kill Cliff Tasty Blood Orange recovery can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Recovery</p>
+            <h3 class="product__name">Tasty Blood Orange</h3>
+            <p class="product__meta">12-pack · Real electrolytes</p>
+            <div class="product__row"><span class="product__price">$39.99</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+            </ul>
+          </article>
+          <article class="fdeck__panel" style="--i:3">
+            <header class="fdeck__head">
+              <div><h3 class="fdeck__title">Recovery + CBD</h3><p class="fdeck__sub">Recover harder, wind down cleaner.</p></div>
+              <a class="btn btn--ghost btn--sm" href="collections/recovery-cbd.html">Shop Recovery + CBD</a>
+            </header>
+            <ul class="fdeck__cards">
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/recovery-cbd-orange.jpg" alt="Kill Cliff Orange Kush recovery + CBD can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Recovery + CBD</p>
+            <h3 class="product__name">Orange Kush</h3>
+            <p class="product__meta">12-pack · Real electrolytes</p>
+            <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li>
+<li class="product reveal reveal--pop">
+            <div class="product__media"><img src="assets/products/recovery-cbd-the-goat.jpg" alt="Kill Cliff The G.O.A.T recovery + CBD can" loading="lazy" decoding="async" /></div>
+            <p class="product__line">Recovery + CBD</p>
+            <h3 class="product__name">The G.O.A.T</h3>
+            <p class="product__meta">12-pack · Real electrolytes</p>
+            <div class="product__row"><span class="product__price">$42.00</span><button class="btn btn--primary btn--sm">Add to cart</button></div>
+          </li><li class="fdeck__all"><a href="collections/recovery-cbd.html"><span>Shop all<br/>flavors</span><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Verified reviews — real Kill Cliff reviews via the Okendo API -->
+    <section class="gear__reviews section" aria-labelledby="oke-title">
+      <div class="container">
+        <div class="gear__rev-head reveal">
+          <p class="eyebrow">Verified reviews</p>
+          <h2 id="oke-title" class="section__title">Rated 4.9 / 5</h2>
+          <p class="gear__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="gear__rev-sub">756 verified reviews &middot; 97% would recommend &middot; powered by Okendo</p>
+        </div>
+        <div class="gear__rev-grid reveal">
+          <blockquote class="gear__rev"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Great Stuff</h3><p>I&rsquo;ve been buying Kill Cliff for years. It&rsquo;s got good ingredients and the amount of caffeine is perfect. It also supports the Navy SEAL Foundation so that&rsquo;s good too.</p><cite>Joshua P. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">The Pick Me Up I Needed</h3><p>This Kill Cliff Joe Rogan flavor has that &ldquo;I came here to make questionable decisions and still feel hydrated&rdquo; energy. It tastes like someone bottled motivation, caffeine, and a tiny bit of chaos.</p><cite>Elizabeth A. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Forever the best!</h3><p>My favorite energy drink by a landslide! No overwhelming amount of caffeine and no jitters. Nowadays, it&rsquo;s all I drink &mdash; Tasty Blood Orange is my go to.</p><cite>Richard J. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Cherry Lime Grenade BOOM!</h3><p>Love this flavor. Sweet cherry with a hint of zesty lime. Outstanding.</p><cite>Mike P. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev gear__rev--more"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Bloody Great!</h3><p>So refreshing, and I can drink them later in the evening because of the little amount of caffeine. I just stocked up with 3 cases &mdash; I&rsquo;ll be back for more soon.</p><cite>Mike P. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev gear__rev--more"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">My Recovery Drink</h3><p>I prefer Berry Legit for recovery every time I return from a workout in the summer &mdash; bike riding, running, or yard work in 90&deg; weather. Tastes great too!</p><cite>Chris L. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev gear__rev--more"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Solid for on the go</h3><p>The sticks are perfect for how much I travel for work. They taste good and satisfy what I need for my nutrition.</p><cite>Jeffrey P. <span>&middot; Verified buyer</span></cite></blockquote>
+          <blockquote class="gear__rev gear__rev--more"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Pre-Workout</h3><p>Awesome taste and effective for my pre-workout routine. Recommend this drink &mdash; and it supports a good cause!</p><cite>Scott M. <span>&middot; Verified buyer</span></cite></blockquote>
+        </div>
+        <div class="gear__rev-more reveal">
+          <button class="btn btn--ghost" id="okeMore" type="button" aria-expanded="false">View more reviews</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. Subscribe & Save — rides the B&W training collage -->
+    <section class="final-cta subsave--dark" aria-labelledby="final-title">
+      <div class="final-cta__bg" aria-hidden="true">
+        <img src="assets/images/train-1.jpg" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/train-2.jpg" alt="" loading="lazy" decoding="async" />
+      </div>
+      <div class="final-cta__overlay" aria-hidden="true"></div>
+      <div class="container">
+        <div class="subsave__panel reveal">
+          <div class="subsave__intro">
+            <p class="subsave__kicker">Best value</p>
+            <h2 id="final-title" class="subsave__title">Subscribe<br /><span class="subsave__amp">&amp; Save</span></h2>
+          </div>
+          <div class="subsave__body">
+            <h3 class="subsave__sub">Keep the energy coming with exclusive KC subscription benefits</h3>
+            <ul class="subsave__list">
+              <li>25% off 1st subscription order</li>
+              <li>Limited edition swag</li>
+              <li>15% off recurring orders</li>
+              <li>Early access to new flavor drops</li>
+              <li>Subscriber only deals</li>
+              <li>Free shipping on orders over $125 and flat rate shipping for orders under $125</li>
+            </ul>
+            <a class="btn subsave__cta" href="collections/subscribe.html">Get yours today</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Newsletter — email composer animation -->
+    <section class="newsletter section" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container">
+        <div class="mailer reveal">
+          <div class="mailer__bar" aria-hidden="true">
+            <span class="mailer__dot"></span><span class="mailer__dot"></span><span class="mailer__dot"></span>
+            <span class="mailer__title">New message</span>
+          </div>
+          <form class="mailer__body" novalidate>
+            <div class="mailer__row">
+              <label class="mailer__label" for="email">From</label>
+              <input class="mailer__input" id="email" name="email" type="email" placeholder="your@email.com" required />
+            </div>
+            <div class="mailer__row">
+              <span class="mailer__label">Subject</span>
+              <h2 class="mailer__typed" id="newsletter-title">Emails that don't suck</h2>
+            </div>
+            <div class="mailer__message">
+              <span id="mailerBody">News, real giveaways, and first dibs on new drops. No spam.</span><span class="mailer__caret" aria-hidden="true">|</span>
+            </div>
+            <div class="mailer__actions">
+              <button class="btn btn--primary" type="submit">Sign me up</button>
+              <span class="mailer__hint">No spam. Unsubscribe anytime.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 16. Footer -->
+  <footer class="footer" aria-label="Footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="logo logo--footer" role="img" aria-label="Kill Cliff"></span>
+        <p class="footer__tagline">Created by a Navy SEAL. Built for the people who train, lift, deploy, hunt, and serve.</p>
+      </div>
+
+      <nav class="footer__col" aria-label="Shop">
+        <h3 class="footer__heading">Shop</h3>
+        <a href="collections/rogan.html">Rogan Collabs</a>
+        <a href="#products">Drinks</a>
+        <a href="collections/apparel-gear.html">Gear</a>
+        <a href="#newsletter">Subscriptions</a>
+        <a href="#">Kill Club</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="About">
+        <h3 class="footer__heading">About</h3>
+        <a href="#">Our Mission</a>
+        <a href="#">Navy SEAL Foundation</a>
+        <a href="#">Hero Discounts</a>
+        <a href="#">The Tasty Times</a>
+        <a href="#">Reviews</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Policies">
+        <h3 class="footer__heading">Policies</h3>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Terms of Service</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Contact">
+        <h3 class="footer__heading">Contact</h3>
+        <a href="#">Email us</a>
+        <a href="#">Text us</a>
+        <a href="#">Help Center</a>
+        <a href="#">Wholesale</a>
+      </nav>
+    </div>
+
+    <div class="container footer__bottom">
+      <div class="footer__social" aria-label="Social media">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="YouTube">YouTube</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+      <p class="footer__legal">
+        These statements have not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
+      </p>
+      <p class="footer__copy">© 2026 Kill Cliff. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js?v=98"></script>
+</body>
+</html>
