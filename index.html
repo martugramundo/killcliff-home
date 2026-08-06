@@ -31,7 +31,7 @@
   <!-- Fonts: Outfit (display) + Rajdhani (body) — self-hosted woff2, @font-face in css/styles.css -->
   <link rel="preload" href="assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="css/styles.css?v=97" />
+  <link rel="stylesheet" href="css/styles.css?v=98" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -491,8 +491,12 @@
     <!-- 10. Products grid -->
     <section class="products section" id="products" aria-labelledby="products-title">
       <div class="container">
-        <div class="section__head reveal">
+        <div class="section__head section__head--row reveal">
           <h2 id="products-title" class="section__title">Find your flavor</h2>
+          <div class="products__nav">
+            <button class="products__arrow" id="prodPrev" type="button" aria-label="Scroll products left"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+            <button class="products__arrow" id="prodNext" type="button" aria-label="Scroll products right"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+          </div>
         </div>
 
         <ul class="product-grid">
@@ -718,6 +722,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=97"></script>
+  <script src="js/main.js?v=98"></script>
 </body>
 </html>

@@ -415,6 +415,21 @@
     }
   })();
 
+  /* Products: horizontal carousel arrows */
+  (function () {
+    var grid = document.querySelector(".product-grid");
+    var prev = document.getElementById("prodPrev");
+    var next = document.getElementById("prodNext");
+    if (!grid || !prev || !next) return;
+    function step() {
+      var card = grid.querySelector(".product");
+      return card ? (card.getBoundingClientRect().width + 22) * 2 : 600;
+    }
+    var behavior = prefersReduced ? "auto" : "smooth";
+    prev.addEventListener("click", function () { grid.scrollBy({ left: -step(), behavior: behavior }); });
+    next.addEventListener("click", function () { grid.scrollBy({ left: step(), behavior: behavior }); });
+  })();
+
   /* Reviews: "View more" reveal (reviews page + homepage Okendo widget) */
   ["rvMore", "okeMore"].forEach(function (id) {
     var btn = document.getElementById(id);
