@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kill Cliff — Recovery hero</title>
+<style>
+  /* Self-contained Kill Cliff animated hero — designed for dark backgrounds */
+  @font-face {
+    font-family: "Outfit"; font-weight: 100 900; font-display: swap;
+    src: url(https://martugramundo.github.io/killcliff-home/assets/fonts/Outfit-VariableFont_wght.woff2) format("woff2");
+  }
+  @font-face {
+    font-family: "Rajdhani"; font-weight: 400; font-display: swap;
+    src: url(https://martugramundo.github.io/killcliff-home/assets/fonts/Rajdhani-Regular.woff2) format("woff2");
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: transparent; }
+  .kc-annot {
+    --yellow: #FFE819; --off-white: #F5F5F5;
+    --surface-2: #141414; --hairline: rgba(245, 245, 245, 0.16);
+    --text-dim: rgba(245, 245, 245, 0.75);
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative; width: 100%; max-width: 760px; margin-inline: auto;
+    aspect-ratio: 1 / 1; display: grid; place-items: center;
+  }
+  .kc-annot img {
+    width: 100%; height: 100%; object-fit: contain; display: block;
+    filter: drop-shadow(0 26px 48px rgba(0, 0, 0, 0.55));
+  }
+  .kc-callout {
+    position: absolute; z-index: 2; display: grid; gap: 2px;
+    background: var(--surface-2); border: 1px solid var(--hairline);
+    border-radius: 12px; padding: 9px 13px;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    animation: kcFade 520ms var(--ease-out-expo) both, kcFloat 3.8s ease-in-out infinite;
+  }
+  .kc-callout b {
+    font-family: "Rajdhani", system-ui, sans-serif; font-size: 13.5px; font-weight: 500;
+    color: var(--off-white); white-space: nowrap; line-height: 1.2; display: block;
+  }
+  .kc-callout b::before { content: "● "; color: var(--yellow); font-size: 9px; vertical-align: 2px; }
+  .kc-callout i {
+    font-style: normal; font-family: "Rajdhani", system-ui, sans-serif; font-size: 10px;
+    font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim);
+  }
+  .kc-tl { top: 16%; left: 20%; animation-delay: 240ms, -0.2s; }
+  .kc-tr { top: 34%; right: -3%; animation-delay: 360ms, -1.6s; }
+  .kc-bl { bottom: 19%; left: -3%; animation-delay: 480ms, -3.0s; }
+  .kc-br { bottom: 20%; right: 8%; animation-delay: 600ms, -4.2s; }
+  @keyframes kcFade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes kcFloat { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-14px) scale(1.04); } }
+  @media (max-width: 640px) {
+    .kc-callout { padding: 7px 10px; }
+    .kc-callout b { font-size: 11.5px; }
+    .kc-tr { right: 0; } .kc-bl { left: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kc-callout { animation: none; opacity: 1; }
+  }
+</style>
+</head>
+<body>
+  <div class="kc-annot">
+    <img src="https://martugramundo.github.io/killcliff-home/assets/products/hero-recovery.png" alt="Kill Cliff Recovery cans — Berry Legit Lemonade, Lemon Lime Lightning, Tasty Blood Orange" decoding="async" />
+    <span class="kc-callout kc-tl"><b>Real electrolytes</b><i>Hydration</i></span>
+    <span class="kc-callout kc-tr"><b>B-vitamins &amp; aminos</b><i>Rebuild</i></span>
+    <span class="kc-callout kc-bl"><b>Zero sugar</b><i>Clean</i></span>
+    <span class="kc-callout kc-br"><b>No crash</b><i>Smooth</i></span>
+  </div>
+</body>
+</html>
