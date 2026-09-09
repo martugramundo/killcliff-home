@@ -1,5 +1,5 @@
 /* Generates placeholder spin-frame SVGs for the hero can lineup.
-   These are PREVIEW STAND-INS — replace assets/cans/<id>/NN.png with real renders.
+   These are PREVIEW STAND-INS - replace assets/cans/<id>/NN.png with real renders.
    Each can gets N frames; a sweeping highlight + label squash fakes a 360 spin. */
 const fs = require("fs");
 const path = require("path");

@@ -4,15 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>Bundle Builder — Mix &amp; Save up to 20% | Kill Cliff</title>
-  <meta name="description" content="Build your own Kill Cliff bundle. Mix Energy, Recovery, and RTM powder — buy more, save more: 10% off 2, 15% off 3, 20% off 5. Subscribe & save with free shipping." />
+  <title>Bundle Builder: Mix &amp; Save up to 20% | Kill Cliff</title>
+  <meta name="description" content="Build your own Kill Cliff bundle. Mix Energy, Recovery and RTM powder. Buy more, save more: 10% off 2, 15% off 3, 20% off 5. Ships free over $125." />
   <link rel="canonical" href="https://killcliff.com/pages/bundle-builder" />
   <meta name="theme-color" content="#000000" />
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kill Cliff" />
-  <meta property="og:title" content="Kill Cliff Bundle Builder — Mix &amp; Save up to 20%" />
-  <meta property="og:description" content="Mix your favorites, stack the discount. Buy more, save more — up to 20% off." />
+  <meta property="og:title" content="Kill Cliff Bundle Builder: Mix &amp; Save up to 20%" />
+  <meta property="og:description" content="Mix your favorites, stack the discount. Buy more, save more: up to 20% off." />
   <meta property="og:url" content="https://killcliff.com/pages/bundle-builder" />
   <meta property="og:image" content="https://martugramundo.github.io/killcliff-home/assets/logos/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -143,7 +143,7 @@
           </nav>
           <p class="eyebrow">Build your own</p>
           <h1 id="bundle-title" class="section__title">Bundle builder</h1>
-          <p class="coll-hero__intro">Mix your favorites and stack the discount. Buy more, save more — up to <strong>20% off</strong>. Add up to 6 packs.</p>
+          <p class="coll-hero__intro">Mix your favorites and stack the discount. Buy more, save more: up to <strong>20% off</strong>. Add up to 6 packs.</p>
         </div>
 
         <div class="bundle__inner">
@@ -213,7 +213,7 @@
             <div class="bundle__group reveal">
               <p class="bundle__step">Step 3 · RTM Powders</p>
               <h2>Add the ready-to-mix powder</h2>
-              <p>Daily performance powder — Creatine HCL, Lion's Mane &amp; Cordyceps, caffeine, L-Glutamine.</p>
+              <p>Daily performance powder: Creatine HCL, Lion's Mane &amp; Cordyceps, caffeine, L-Glutamine.</p>
               <div class="bundle__grid">
                 <div class="bundle__card">
                   <div class="bundle__card-media"><img src="../assets/products/rtm-box-front.jpg" alt="Kill Cliff RTM Orange daily performance powder" loading="lazy" decoding="async" /></div>
@@ -245,7 +245,7 @@
 
             <div class="bundle__totals">
               <div class="row"><span>Subtotal</span><span id="bSub">$0.00</span></div>
-              <div class="row row--save"><span>Bundle discount (<span id="bPct">0%</span>)</span><span id="bSave">–$0.00</span></div>
+              <div class="row row--save"><span>Bundle discount (<span id="bPct">0%</span>)</span><span id="bSave">$0.00</span></div>
               <div class="row row--total"><span>Total</span><span id="bTotal">$0.00</span></div>
             </div>
 
@@ -374,7 +374,7 @@
       var d = discount(c), save = sub * d, total = sub - save;
       $('bSub').textContent = money(sub);
       $('bPct').textContent = Math.round(d * 100) + '%';
-      $('bSave').textContent = '–' + money(save);
+      $('bSave').textContent = '-' + money(save);
       $('bTotal').textContent = money(total);
       var cta = $('bCta');
       cta.disabled = c === 0;
