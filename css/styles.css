@@ -1,5 +1,5 @@
 /* =========================================================
-   Kill Cliff — Homepage styles
+   Kill Cliff - Homepage styles
    Brand tokens from killcliffbranding skill (single source).
    Yellow is used surgically: hero accent word, primary CTAs,
    the comparison "winner" column, and one stat. Everywhere
@@ -15,12 +15,12 @@
 
 :root {
   /* Primary palette */
-  --dark: #000000;          /* default background — pure black */
+  --dark: #000000;          /* default background - pure black */
   --surface-1: #0c0c0c;     /* near-black panel */
   --surface-2: #141414;     /* elevated popover / callout */
-  --dark-2: #202020;        /* Secondary Dark — cards, elevated surfaces */
+  --dark-2: #202020;        /* Secondary Dark - cards, elevated surfaces */
   --black: #000000;
-  --yellow: #FFE819;        /* Accent — used sparingly */
+  --yellow: #FFE819;        /* Accent - used sparingly */
   --off-white: #F5F5F5;     /* Body text on dark */
   --grey: #D9D9D9;
   --white: #FFFFFF;
@@ -47,7 +47,7 @@
   --s-2: 8px;  --s-3: 12px; --s-4: 16px; --s-5: 24px;
   --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px;
 
-  /* Vertical rhythm — varied, not uniform (tightened) */
+  /* Vertical rhythm - varied, not uniform (tightened) */
   --sect-tight:   clamp(22px, 2.6vw, 34px);  /* thin bands */
   --sect-std:     clamp(44px, 5vw, 72px);    /* standard sections */
   --sect-feature: clamp(56px, 6.5vw, 88px);  /* key moments */
@@ -98,7 +98,7 @@ blockquote { margin: 0; }
 }
 .skip-link:focus { left: 8px; top: 8px; }
 
-/* Keyboard focus — visible yellow ring on the dark surface (mouse clicks stay clean) */
+/* Keyboard focus - visible yellow ring on the dark surface (mouse clicks stay clean) */
 :focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; border-radius: 3px; }
 a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-visible { outline-offset: 4px; }
 
@@ -274,7 +274,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .hero__copy { grid-column: 2; text-align: left; }
 .hero .eyebrow { text-align: left; margin-bottom: 14px; }
-/* Navy SEAL provenance — a real trust badge, not a whisper-eyebrow */
+/* Navy SEAL provenance - a real trust badge, not a whisper-eyebrow */
 .hero__seal {
   display: inline-flex; align-items: center; gap: 9px;
   margin: 0 0 20px;
@@ -291,7 +291,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .hero__sub { margin: 20px 0 28px; max-width: 52ch; font-size: clamp(15px, 1.6vw, 17px); font-weight: 400; color: var(--text-dim); line-height: 1.55; }
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start; }
 
-/* Brand-new RTM launch band — spans the full hero-stage width */
+/* Brand-new RTM launch band - spans the full hero-stage width */
 .rtm-band {
   /* fixed copy-column width so the container hugs the content (equal L/R inset, no empty right gap) */
   display: grid; grid-template-columns: auto clamp(280px, 40vw, 480px); align-items: center;
@@ -306,7 +306,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* crop the square video's transparent side-margins so the box fills its frame and sits close to the copy */
 .rtm-band__vid { width: clamp(140px, 16vw, 200px); aspect-ratio: 4 / 5; object-fit: cover; display: block; border-radius: 12px; }
 .rtm-band__copy { min-width: 0; }
-/* "Brand-new" — same pill badge as the hero's "Created by a Navy SEAL" */
+/* "Brand-new" - same pill badge as the hero's "Created by a Navy SEAL" */
 .rtm-band__k {
   display: inline-flex; align-items: center;
   margin: 0 0 15px; padding: 8px 16px;
@@ -336,7 +336,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   animation: float 5s ease-in-out infinite;
   animation-delay: calc(var(--i, 0) * 0.28s);
 }
-/* lead can sits slightly taller — hero of the lineup */
+/* lead can sits slightly taller - hero of the lineup */
 .can-spin--lead { width: clamp(84px, 12vw, 150px); }
 
 .can-spin__frame {
@@ -431,7 +431,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   color: var(--yellow);
 }
 .reason__title { font-size: clamp(19px, 2.1vw, 26px); font-weight: 700; text-transform: uppercase; margin-bottom: 9px; letter-spacing: -0.015em; }
-/* This section is the argument for the whole product — let it lead louder */
+/* This section is the argument for the whole product - let it lead louder */
 .reasons .section__title { font-size: clamp(34px, 5.4vw, 62px); }
 .reasons__lede { font-weight: 500; color: var(--off-white); }
 .reason__body p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0; }
@@ -535,7 +535,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .band__inner { display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
 .band__title { font-size: clamp(24px, 3.8vw, 44px); text-transform: uppercase; letter-spacing: -0.015em; max-width: 22ch; line-height: 1.04; }
 
-/* ---------- Stack — ingredient diagram around the can ---------- */
+/* ---------- Stack - ingredient diagram around the can ---------- */
 .stack__diagram {
   display: grid; grid-template-columns: 1fr auto 1fr;
   gap: 0; align-items: center;
@@ -543,7 +543,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .stack__center { position: relative; z-index: 1; display: grid; place-items: center; overflow: hidden; border-radius: 14px; }
 .stack__center .can-slot--stack { width: clamp(220px, 22vw, 320px); aspect-ratio: 4 / 5; }
 /* box hugs the can band (source y 283–1487) via object-position, cropping only the black
-   top/bottom margins of the frame — never the can — so there's no dead space around it */
+   top/bottom margins of the frame - never the can - so there's no dead space around it */
 .stack__video { width: clamp(210px, 22vw, 300px); aspect-ratio: 1080 / 1240; object-fit: cover; object-position: 50% 46%; height: auto; display: block; }
 /* columns paint above the center video so the left connectors aren't hidden behind it */
 .stack__col { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
@@ -685,7 +685,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .final-cta__title { font-size: clamp(28px, 4.5vw, 54px); text-transform: uppercase; line-height: 1.0; color: var(--off-white); }
 .final-cta__sub { margin: 0; font-size: clamp(13px, 1.4vw, 16px); font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(245,245,245,0.8); max-width: 40ch; }
 
-/* ---------- Newsletter — email composer ---------- */
+/* ---------- Newsletter - email composer ---------- */
 .mailer {
   max-width: 720px; margin-inline: auto;
   background: var(--surface-1); border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden;
@@ -730,16 +730,16 @@ html.js .reveal { opacity: 0; transform: translateY(22px); }
 html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* ---------- Per-section entrances (each fits its content; built on .reveal gating) ---------- */
-/* products — cards cascade in with a subtle pop (stagger comes from the observer) */
+/* products - cards cascade in with a subtle pop (stagger comes from the observer) */
 html.js .reveal--pop { transform: translateY(26px) scale(0.965); }
 html.js .reveal--pop.is-visible { transform: none; }
 
-/* reasons — each big number stamps in as its row reveals */
+/* reasons - each big number stamps in as its row reveals */
 html.js .reason .reason__num { opacity: 0; transform: scale(0.62); transform-origin: left center; }
 html.js .reason.is-visible .reason__num { animation: kcNumStamp 740ms var(--ease-out-expo) 120ms both; }
 @keyframes kcNumStamp { to { opacity: 1; transform: none; } }
 
-/* stack — connectors draw from the copy toward the can when the diagram reveals */
+/* stack - connectors draw from the copy toward the can when the diagram reveals */
 html.js .stack__ing--l .stack__ing-link { transform-origin: left center; }
 html.js .stack__ing--r .stack__ing-link { transform-origin: right center; }
 html.js .stack__diagram.reveal .stack__ing-link { transform: scaleX(0); }
@@ -747,7 +747,7 @@ html.js .stack__diagram.reveal.is-visible .stack__ing--l .stack__ing-link { anim
 html.js .stack__diagram.reveal.is-visible .stack__ing--r .stack__ing-link { animation: kcDraw 720ms var(--ease-out-expo) 460ms forwards; }
 @keyframes kcDraw { to { transform: scaleX(1); } }
 
-/* compare — benefit pills stagger in when the panel reveals */
+/* compare - benefit pills stagger in when the panel reveals */
 html.js .cmp.reveal .cmp__tab { opacity: 0; }
 html.js .cmp.reveal.is-visible .cmp__tab { animation: kcPill 640ms var(--ease-out-expo) both; }
 html.js .cmp.reveal.is-visible .cmp__tab:nth-child(1) { animation-delay: 60ms; }
@@ -757,7 +757,7 @@ html.js .cmp.reveal.is-visible .cmp__tab:nth-child(4) { animation-delay: 330ms; 
 html.js .cmp.reveal.is-visible .cmp__tab:nth-child(5) { animation-delay: 420ms; }
 @keyframes kcPill { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
 
-/* final CTA — the headline wipes in behind a clip mask */
+/* final CTA - the headline wipes in behind a clip mask */
 html.js .final-cta__inner .final-cta__title { clip-path: inset(0 100% 0 0); }
 html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000ms var(--ease-out-expo) 180ms forwards; }
 @keyframes kcWipe { to { clip-path: inset(0 0 0 0); } }
@@ -878,7 +878,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .crumbs span[aria-hidden] { color: rgba(245,245,245,0.3); }
 .crumbs .crumbs__here { color: var(--off-white); }
 
-/* collection hero — copy + lead product shot */
+/* collection hero - copy + lead product shot */
 .coll-hero.section { padding-block: var(--sect-std) var(--sect-tight); }
 .coll-hero__inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.9fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .coll-hero__title { font-size: clamp(52px, 10vw, 132px); text-transform: uppercase; line-height: 0.86; letter-spacing: -0.03em; text-wrap: balance; margin: 0; }
@@ -891,7 +891,7 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .coll-hero__media img,
 .coll-hero__media video { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--r-lg); display: block; background: #000; }
 
-/* Annotated hero — transparent PNG product + benefit popups */
+/* Annotated hero - transparent PNG product + benefit popups */
 .coll-hero__media--annot { background: none; }
 .rtm-annot { position: relative; width: 100%; aspect-ratio: 1 / 1; display: grid; place-items: center; }
 .coll-hero__media--annot .rtm-annot__img { width: 100%; height: 100%; object-fit: contain; border-radius: 0; background: none; filter: drop-shadow(0 26px 48px rgba(0,0,0,0.55)); }
@@ -921,7 +921,7 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
   .rtm-callout--tl { left: 0; } .rtm-callout--tr { right: 0; }
   .rtm-callout--bl { left: 0; } .rtm-callout--br { right: 0; }
 }
-/* drink collections — yellow-dot callouts flanking the fanned cans (2 left / 2 right) */
+/* drink collections - yellow-dot callouts flanking the fanned cans (2 left / 2 right) */
 .rtm-callout--drink .rtm-callout__main { display: flex; align-items: center; gap: 8px; }
 .rtm-callout--drink .rtm-callout__main::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--yellow); }
 .rtm-callout--drink.rtm-callout--tl { top: 15%; left: 7%; bottom: auto; }
@@ -934,7 +934,7 @@ html.js .coll-hero__media--annot.is-visible .rtm-callout--br { animation-delay: 
 }
 .coll-hero__count { position: absolute; left: 16px; bottom: 16px; font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: var(--dark); background: var(--yellow); padding: 6px 12px; border-radius: 100px; }
 
-/* why-this-line band — 3 columns, hairline-separated (no boxes) */
+/* why-this-line band - 3 columns, hairline-separated (no boxes) */
 .coll-why.section { padding-block: var(--sect-std); border-top: 1px solid var(--hairline); }
 .coll-why__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(24px, 4vw, 56px); margin: var(--head-gap) 0 0; padding: 0; list-style: none; }
 .coll-why__item { position: relative; padding-top: 22px; border-top: 1px solid var(--hairline); }
@@ -959,7 +959,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .coll-why__item h3 { font-size: clamp(17px, 2vw, 22px); text-transform: uppercase; letter-spacing: -0.01em; margin: 0 0 8px; }
 .coll-why__item p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0; }
 
-/* cross-sell — link tiles to other collections */
+/* cross-sell - link tiles to other collections */
 .coll-cross.section { padding-block: var(--sect-std); border-top: 1px solid var(--hairline); }
 .coll-cross__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: var(--head-gap) 0 0; padding: 0; list-style: none; align-items: stretch; }
 .coll-cross__grid > li { display: flex; }
@@ -1186,7 +1186,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 }
 @media (hover: none) { .pdp__hint { display: none; } }
 
-/* ===== PDP v2 — gallery, big rotating stat, lab graphic, octane loop, banner ===== */
+/* ===== PDP v2 - gallery, big rotating stat, lab graphic, octane loop, banner ===== */
 /* gallery: 1:1 stage + thumb slider */
 .pdp__stage { position: relative; aspect-ratio: 1 / 1; }
 .pdp__slide { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity 320ms var(--ease-out-quint); }
@@ -1208,7 +1208,7 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .pdp__bigstat .is-anim { animation: bigStatIn 520ms var(--ease-out-expo); }
 @keyframes bigStatIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 
-/* what's inside — lab graphic */
+/* what's inside - lab graphic */
 .pdp__lab { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 68px); align-items: center; margin-top: var(--head-gap); }
 .pdp__lab-stage { position: relative; aspect-ratio: 1 / 1; border: 1px solid var(--hairline); border-radius: var(--r-lg); background: radial-gradient(60% 60% at 50% 45%, rgba(214,40,40,0.10), transparent 72%), var(--dark-2); overflow: hidden; }
 .pdp__lab-stage::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px); background-size: 32px 32px; }
@@ -1236,7 +1236,7 @@ html.js .pdp__lab.is-visible .pdp__lab-item:nth-child(5){animation-delay:.9s}
 html.js .pdp__lab.is-visible .pdp__lab-item:nth-child(6){animation-delay:1.05s}
 @keyframes labItem { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
 
-/* four systems marks — sequential fill on the PDP too */
+/* four systems marks - sequential fill on the PDP too */
 html.js .pdp__bens .pdp__ben:nth-child(1) .coll-why__mark { animation-name: seq4a; }
 html.js .pdp__bens .pdp__ben:nth-child(2) .coll-why__mark { animation-name: seq4b; }
 html.js .pdp__bens .pdp__ben:nth-child(3) .coll-why__mark { animation-name: seq4c; }
@@ -1244,7 +1244,7 @@ html.js .pdp__bens .pdp__ben:nth-child(4) .coll-why__mark { animation-name: seq4
 html.js .pdp__bens .coll-why__mark { animation-duration: 7.6s; animation-timing-function: var(--ease-out-quint); animation-iteration-count: infinite; }
 .pdp__ben .coll-why__mark { position: absolute; top: -1px; left: 0; width: 40px; height: 3px; background: var(--yellow); transform-origin: left center; }
 
-/* intensity — 2 col + vertical loop */
+/* intensity - 2 col + vertical loop */
 .pdp__octane { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
 .pdp__octane-loop { position: relative; height: 400px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent); }
 .pdp__octane-track { display: flex; flex-direction: column; animation: octaneScroll 24s linear infinite; }
@@ -1252,7 +1252,7 @@ html.js .pdp__bens .coll-why__mark { animation-duration: 7.6s; animation-timing-
 .pdp__octane-loop:hover .pdp__octane-track { animation-play-state: paused; }
 @keyframes octaneScroll { from { transform: translateY(0); } to { transform: translateY(-50%); } }
 
-/* born in the lab — banner */
+/* born in the lab - banner */
 .pdp__banner { background: rgba(255,255,255,0.05); border-block: 1px solid var(--hairline); }
 .pdp__banner-inner { text-align: center; max-width: 62ch; margin-inline: auto; padding-block: clamp(44px, 7vw, 92px); }
 .pdp__banner-inner h2 { font-size: clamp(26px, 4vw, 46px); text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.0; text-wrap: balance; }
@@ -1328,13 +1328,13 @@ html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-
 /* banner wider */
 .pdp__banner-inner { max-width: 1000px; }
 
-/* ===== Nothing to hide — line-art can (loop draw) + callouts ===== */
+/* ===== Nothing to hide - line-art can (loop draw) + callouts ===== */
 .labx { margin-top: var(--head-gap); }
 .labx__stage { position: relative; max-width: 1120px; margin-inline: auto; min-height: 560px; display: grid; place-items: center; }
 .labx__canwrap { position: relative; }
 .labx__can { display: block; height: clamp(340px, 40vw, 460px); width: auto; filter: drop-shadow(0 26px 46px rgba(0,0,0,0.6)); position: relative; z-index: 1; }
 
-/* nodes — horizontal connectors */
+/* nodes - horizontal connectors */
 .labx__node { position: absolute; display: flex; align-items: center; gap: 0; width: 43%; }
 .labx__node--l { left: 0; flex-direction: row; text-align: right; }
 .labx__node--r { right: 0; flex-direction: row; text-align: left; }
@@ -1354,7 +1354,7 @@ html.js .pdp__curve.is-visible .anno { animation: curveFade 0.6s var(--ease-out-
 .labx__node--l .labx__line { transform-origin: right center; margin-left: 15px; }
 .labx__node--r .labx__line { transform-origin: left center; margin-right: 15px; }
 
-/* small white tip — sits flush against the end of the line */
+/* small white tip - sits flush against the end of the line */
 .labx__tip { flex: none; width: 9px; height: 9px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 4px rgba(255,255,255,0.10); }
 .labx__node--l .labx__tip { margin-left: -1px; }
 .labx__node--r .labx__tip { margin-right: -1px; }
@@ -1563,7 +1563,7 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 .sub-hero--center .sub-hero__toptag { }
 .sub-hero--center .sub-hero__mark { left: 50%; right: auto; transform: translateX(-50%); bottom: -6%; }
 
-/* Troops backdrop (Navy SEAL Foundation hero) — subtle, emerging from the bottom */
+/* Troops backdrop (Navy SEAL Foundation hero) - subtle, emerging from the bottom */
 .sub-hero--troops .sub-hero__mark { display: none; }
 .sub-hero__troops {
   position: absolute; left: 0; right: 0; bottom: 0;
@@ -1576,7 +1576,7 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 }
 
 /* =========================================================
-   Subscribe & Save — yellow conversion band
+   Subscribe & Save - yellow conversion band
    ========================================================= */
 .subsave { padding-block: 0; }
 .subsave__panel {
@@ -1629,7 +1629,7 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
   .subsave__list { grid-template-columns: 1fr; }
 }
 
-/* dark variant — Subscribe & Save riding the final-cta collage */
+/* dark variant - Subscribe & Save riding the final-cta collage */
 .subsave--dark { text-align: left; }
 .subsave--dark .subsave__panel { position: relative; background: transparent; border-radius: 0; padding: clamp(40px, 6vw, 76px) 0; }
 .subsave--dark .subsave__title { color: var(--off-white); }
@@ -1646,7 +1646,7 @@ html.js .subsave__panel.reveal.is-visible .subsave__cta { animation: subUp 520ms
    Joe Rogan collabs (homepage band)
    ========================================================= */
 .jr__inner { display: grid; grid-template-columns: auto minmax(0, 0.92fr) minmax(0, 1.2fr); gap: clamp(20px, 3vw, 48px); align-items: center; }
-/* Rogan portrait — third column, bleeding to the page's left margin */
+/* Rogan portrait - third column, bleeding to the page's left margin */
 .jr__face { align-self: center; justify-self: start; height: clamp(380px, 38vw, 540px); width: auto; max-width: none; object-fit: contain; margin-left: -48px; pointer-events: none; }
 @media (min-width: 1024px) { .jr__face { margin-left: calc(-1 * var(--gutter-d)); } }
 .jr__lede { margin: 18px 0 0; font-size: clamp(15px, 1.7vw, 17px); font-weight: 400; color: var(--text-dim); line-height: 1.55; max-width: 52ch; }

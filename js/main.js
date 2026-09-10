@@ -1,5 +1,5 @@
 /* =========================================================
-   Kill Cliff — Homepage interactions (vanilla, no deps)
+   Kill Cliff - Homepage interactions (vanilla, no deps)
    ========================================================= */
 (function () {
   "use strict";
@@ -115,10 +115,10 @@
   /* ---- Comparison (interactive toggle) ---- */
   (function () {
     var CMP = {
-      sugar: { label: "Zero sugar", kc: "0g sugar — clean energy", other: "Up to 50g of sugar" },
-      caffeine: { label: "Clean caffeine from green tea", kc: "Smooth, sustained energy", other: "Harsh stimulants — jitters & a racing heart" },
+      sugar: { label: "Zero sugar", kc: "0g sugar. Clean energy", other: "Up to 50g of sugar" },
+      caffeine: { label: "Clean caffeine from green tea", kc: "Smooth, sustained energy", other: "Harsh stimulants. Jitters and a racing heart" },
       electrolytes: { label: "Real electrolytes", kc: "Sodium, potassium, magnesium & B-vitamins", other: "No real electrolytes" },
-      creatine: { label: "Premium creatine HCl", kc: "Premium creatine HCl", other: "None, or cheap monohydrate" },
+      sweeteners: { label: "No artificial sweeteners", kc: "Sweetened with stevia and erythritol", other: "Sucralose, aspartame, or Ace-K" },
       crash: { label: "No crash, no jitters", kc: "Clean, sustained energy", other: "Spike, then crash" },
       dyes: { label: "No artificial dyes", kc: "No artificial dyes", other: "Synthetic colors & fillers" },
       mission: { label: "Supports the Navy SEAL Foundation", kc: "Every purchase gives back", other: "No mission" }
@@ -148,12 +148,12 @@
     set("sugar");
   })();
 
-  /* ---- The stack — interactive tabs ---- */
+  /* ---- The stack - interactive tabs ---- */
   var STACK = {
-    hcl: { title: "Creatine HCl", body: "The premium form of creatine your muscles run on — for explosive power and faster recovery. Not the cheap monohydrate filler." },
-    lions: { title: "Lion's Mane", body: "The cognitive edge. Mind energy, not body buzz — sustained, sharp focus without the crash." },
-    glutamine: { title: "Glutamine", body: "Recovery support so you bounce back faster between sessions, deployments, and long days in the field." },
-    electrolytes: { title: "Real electrolytes", body: "Clean hydration that puts back what sweat takes out — sodium, potassium, and magnesium that actually work." }
+    hcl: { title: "Creatine HCl", body: "In RTM. The premium form of creatine your muscles run on, for explosive power and faster recovery. Not the cheap monohydrate filler." },
+    lions: { title: "Lion's Mane", body: "In RTM. Mind energy, not body buzz. Sustained, sharp focus without the crash." },
+    glutamine: { title: "Glutamine", body: "In RTM and Recovery. Bounce back faster between sessions, deployments, and long days in the field." },
+    electrolytes: { title: "Real electrolytes", body: "In every can. Clean hydration that puts back what sweat takes out: sodium, potassium, and magnesium that actually work." }
   };
   var stackTabs = document.querySelectorAll(".stack__tab");
   var stackPanel = document.getElementById("stackPanel");
@@ -335,7 +335,7 @@
         var img = document.createElement("img");
         img.className = "can-spin__frame";
         img.decoding = "async";
-        // frame 0 is the resting/front view (drawn first) — let it compete for the
+        // frame 0 is the resting/front view (drawn first) - let it compete for the
         // hero paint; defer the rest so they don't fight the LCP text + first frame.
         img.setAttribute("fetchpriority", f === 1 ? "high" : "low");
         img.src = "assets/cans/" + id + "/" + (f < 10 ? "0" + f : f) + "." + ext;
@@ -354,7 +354,7 @@
 
     if (!engines.length) return;
 
-    // Static when reduced motion is requested — everyone stays on the front.
+    // Static when reduced motion is requested - everyone stays on the front.
     if (prefersReduced) return;
 
     // Sequencer: one can spins a full revolution, then the next, in a loop.

@@ -1,10 +1,10 @@
-# Kill Cliff — Homepage
+# Kill Cliff - Homepage
 
 Dark-mode-first, responsive, SEO-ready homepage for Kill Cliff. Built on the
-[killcliffbranding](../../.claude/skills/killcliffbranding/) brand system — Primary Dark `#161616`,
+[killcliffbranding](../../.claude/skills/killcliffbranding/) brand system - Primary Dark `#161616`,
 Yellow `#FFE819` accent, Oswald typography.
 
-No build step. Plain HTML / CSS / JS — drop straight into a GitHub repo and serve as static files.
+No build step. Plain HTML / CSS / JS - drop straight into a GitHub repo and serve as static files.
 
 ## Run / preview
 
@@ -48,10 +48,10 @@ Markup (in the hero):
 <div class="can-spin" data-can="spicy-pineapple" data-frames="31" data-ext="webp" style="--i:0"></div>
 ```
 
-- `data-can` — folder name under `assets/cans/`
-- `data-frames` — number of frames in the sequence
-- `data-ext` — frame extension (`webp` real turntable / `svg` placeholder)
-- `--i` — phase offset (0,1,2,…)
+- `data-can` - folder name under `assets/cans/`
+- `data-frames` - number of frames in the sequence
+- `data-ext` - frame extension (`webp` real turntable / `svg` placeholder)
+- `--i` - phase offset (0,1,2,…)
 - `.can-spin--lead` on the center can makes it slightly taller
 
 A full revolution always takes `ROTATION_MS` (in `initCanSpin`) regardless of frame count,
@@ -61,9 +61,9 @@ crossfade duration is derived per-can from the frame gap.
 ### Current state
 
 The lineup is **4 cans**, all real turntables, equal height (no lead emphasis):
-spicy-pineapple, cbd-energy (Elk Blood), lemon-lime, orange-kush — 31 × `.webp` each.
+spicy-pineapple, cbd-energy (Elk Blood), lemon-lime, orange-kush - 31 × `.webp` each.
 (`assets/cans/berry-lemonade/` still holds 8 placeholder `.svg` but is no longer in the
-lineup — add it back as a 5th `.can-spin` if its turntable video arrives.)
+lineup - add it back as a 5th `.can-spin` if its turntable video arrives.)
 
 ### Building frames from a rotation video (preferred)
 
@@ -89,17 +89,16 @@ To finish **berry-lemonade**, drop its rotation video and run the same command i
 - **Placeholder** → `tools/gen-can-frames.js [flavor-id]` generates slim stand-in SVGs sized
   to match the real frames (267×760). Omit the id to regenerate all.
 
-Pull source art from the brand Drive: **can renders** —
-https://drive.google.com/drive/folders/1L0MCn4ey8h3TkXv1vLPx4N_LvC6NAIPM
+Pull source art from the brand Drive: **can renders** - https://drive.google.com/drive/folders/1L0MCn4ey8h3TkXv1vLPx4N_LvC6NAIPM
 
 Other can placeholders (product grid, stack, mission, etc.) still use `.can-slot` with a
-`data-can="..."` label — swap the inner `<span class="can-slot__label">` for an `<img>`.
+`data-can="..."` label - swap the inner `<span class="can-slot__label">` for an `<img>`.
 
 ## Other assets to pull from Drive
 
 | Asset | Drive folder |
 |---|---|
-| Logo (already wired: `assets/logos/kill-cliff-logo.svg`, recolored via CSS mask — yellow header / off-white footer / faint watermark in final CTA) | https://drive.google.com/drive/folders/1xlWc8tNX6DxOXmJNuiBHbaB-hj3fW_Yk |
+| Logo (already wired: `assets/logos/kill-cliff-logo.svg`, recolored via CSS mask - yellow header / off-white footer / faint watermark in final CTA) | https://drive.google.com/drive/folders/1xlWc8tNX6DxOXmJNuiBHbaB-hj3fW_Yk |
 | Press / "As seen in" logos | brand graphic assets |
 | Can renders | https://drive.google.com/drive/folders/1L0MCn4ey8h3TkXv1vLPx4N_LvC6NAIPM |
 
@@ -125,14 +124,14 @@ To shift the balance further, edit `--yellow` usage in `css/styles.css` (search 
 ## Video (RTM section)
 
 The "Ready to Mix" section uses `assets/video/rtm-h264.mp4` (autoplay/loop/muted/playsinline).
-The original export was **ProRes .mov** (1080×1920) which browsers can't decode — it was transcoded to
+The original export was **ProRes .mov** (1080×1920) which browsers can't decode - it was transcoded to
 H.264 with: `ffmpeg -i rtm.mov -vcodec libx264 -profile:v high -pix_fmt yuv420p -crf 22 -movflags +faststart -an rtm-h264.mp4`.
 To swap the clip later, transcode the same way (browsers need **H.264 MP4 or WebM**, not ProRes/HEVC).
 
 ## Notes
 
 - **Typography:** Oswald via Google Fonts (`display=swap`). Hyperwave THREE (brand display face) is not
-  freely available — used nowhere yet; if added later, pull from Drive and keep it to one moment per page.
+  freely available - used nowhere yet; if added later, pull from Drive and keep it to one moment per page.
 - **Copy** is adapted from the live site, run through the brand voice rules (clean energy, the stack,
   Navy SEAL Foundation). Placeholder for final review.
 - **Accessibility:** semantic landmarks, single `<h1>`, skip link, `prefers-reduced-motion` honored,
