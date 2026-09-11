@@ -12,6 +12,7 @@
 @font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
 @font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
 @font-face { font-family: "Rajdhani"; src: url("../assets/fonts/Rajdhani-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Hyperwave"; src: url("../assets/fonts/Hyperwave.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
 
 :root {
   /* Primary palette */
@@ -34,7 +35,8 @@
 
   /* Type */
   --font-display: "Outfit", system-ui, sans-serif;   /* titles, subtitles, stats */
-  --font-body: "Rajdhani", system-ui, sans-serif;     /* paragraphs, buttons, eyebrows */
+  --font-body: "Rajdhani", system-ui, sans-serif;     /* paragraphs, buttons */
+  --font-brush: "Hyperwave", "Rajdhani", system-ui, sans-serif; /* accent script: eyebrows, ticker, micro-labels only - never headings or body */
 
   /* Layout */
   --maxw: 1440px;
@@ -118,7 +120,9 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .eyebrow {
   display: block;
   margin: 0 0 18px;
-  font-size: 13px; font-weight: 500; letter-spacing: 0.16em;
+  /* brush script runs small-bodied: bigger size, near-zero tracking (tracking breaks the strokes) */
+  font-family: var(--font-brush);
+  font-size: 17px; font-weight: 400; letter-spacing: 0.03em;
   text-transform: uppercase; color: var(--text-dim);
 }
 .section__head { max-width: 760px; margin-bottom: var(--head-gap); }
@@ -282,8 +286,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   border: 1px solid rgba(255, 232, 25, 0.42);
   border-radius: 999px;
   background: rgba(255, 232, 25, 0.07);
-  font-family: var(--font-body);
-  font-size: 13px; font-weight: 600; letter-spacing: 0.1em; line-height: 1;
+  font-family: var(--font-brush);
+  font-size: 15px; font-weight: 400; letter-spacing: 0.03em; line-height: 1;
   text-transform: uppercase; color: var(--off-white);
 }
 .hero__seal svg { color: var(--yellow); flex: none; }
@@ -312,8 +316,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   margin: 0 0 15px; padding: 8px 16px;
   border: 1px solid rgba(255, 232, 25, 0.42); border-radius: 999px;
   background: rgba(255, 232, 25, 0.07);
-  font-family: var(--font-body); font-size: 13px; font-weight: 600;
-  letter-spacing: 0.1em; line-height: 1; text-transform: uppercase; color: var(--off-white);
+  font-family: var(--font-brush); font-size: 15px; font-weight: 400;
+  letter-spacing: 0.03em; line-height: 1; text-transform: uppercase; color: var(--off-white);
 }
 .rtm-band__t { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: -0.015em; font-size: clamp(27px, 3.3vw, 40px); line-height: 1.02; margin: 0 0 12px; text-wrap: balance; }
 .rtm-band__s { font-size: clamp(15px, 1.6vw, 17px); font-weight: 400; color: var(--text-dim); line-height: 1.55; margin: 0; max-width: 44ch; }
@@ -380,7 +384,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .ticker__track { display: flex; align-items: center; gap: 28px; width: max-content; padding: 13px 0; animation: marquee 48s linear infinite; }
 .ticker__track span:not(.ticker__dot) {
-  font-size: 15px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; color: var(--off-white); white-space: nowrap;
+  font-family: var(--font-brush);
+  font-size: 17px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em; color: var(--off-white); white-space: nowrap;
 }
 .ticker__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); flex: none; }
 
@@ -545,6 +550,14 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* box hugs the can band (source y 283–1487) via object-position, cropping only the black
    top/bottom margins of the frame - never the can - so there's no dead space around it */
 .stack__video { width: clamp(210px, 22vw, 300px); aspect-ratio: 1080 / 1240; object-fit: cover; object-position: 50% 46%; height: auto; display: block; }
+/* static can render in the diagram center (collection pages without a video yet) */
+.stack__img { width: clamp(150px, 15vw, 210px); height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.55)); }
+.stack__img--stick { width: clamp(130px, 13vw, 180px); transform: rotate(-6deg); }
+/* the video is cover-cropped with built-in side margins; a static render fills its
+   box edge-to-edge, so the columns' negative pull-in would overlap it */
+.stack__diagram:has(.stack__img) .stack__col--left { margin-right: 0; }
+.stack__diagram:has(.stack__img) .stack__col--right { margin-left: 0; }
+.stack__diagram:has(.stack__img) .stack__center { padding-inline: clamp(10px, 1.5vw, 24px); overflow: visible; }
 /* columns paint above the center video so the left connectors aren't hidden behind it */
 .stack__col { position: relative; z-index: 2; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 52px); }
 /* Zoom fills the can in-frame + pull the ingredient columns inward so each item hugs it */
@@ -616,10 +629,11 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .product__badge {
   position: absolute; top: 10px; left: 10px;
   background: rgba(0,0,0,0.85); color: var(--off-white); border: 1px solid var(--hairline);
-  font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 5px 10px; border-radius: 4px;
+  font-family: var(--font-brush);
+  font-size: 13px; font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; padding: 5px 10px; border-radius: 4px;
 }
-.product__badge--hot { background: var(--yellow); color: var(--dark); border-color: var(--yellow); font-weight: 700; }
-.product__line { font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-dim); margin: 0 0 4px; }
+.product__badge--hot { background: var(--yellow); color: var(--dark); border-color: var(--yellow); }
+.product__line { font-family: var(--font-brush); font-size: 14.5px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.03em; color: var(--text-dim); margin: 0 0 4px; }
 .product__name { font-size: 16px; font-weight: 700; text-transform: uppercase; line-height: 1.05; margin: 0 0 6px; }
 .product__name a { color: inherit; text-decoration: none; transition: color var(--t-micro) var(--ease-out-quint); }
 .product__name a:hover { color: var(--yellow); }
@@ -1109,6 +1123,17 @@ html.js .coll-why__list--4 .coll-why__item:nth-child(4) .coll-why__mark { animat
 .gear__rev p { font-size: 14px; font-weight: 400; color: var(--text-dim); line-height: 1.5; margin: 0 0 12px; }
 .gear__rev cite { font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase; color: var(--off-white); font-style: normal; }
 .gear__rev cite span { color: var(--text-dim); font-weight: 500; }
+/* reviews with customer photos / video: media bleeds to the card edges, text below */
+.gear__rev--media { padding: 0; overflow: hidden; }
+.gear__rev-shot { position: relative; }
+.gear__rev-shot img, .gear__rev-shot video { width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; display: block; background: var(--black); }
+.gear__rev-tag {
+  position: absolute; top: 10px; left: 10px;
+  font-family: var(--font-brush); font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase;
+  color: var(--off-white); background: rgba(0, 0, 0, 0.82); border: 1px solid var(--hairline);
+  padding: 5px 10px; border-radius: 4px; pointer-events: none;
+}
+.gear__rev--media .gear__rev-body { padding: 18px 22px 22px; }
 
 /* =========================================================
    Product page / PDP  (collections/product-*.html)
@@ -1589,7 +1614,7 @@ html.js .reveal.is-visible .sub-perk:nth-child(6), html.js .reveal.is-visible .k
 .subsave__kicker {
   display: inline-block; margin: 0 0 16px; padding: 7px 13px; border-radius: 100px;
   background: #000; color: var(--yellow);
-  font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  font-family: var(--font-brush); font-size: 14px; font-weight: 400; letter-spacing: 0.03em; text-transform: uppercase;
 }
 .subsave__title {
   margin: 0; font-family: var(--font-display); font-weight: 800; text-transform: uppercase;
