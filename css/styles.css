@@ -553,6 +553,10 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* static can render in the diagram center (collection pages without a video yet) */
 .stack__img { width: clamp(150px, 15vw, 210px); height: auto; display: block; filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.55)); }
 .stack__img--stick { width: clamp(130px, 13vw, 180px); transform: rotate(-6deg); }
+/* the RTM stick video is pre-cropped to the stick (320x1180): natural aspect, no cover-crop */
+.stack__video--stick { width: clamp(120px, 12vw, 170px); aspect-ratio: 320 / 1180; object-fit: contain; object-position: center; }
+.stack__diagram:has(.stack__video--stick) .stack__col--left { margin-right: 0; }
+.stack__diagram:has(.stack__video--stick) .stack__col--right { margin-left: 0; }
 /* the video is cover-cropped with built-in side margins; a static render fills its
    box edge-to-edge, so the columns' negative pull-in would overlap it */
 .stack__diagram:has(.stack__img) .stack__col--left { margin-right: 0; }
