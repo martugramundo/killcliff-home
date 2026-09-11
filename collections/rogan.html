@@ -20,7 +20,7 @@
 
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="../css/styles.css?v=104" />
+  <link rel="stylesheet" href="../css/styles.css?v=105" />
 
   <script type="application/ld+json">
   {
@@ -31,6 +31,7 @@
     "url": "https://killcliff.com/collections/joe-rogan"
   }
   </script>
+  <script type="module" async src="https://widget.gotolstoy.com/we/widget.js" data-shop="killcliff.myshopify.com" data-app-key="7e13edee-4308-4380-bc08-fa255cb2be9b" data-should-use-cache="true"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -150,7 +151,8 @@
 
   <main id="main">
 
-    <section class="coll-hero section" aria-labelledby="coll-title">
+    <section class="coll-hero coll-hero--joe section" aria-labelledby="coll-title">
+      <img class="coll-hero__bgface" src="../assets/rogan-hero-bg.webp" alt="" aria-hidden="true" width="900" height="900" decoding="async" fetchpriority="low" />
       <div class="container coll-hero__inner">
         <div class="coll-hero__copy reveal">
           <nav class="crumbs" aria-label="Breadcrumb">
@@ -207,6 +209,21 @@
       </div>
     </section>
 
+    <!-- Joe x KC film -->
+    <section class="jr-film" aria-label="Joe Rogan and Kill Cliff, on film">
+      <div class="container">
+        <div class="jr-film__frame reveal">
+          <video id="jrFilm" class="jr-film__vid js-lazyvideo" loop muted playsinline preload="metadata" poster="../assets/spicy-joe-poster.webp">
+            <source src="../assets/video/spicy-joe-h264.mp4" type="video/mp4" />
+          </video>
+          <button class="jr-film__sound js-sound-toggle" data-video="jrFilm" type="button" aria-pressed="false">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/></svg>
+            <span>Unmute</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
     <section class="stack section" aria-labelledby="why-title">
       <div class="container">
         <div class="section__head section__head--center reveal">
@@ -234,8 +251,8 @@
           </div>
 
           <div class="stack__center">
-            <video class="stack__video js-lazyvideo" loop muted playsinline preload="metadata" poster="../assets/stack-poster.webp" aria-hidden="true">
-              <source src="../assets/video/stack-h264.mp4" type="video/mp4" />
+            <video class="stack__video js-lazyvideo" loop muted playsinline preload="metadata" poster="../assets/latas-joe-poster.webp" aria-hidden="true">
+              <source src="../assets/video/latas-joe-h264.mp4" type="video/mp4" />
             </video>
           </div>
 
@@ -259,6 +276,23 @@
       </div>
     </section>
 
+    <section class="gear__reviews section" aria-labelledby="crev-title">
+      <div class="container">
+        <div class="gear__rev-head reveal">
+          <p class="eyebrow">Verified reviews</p>
+          <h2 id="crev-title" class="section__title">The collabs, reviewed</h2>
+          <p class="gear__stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+          <p class="gear__rev-sub">Verified buyer reviews &middot; powered by Okendo</p>
+        </div>
+        <div class="gear__rev-grid reveal">
+          <blockquote class="gear__rev gear__rev--media"><span class="gear__rev-shot"><img src="../assets/reviews/rev-michael.webp" alt="Customer photo from Michael G.&rsquo;s review" loading="lazy" decoding="async" width="720" height="720" /><span class="gear__rev-tag">Customer photo</span></span><div class="gear__rev-body"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Amazing!</h3><p>The Spicy Pineapple is such a great flavor!</p><cite>Michael G. <span>&middot; Verified buyer</span></cite></div></blockquote>
+          <blockquote class="gear__rev gear__rev--media"><span class="gear__rev-shot"><img src="../assets/reviews/rev-elizabeth.webp" alt="Customer photo from Elizabeth A.&rsquo;s review" loading="lazy" decoding="async" width="720" height="720" /><span class="gear__rev-tag">Customer photo</span></span><div class="gear__rev-body"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">The Pick Me Up I Needed</h3><p>This Kill Cliff Joe Rogan flavor has that "I came here to make questionable decisions and still feel hydrated" energy. It tastes like someone bottled motivation, caffeine, and a tiny bit of chaos.</p><cite>Elizabeth A. <span>&middot; Verified buyer</span></cite></div></blockquote>
+          <blockquote class="gear__rev gear__rev--media"><span class="gear__rev-shot"><img src="../assets/reviews/cr-zach-sp.webp" alt="Customer photo from Zach P.&rsquo;s review" loading="lazy" decoding="async" width="720" height="720" /><span class="gear__rev-tag">Customer photo</span></span><div class="gear__rev-body"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">Fill Me Full of Flaming Joe</h3><p>You can really taste the flames in the pineapple. Delicious! I order two packs every month.</p><cite>Zach P. <span>&middot; Verified buyer</span></cite></div></blockquote>
+          <blockquote class="gear__rev gear__rev--media"><span class="gear__rev-shot"><img src="../assets/reviews/cr-raymond-sp.webp" alt="Customer photo from Raymond A.&rsquo;s review" loading="lazy" decoding="async" width="720" height="720" /><span class="gear__rev-tag">Customer photo</span></span><div class="gear__rev-body"><p class="gear__rev-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</p><h3 class="gear__rev-title">best of the best</h3><p>One of the best energy drinks you could have, flavor wise. The sweet with the heat doesn&rsquo;t taste medical or like a candy-coated kids drink. Real deal.</p><cite>Raymond A. <span>&middot; Verified buyer</span></cite></div></blockquote>
+        </div>
+      </div>
+    </section>
+
     <section class="coll-cross section" aria-labelledby="cross-title">
       <div class="container">
         <div class="section__head reveal">
@@ -272,6 +306,18 @@
           <li><a class="coll-cross__card" href="recovery-cbd.html"><span class="coll-cross__name">Recovery + CBD<span class="coll-cross__sub">Recover + unwind</span></span><span class="coll-cross__arrow" aria-hidden="true">&rarr;</span></a></li>
           <li><a class="coll-cross__card" href="ready-to-mix.html"><span class="coll-cross__name">Ready to Mix<span class="coll-cross__sub">Daily performance powder</span></span><span class="coll-cross__arrow" aria-hidden="true">&rarr;</span></a></li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Tolstoy: Joe Rogan video slider -->
+    <section class="jr-tolstoy section" aria-labelledby="jrt-title" style="border-top:1px solid var(--hairline)">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">Watch &amp; shop</p>
+          <h2 id="jrt-title" class="section__title">Joe, on tape</h2>
+          <p class="section__lede">Straight from the feed: real Rogan x Kill Cliff clips. Tap any tile to watch.</p>
+        </div>
+        <tolstoy-carousel class="tolstoy-carousel" data-publish-id="d1hbxewllnqeb" data-tags="" data-product-id=""></tolstoy-carousel>
       </div>
     </section>
 
@@ -355,6 +401,6 @@
     </div>
   </footer>
 
-  <script src="../js/main.js?v=104"></script>
+  <script src="../js/main.js?v=105"></script>
 </body>
 </html>

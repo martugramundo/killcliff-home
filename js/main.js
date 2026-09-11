@@ -415,6 +415,19 @@
     }
   })();
 
+
+  /* Film sections: sound toggle for muted autoplay videos */
+  document.querySelectorAll(".js-sound-toggle").forEach(function (btn) {
+    var vid = document.getElementById(btn.getAttribute("data-video"));
+    if (!vid) return;
+    btn.addEventListener("click", function () {
+      vid.muted = !vid.muted;
+      if (!vid.muted && vid.paused) vid.play();
+      btn.setAttribute("aria-pressed", String(!vid.muted));
+      btn.querySelector("span").textContent = vid.muted ? "Unmute" : "Mute";
+    });
+  });
+
   /* Products: horizontal carousel arrows */
   (function () {
     var grid = document.querySelector(".product-grid");
