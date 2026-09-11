@@ -1720,11 +1720,11 @@ html.js .jr__face.reveal.is-visible { animation: jrFaceIn 2200ms var(--ease-out-
 .coll-hero--joe { position: relative; overflow: hidden; }
 .coll-hero--joe .coll-hero__inner { position: relative; z-index: 1; }
 .coll-hero__bgface {
-  position: absolute; left: clamp(-70px, -4vw, -20px); bottom: 0; z-index: 0;
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; z-index: 0;
   height: min(94%, 620px); width: auto; max-width: none;
-  opacity: 0.24; pointer-events: none; user-select: none;
+  opacity: 0.35; pointer-events: none; user-select: none;
 }
-@media (max-width: 860px) { .coll-hero__bgface { height: 60%; opacity: 0.16; } }
+@media (max-width: 860px) { .coll-hero__bgface { height: 60%; opacity: 0.2; } }
 
 .jr-film { padding-block: 0 var(--sect-std); }
 .jr-film__frame { position: relative; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--hairline); background: #000; }
