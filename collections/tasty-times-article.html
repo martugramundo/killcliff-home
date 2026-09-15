@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>The Tasty Times | Kill Cliff</title>
-  <meta name="description" content="News, stories, and straight talk from Kill Cliff on clean energy, recovery, ingredients, and community." />
-  <link rel="canonical" href="https://martugramundo.github.io/killcliff-home/collections/tasty-times.html" />
+  <title>Do Monster Energy Drinks Actually Work? | Kill Cliff</title>
+  <meta name="description" content="Monster sponsors hundreds of action sports athletes, but does the drink itself help performance. We break down the caffeine and ingredient label." />
+  <link rel="canonical" href="https://killcliff.com/blogs/the-tasty-times/do-monster-energy-drinks-actually-work" />
   <meta name="theme-color" content="#000000" />
 
-  <meta property="og:type" content="product" />
+  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Kill Cliff" />
-  <meta property="og:title" content="The Tasty Times | Kill Cliff" />
-  <meta property="og:description" content="News, stories, and straight talk from Kill Cliff on clean energy, recovery, ingredients, and community." />
-  <meta property="og:url" content="https://martugramundo.github.io/killcliff-home/collections/tasty-times.html" />
+  <meta property="og:title" content="Do Monster Energy Drinks Actually Work? | Kill Cliff" />
+  <meta property="og:description" content="Monster sponsors the athletes, but does the drink pull its weight. Here is what is actually in the can." />
+  <meta property="og:url" content="https://killcliff.com/blogs/the-tasty-times/do-monster-energy-drinks-actually-work" />
   <meta property="og:image" content="https://martugramundo.github.io/killcliff-home/assets/logos/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -21,6 +21,48 @@
   <link rel="preload" href="../assets/fonts/Outfit-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../assets/fonts/Rajdhani-Regular.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="../css/styles.css?v=108" />
+
+  <style>
+    /* Article template. Scoped so it can port straight into templates/article.liquid. */
+    .art-hero{padding:clamp(28px,4vw,56px) 0 0}
+    .art-hero__inner{max-width:760px;margin:0 auto;text-align:center}
+    .art-hero__k{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;
+      font-family:var(--font-body);text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:var(--yellow);margin:0 0 14px}
+    .art-hero__k span{color:var(--text-faint)}
+    .art-hero__title{font-family:var(--font-display);font-weight:800;line-height:1.04;letter-spacing:-.02em;
+      font-size:clamp(30px,4.6vw,54px);margin:0 0 18px;color:var(--off-white)}
+    .art-hero__meta{font-family:var(--font-body);font-size:15px;color:var(--text-faint);margin:0}
+    .art-hero__meta b{color:var(--off-white);font-weight:600}
+    .art-figure{margin:clamp(26px,3.4vw,44px) 0 0;border:1px solid var(--hairline);border-radius:14px;overflow:hidden;background:var(--surface-1)}
+    .art-figure img{display:block;width:100%;height:auto}
+    .art-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(30px,4vw,56px);
+      padding:clamp(34px,4.4vw,64px) 0 0}
+    @media(min-width:1000px){.art-wrap{grid-template-columns:minmax(0,1fr) 300px}}
+    .prose{max-width:720px;font-family:var(--font-body);font-size:18px;line-height:1.72;color:var(--text-dim)}
+    .prose>*+*{margin-top:1.1em}
+    .prose h2{font-family:var(--font-display);font-weight:800;font-size:clamp(23px,2.5vw,30px);
+      line-height:1.2;color:var(--off-white);margin-top:1.9em;letter-spacing:-.01em}
+    .prose h3{font-family:var(--font-display);font-weight:700;font-size:20px;color:var(--off-white);margin-top:1.6em}
+    .prose a{color:var(--yellow);text-underline-offset:3px}
+    .prose ul,.prose ol{padding-left:1.15em}
+    .prose li+li{margin-top:.45em}
+    .prose blockquote{border-left:3px solid var(--yellow);padding:2px 0 2px 18px;color:var(--off-white);font-size:20px}
+    .prose img{width:100%;height:auto;border-radius:12px;border:1px solid var(--hairline)}
+    .art-aside{align-self:start;position:sticky;top:calc(var(--header-h) + 18px);display:grid;gap:18px}
+    .art-card{border:1px solid var(--hairline);border-radius:14px;background:var(--surface-1);padding:20px}
+    .art-card h4{font-family:var(--font-display);font-weight:800;font-size:15px;text-transform:uppercase;
+      letter-spacing:.1em;color:var(--yellow);margin:0 0 12px}
+    .art-card p{font-family:var(--font-body);font-size:15px;line-height:1.6;color:var(--text-dim);margin:0 0 14px}
+    .art-toc{list-style:none;margin:0;padding:0;font-family:var(--font-body);font-size:15px}
+    .art-toc li+li{margin-top:9px}
+    .art-toc a{color:var(--text-dim)}
+    .art-toc a:hover{color:var(--yellow)}
+    .art-tags{display:flex;flex-wrap:wrap;gap:8px;padding:clamp(26px,3vw,40px) 0 0;
+      border-top:1px solid var(--hairline);margin-top:clamp(30px,3.6vw,48px)}
+    .art-tag{font-family:var(--font-body);font-size:13px;text-transform:uppercase;letter-spacing:.08em;
+      border:1px solid var(--hairline);border-radius:999px;padding:6px 13px;color:var(--text-faint)}
+    .art-share{display:flex;gap:10px;align-items:center;font-family:var(--font-body);font-size:14px;color:var(--text-faint)}
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -135,48 +177,73 @@
   <div class="drawer-overlay" id="drawerOverlay" hidden></div>
 
   <main id="main">
-    <section class="sub-hero sub-hero--center" aria-labelledby="h-title">
+    <article class="art-hero" aria-labelledby="art-title">
       <div class="container">
-        <div class="sub-hero__inner reveal">
-          <p class="eyebrow">News &amp; stories</p>
-          <h1 id="h-title" class="sub-hero__title">The <span class="sub-hero__accent">Tasty</span><br>Times</h1>
-          <p class="sub-hero__intro">Straight talk on clean energy, recovery, ingredients, and the community. No fluff, no BS. Just the good stuff.</p>
-          <div class="sub-hero__cta">
-            <a href="../index.html#products" class="btn btn--ghost">Shop the lineup</a>
-          </div>
+        <div class="art-hero__inner reveal">
+          <p class="art-hero__k">Ingredients <span>&middot; 7 min read</span></p>
+          <h1 id="art-title" class="art-hero__title">Do Monster Energy Drinks Actually Work?</h1>
+          <p class="art-hero__meta">By <b>Connor Deneau</b> &middot; <time datetime="2019-11-19">November 19, 2019</time></p>
+        </div>
+        <figure class="art-figure reveal">
+          <img src="../assets/images/train-1.jpg" alt="Kill Cliff can beside training gear" width="1200" height="630" />
+        </figure>
+      </div>
+    </article>
+
+    <div class="container art-wrap">
+      <div class="prose reveal">
+        <p>By now you have likely heard of Monster energy drinks. Along with Red Bull, they are one of the most prominent energy drink brands in the world, and they sponsor hundreds of athletes across action sports.</p>
+        <p>With that much success signing professional athletes, you would think drinking Monster helps athletic performance. We went looking for the answer.</p>
+
+        <h2 id="s-ingredients">What is actually in a Monster</h2>
+        <p>Monster does not make its ingredient list easy to find. Here is what a 16 ounce can contains, and what each item is doing.</p>
+        <ul>
+          <li>Caffeine, at 160mg per 16 ounce can</li>
+          <li>Sugar, and a lot of it</li>
+          <li>Artificial sweeteners in the zero sugar versions</li>
+        </ul>
+
+        <h2 id="s-caffeine">The caffeine question</h2>
+        <p>Not all caffeine is the same. Some is naturally derived from plants and some is produced synthetically. Synthetic caffeine is the cheaper option and the one most large energy drinks reach for.</p>
+        <blockquote>Clean caffeine gives you the lift without the crash on the other side.</blockquote>
+
+        <h2 id="s-verdict">So does it work?</h2>
+        <p>It will wake you up. Whether that is the kind of energy you want is a different question, and it is the reason we built Kill Cliff the way we did.</p>
+
+        <div class="art-tags">
+          <span class="art-tag">Ingredients</span>
+          <span class="art-tag">Caffeine</span>
+          <span class="art-tag">Energy drinks</span>
         </div>
       </div>
-      <span class="sub-hero__mark" aria-hidden="true">NEWS</span>
-    </section>
-    <section class="section" aria-labelledby="tt-list" style="border-top:1px solid var(--hairline)">
+
+      <aside class="art-aside reveal">
+        <div class="art-card">
+          <h4>In this article</h4>
+          <ul class="art-toc">
+            <li><a href="#s-ingredients">What is actually in a Monster</a></li>
+            <li><a href="#s-caffeine">The caffeine question</a></li>
+            <li><a href="#s-verdict">So does it work?</a></li>
+          </ul>
+        </div>
+        <div class="art-card">
+          <h4>Clean energy, no crash</h4>
+          <p>Zero sugar, real electrolytes, no artificial sweeteners. Created by a Navy SEAL.</p>
+          <a class="btn btn--primary" href="https://killcliff.com/collections/ignite">Shop Energy</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="section" aria-labelledby="art-more" style="border-top:1px solid var(--hairline)">
       <div class="container">
         <div class="section__head reveal">
-          <p class="eyebrow">Latest</p>
-          <h2 id="tt-list" class="section__title">Fresh off the press</h2>
+          <p class="eyebrow">Keep reading</p>
+          <h2 id="art-more" class="section__title">More from The Tasty Times</h2>
         </div>
         <div class="kc-articles reveal">
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Ignite <span>&middot; Jun 11, 2026</span></p><h3><a href="tasty-times-article.html">The guide to sugar-free energy drinks</a></h3><p>Do energy drinks really need artificial sweeteners, and what does &ldquo;naturally sweetened&rdquo; actually mean?</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Nutrition <span>&middot; Jun 09, 2026</span></p><h3>Creatine HCL vs. monohydrate: the honest comparison</h3><p>Absorption, dosing, and bloating: why we put creatine HCl in the can.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Mixology <span>&middot; Jan 26, 2023</span></p><h3>The Bungalow Twist: an original CBD drink</h3><p>Beat the winter blues and revisit summer with a CBD cocktail built on the original.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Fight Club <span>&middot; Jan 26, 2023</span></p><h3>Kill Cliff FC&rsquo;s Dilano Taylor fights for $1 million</h3><p>The road to the final and a seven-figure payday for &ldquo;the Swedish Denzel.&rdquo;</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Reveal <span>&middot; Nov 04, 2022</span></p><h3>What CBD Orange Kush actually tastes like</h3><p>Tangy, sweet, and impossible to name. Tanweet? Sweetang? We tried it so you know.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Reveal <span>&middot; Nov 01, 2022</span></p><h3>What does the Killer Cliffsicle taste like?</h3><p>We cracked the nostalgia-flavored can so you don&rsquo;t have to guess.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Mixology <span>&middot; Oct 14, 2022</span></p><h3>Orange you glad you got Orange Kush?</h3><p>A quick three-ingredient pour built on CBD Orange Kush.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Fight Club <span>&middot; Nov 11, 2022</span></p><h3>The biggest night in Kill Cliff MMA history</h3><p>Multiple KCFC fighters, multiple leagues, one huge Saturday.</p></div></article>
-          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Nutrition <span>&middot; Oct 14, 2022</span></p><h3>Someone brought us a can of Bang. Here&rsquo;s what happened.</h3><p>A blind taste test that did not go the way anyone planned.</p></div></article>
-        </div>
-      </div>
-    </section>
-    <section class="newsletter section" id="newsletter" aria-labelledby="nl-title">
-      <div class="container">
-        <div class="mailer reveal">
-          <div class="mailer__bar" aria-hidden="true"><span class="mailer__dot"></span><span class="mailer__dot"></span><span class="mailer__dot"></span><span class="mailer__title">New message</span></div>
-          <form class="mailer__body" novalidate>
-            <div class="mailer__row"><label class="mailer__label" for="email">From</label><input class="mailer__input" id="email" name="email" type="email" placeholder="your@email.com" required /></div>
-            <div class="mailer__row"><span class="mailer__label">Subject</span><h2 class="mailer__typed" id="nl-title">Emails that don't suck</h2></div>
-            <div class="mailer__message"><span>News, real giveaways, and first dibs on new drops. No spam.</span><span class="mailer__caret" aria-hidden="true">|</span></div>
-            <div class="mailer__actions"><button class="btn btn--primary" type="submit">Sign me up</button><span class="mailer__hint">No spam. Unsubscribe anytime.</span></div>
-          </form>
+          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Ingredients</p><h3>Are Reign energy drinks healthy?</h3><p>What the label says, and what it leaves out.</p></div></article>
+          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Ingredients</p><h3>The side effects of sucralose</h3><p>The sweetener in most zero sugar drinks, examined.</p></div></article>
+          <article class="kc-article"><div class="kc-article__body"><p class="kc-article__k">Nutrition</p><h3>Green tea caffeine vs. synthetic caffeine</h3><p>Where your caffeine comes from changes how it feels.</p></div></article>
         </div>
       </div>
     </section>
