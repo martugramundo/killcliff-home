@@ -1,0 +1,95 @@
+{%- comment -%}
+  Product. Render on templates/product.liquid.
+
+  Fixes the three warnings Google's URL Inspection reports today on every PDP:
+    Product snippet  - missing "review" / "aggregateRating"
+    Merchant listing - missing "shippingDetails", "hasMerchantReturnPolicy", "validFrom"
+
+  Ratings bind to the NATIVE metafields Okendo writes (reviews.rating,
+  reviews.rating_count). Do NOT bind to yotpo.* or stamped.* - those apps are
+  retired and their metafields still hold stale, conflicting numbers
+  (Elk Blood: Okendo 4.7/89, Yotpo 4.9/295, Stamped 4.8/170).
+{%- endcomment -%}
+{%- liquid
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value | plus: 0
+  assign p_desc = product.metafields.global.description_tag | default: product.description
+  assign is_consumable = false
+  assign t = product.type | downcase
+  if t == 'drinks' or t == 'rtm'
+    assign is_consumable = true
+  endif
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": {{ product.url | prepend: shop.url | append: '#product' | json }},
+  "url": {{ product.url | prepend: shop.url | json }},
+  "name": {{ product.title | json }},
+  "description": {{ p_desc | strip_html | strip_newlines | truncate: 500 | json }},
+  "brand": { "@type": "Brand", "name": "Kill Cliff" },
+  {%- if product.featured_media.preview_image %}
+  "image": [
+    {%- for media in product.media limit: 5 -%}
+      {%- if media.preview_image -%}
+        {%- unless forloop.first %},{% endunless %}
+        {{ media.preview_image | image_url: width: 1200 | prepend: "https:" | json }}
+      {%- endif -%}
+    {%- endfor -%}
+  ],
+  {%- endif %}
+  {%- if rating and rating_count > 0 %}
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ rating.rating | json }},
+    "bestRating": {{ rating.scale_max | json }},
+    "worstRating": {{ rating.scale_min | json }},
+    "reviewCount": {{ rating_count }}
+  },
+  {%- endif %}
+  "offers": [
+    {%- for variant in product.variants -%}
+      {%- unless forloop.first %},{% endunless %}
+      {
+        "@type": "Offer",
+        "@id": {{ variant.url | prepend: shop.url | append: '#offer' | json }},
+        "url": {{ variant.url | prepend: shop.url | json }},
+        {%- if variant.sku != blank %}"sku": {{ variant.sku | json }},{% endif %}
+        "name": {{ variant.title | json }},
+        "price": {{ variant.price | divided_by: 100.0 | round: 2 | json }},
+        "priceCurrency": {{ cart.currency.iso_code | json }},
+        "priceValidUntil": {{ 'now' | date: "%Y" | plus: 1 | append: "-12-31" | json }},
+        "availability": {%- if variant.available %}"https://schema.org/InStock"{% else %}"https://schema.org/OutOfStock"{% endif %},
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": { "@id": {{ shop.url | append: '/#organization' | json }} },
+        "shippingDetails": [
+          {
+            "@type": "OfferShippingDetails",
+            "shippingRate": { "@type": "MonetaryAmount", "value": "7.99", "currency": "USD" },
+            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" }
+          },
+          {
+            "@type": "OfferShippingDetails",
+            "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+            "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+            "description": "Free shipping on US orders over $125"
+          }
+        ],
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "US",
+          {%- if is_consumable %}
+          "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+          {%- else %}
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 14,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+          {%- endif %}
+        }
+      }
+    {%- endfor -%}
+  ]
+}
+</script>

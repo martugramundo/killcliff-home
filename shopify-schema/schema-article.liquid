@@ -1,0 +1,40 @@
+{%- comment -%}
+  BlogPosting. Render on templates/article.liquid.
+  Upgrades the old theme's block, which used http://schema.org, typed posts as
+  generic Article, inlined the ENTIRE article body into the page as articleBody,
+  and set publisher.logo to the post's own image.
+{%- endcomment -%}
+{%- liquid
+  assign meta_desc = article.metafields.global.description_tag
+  if meta_desc == blank
+    assign meta_desc = article.excerpt_or_content | strip_html | strip_newlines | truncate: 200
+  endif
+  assign img = article.image | default: page_image
+-%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": {{ article.url | prepend: shop.url | append: '#article' | json }},
+  "mainEntityOfPage": { "@type": "WebPage", "@id": {{ article.url | prepend: shop.url | json }} },
+  "url": {{ article.url | prepend: shop.url | json }},
+  "headline": {{ article.title | strip_html | truncate: 110 | json }},
+  "description": {{ meta_desc | json }},
+  {%- if img %}
+  "image": {
+    "@type": "ImageObject",
+    "url": {{ img | image_url: width: 1200 | prepend: "https:" | json }},
+    "width": 1200,
+    "height": {{ 1200 | divided_by: img.aspect_ratio | round }}
+  },
+  {%- endif %}
+  "datePublished": {{ article.published_at | date: "%Y-%m-%dT%H:%M:%SZ" | json }},
+  "dateModified": {{ article.updated_at | default: article.published_at | date: "%Y-%m-%dT%H:%M:%SZ" | json }},
+  "author": { "@type": "Person", "name": {{ article.author | json }} },
+  "publisher": { "@id": {{ shop.url | append: '/#organization' | json }} },
+  "isPartOf": { "@type": "Blog", "@id": {{ blog.url | prepend: shop.url | append: '#blog' | json }}, "name": {{ blog.title | json }} }
+  {%- if article.tags.size > 0 %},
+  "keywords": {{ article.tags | join: ", " | json }}
+  {%- endif %}
+}
+</script>

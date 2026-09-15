@@ -1,0 +1,47 @@
+{%- comment -%}
+  Organization + WebSite. Render ONCE, in layout/theme.liquid, inside <head>.
+  Replaces the two blocks the old Impulse theme emitted.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": {{ shop.url | append: '/#organization' | json }},
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }},
+      {%- if settings.logo %}
+      "logo": {
+        "@type": "ImageObject",
+        "url": {{ settings.logo | image_url: width: 600 | prepend: "https:" | json }},
+        "width": 600,
+        "height": {{ 600 | divided_by: settings.logo.aspect_ratio | round }}
+      },
+      {%- endif %}
+      "sameAs": [
+        {%- assign social = '' -%}
+        {%- if settings.social_instagram_link != blank %}{{ settings.social_instagram_link | json }},{% endif %}
+        {%- if settings.social_facebook_link != blank %}{{ settings.social_facebook_link | json }},{% endif %}
+        {%- if settings.social_youtube_link != blank %}{{ settings.social_youtube_link | json }},{% endif %}
+        {%- if settings.social_tiktok_link != blank %}{{ settings.social_tiktok_link | json }}{% endif %}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ shop.url | append: '/#website' | json }},
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }},
+      "publisher": { "@id": {{ shop.url | append: '/#organization' | json }} },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ shop.url | append: '/search?q={search_term_string}' | json }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
+}
+</script>

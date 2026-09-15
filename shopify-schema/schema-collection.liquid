@@ -1,0 +1,33 @@
+{%- comment -%}
+  CollectionPage + ItemList. Render on templates/collection.liquid.
+  The old theme emitted nothing on collection pages.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": {{ collection.url | prepend: shop.url | append: '#collection' | json }},
+  "url": {{ collection.url | prepend: shop.url | json }},
+  "name": {{ collection.title | json }},
+  {%- assign coll_desc = collection.metafields.global.description_tag | default: collection.description -%}
+  {%- if coll_desc != blank %}
+  "description": {{ coll_desc | strip_html | strip_newlines | truncate: 300 | json }},
+  {%- endif %}
+  "isPartOf": { "@id": {{ shop.url | append: '/#website' | json }} },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": {{ collection.products_count }},
+    "itemListElement": [
+      {%- for product in collection.products limit: 24 -%}
+        {%- unless forloop.first %},{% endunless %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "url": {{ product.url | prepend: shop.url | json }},
+          "name": {{ product.title | json }}
+        }
+      {%- endfor -%}
+    ]
+  }
+}
+</script>
