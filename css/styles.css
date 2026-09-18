@@ -136,7 +136,15 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   font-size: clamp(15px, 1.7vw, 17px); font-weight: 400;
   color: var(--text-dim); line-height: 1.55; max-width: 66ch; text-wrap: pretty;
 }
-.accent { color: var(--yellow); }
+.accent {
+  color: var(--yellow);
+  /* brush script runs small-bodied: 1.3em matches Outfit's cap height */
+  font-family: var(--font-brush);
+  font-weight: 400;
+  font-size: 1.3em;
+  letter-spacing: 0.02em;
+  line-height: 0; /* keep the bigger em from growing the heading's line box */
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -899,7 +907,15 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .coll-hero.section { padding-block: var(--sect-std) var(--sect-tight); }
 .coll-hero__inner { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.9fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
 .coll-hero__title { font-size: clamp(52px, 10vw, 132px); text-transform: uppercase; line-height: 0.86; letter-spacing: -0.03em; text-wrap: balance; margin: 0; }
-.coll-hero__title .accent { color: var(--yellow); }
+.coll-hero__title .accent {
+  color: var(--yellow);
+  /* brush script runs small-bodied: 1.3em matches Outfit's cap height */
+  font-family: var(--font-brush);
+  font-weight: 400;
+  font-size: 1.3em;
+  letter-spacing: 0.02em;
+  line-height: 0; /* keep the bigger em from growing the heading's line box */
+}
 .coll-hero__intro { margin: clamp(18px, 2.5vw, 26px) 0 0; max-width: 46ch; font-size: clamp(15px, 1.7vw, 18px); font-weight: 400; color: var(--text-dim); line-height: 1.55; }
 .coll-hero__chips { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: clamp(22px, 3vw, 30px) 0 0; padding: 0; }
 .coll-hero__chips li { font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--off-white); border: 1px solid var(--hairline); border-radius: 100px; padding: 8px 14px; }
