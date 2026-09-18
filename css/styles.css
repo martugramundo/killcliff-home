@@ -138,10 +138,10 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .accent {
   color: var(--yellow);
-  /* brush script runs small-bodied: 1.3em matches Outfit's cap height */
+  /* brush script runs small-bodied: ~1.3em matches Outfit cap height, +bump per user */
   font-family: var(--font-brush);
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1.4em;
   letter-spacing: 0.02em;
   line-height: 0; /* keep the bigger em from growing the heading's line box */
 }
@@ -909,10 +909,10 @@ html.js .final-cta__inner.is-visible .final-cta__title { animation: kcWipe 1000m
 .coll-hero__title { font-size: clamp(52px, 10vw, 132px); text-transform: uppercase; line-height: 0.86; letter-spacing: -0.03em; text-wrap: balance; margin: 0; }
 .coll-hero__title .accent {
   color: var(--yellow);
-  /* brush script runs small-bodied: 1.3em matches Outfit's cap height */
+  /* brush script runs small-bodied: ~1.3em matches Outfit cap height, +bump per user */
   font-family: var(--font-brush);
   font-weight: 400;
-  font-size: 1.3em;
+  font-size: 1.4em;
   letter-spacing: 0.02em;
   line-height: 0; /* keep the bigger em from growing the heading's line box */
 }
