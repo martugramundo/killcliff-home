@@ -1767,5 +1767,6 @@ html.js .jr__face.reveal.is-visible { animation: jrFaceIn 2200ms var(--ease-out-
 /* ---------- Live product cards (Shopify collections) ---------- */
 /* real pack shots render contained at a smaller, uniform size */
 .product--live .product__media { background: #0d0d0d; }
-.product--live .product__media img { object-fit: contain; max-height: 190px; padding: 10px; }
+/* official pack shots are 1080x1080: fill the square well edge to edge */
+.product--live .product__media img { object-fit: cover; }
 .product--live:hover .product__media img { transform: scale(1.03); }
