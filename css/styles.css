@@ -265,7 +265,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 /* Stage sets one shared width; the lineup row and the RTM band both fill it,
    so their left/right edges line up. */
 .hero__stage {
-  width: 100%; max-width: 1040px; margin-inline: auto;
+  width: 100%; max-width: 1140px; margin-inline: auto;
   display: flex; flex-direction: column; gap: clamp(24px, 3.4vw, 46px);
   min-height: calc(100svh - var(--header-h) - var(--ticker-h));
   justify-content: center;
@@ -363,7 +363,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
   width: auto; margin-top: 0; padding-top: 0;
 }
 .cans--horizontal .can-spin {
-  --cw: clamp(150px, 19vw, 250px);   /* horizontal width of the can */
+  --cw: clamp(180px, 24vw, 315px);   /* horizontal width of the can */
   width: var(--cw);
   height: calc(var(--cw) * 267 / 760);
   aspect-ratio: auto;
