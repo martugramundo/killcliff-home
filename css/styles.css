@@ -113,7 +113,8 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 }
 .section { padding-block: var(--sect-std); }
 .products.section { padding-block: var(--sect-feature); }
-.press { padding-block: var(--sect-tight); }
+/* extra air around the press band, especially before the next section */
+.press { padding-block: clamp(32px, 3.6vw, 52px) clamp(56px, 6.5vw, 96px); }
 .newsletter.section { padding-block: var(--sect-tight) var(--sect-std); }
 
 /* Eyebrow: now off-white with a small yellow lead dash (minimal yellow) */
