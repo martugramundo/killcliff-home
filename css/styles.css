@@ -642,7 +642,7 @@ a:focus-visible, .btn:focus-visible, .cmp__tab:focus-visible, .icon-btn:focus-vi
 .product:hover { transform: translateY(-6px); background: var(--surface-hover); border-color: var(--hairline); }
 .product__media { position: relative; margin-bottom: 16px; overflow: hidden; border-radius: var(--r-md); }
 .product__media-link { display: block; }
-.product__media img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: block; transition: transform 500ms var(--ease-out-quint); }
+.product__media img { width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; display: block; transition: transform 500ms var(--ease-out-quint); }
 .product:hover .product__media img { transform: scale(1.05); }
 .product__badge {
   position: absolute; top: 10px; left: 10px;
@@ -1762,3 +1762,9 @@ html.js .jr__face.reveal.is-visible { animation: jrFaceIn 2200ms var(--ease-out-
 .jr-film__sound:hover { border-color: var(--yellow); color: var(--yellow); }
 
 .jr-tolstoy .tolstoy-carousel { display: block; min-height: 380px; }
+
+/* ---------- Live product cards (Shopify collections) ---------- */
+/* real pack shots render contained at a smaller, uniform size */
+.product--live .product__media { background: #0d0d0d; }
+.product--live .product__media img { object-fit: contain; max-height: 190px; padding: 10px; }
+.product--live:hover .product__media img { transform: scale(1.03); }
